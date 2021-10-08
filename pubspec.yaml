@@ -61,7 +61,7 @@ flutter:
     - assets/images/code.jpg
     - assets/images/open.png
     - assets/images/success.jpg
-    - assets/images/home.svg
+    - assets/images/home.png
     - assets/images/medical.svg
     - assets/images/high.svg
     - assets/images/vital.svg
@@ -69,6 +69,15 @@ flutter:
     - assets/images/health.svg
     - assets/images/medical2.svg
     - assets/images/mental.svg
+    - assets/images/avatar.png
+    - assets/images/changeProfilePicture.jpg
+    - assets/images/report.png
+    - assets/images/data.png
+    - assets/images/calc1.svg
+    - assets/images/calc2.svg
+    - assets/images/calc3.svg
+    
+
     
 
 
@@ -93,6 +102,57 @@ flutter:
     - family: Password
       fonts:
         - asset: assets/fonts/Password.ttf
+
+
+    - family: calendar
+      fonts:
+        - asset: assets/fonts/Calendar.ttf
+
+
+    - family: Calculator
+      fonts:
+        - asset: assets/fonts/Calculator.ttf
+
+
+    - family: Home
+      fonts:
+        - asset: assets/fonts/Home.ttf
+
+
+
+    - family: Medications
+      fonts:
+        - asset: assets/fonts/Medications.ttf
+
+
+    - family: User
+      fonts:
+        - asset: assets/fonts/User.ttf
+
+
+    - family: NewHome
+      fonts:
+        - asset: assets/fonts/NewHome.ttf
+
+    - family: Navigate
+      fonts:
+        - asset: assets/fonts/Navigate.ttf
+
+    - family: Arrow
+      fonts:
+        - asset: assets/fonts/Arrow.ttf
+
+        
+    - family: Upload
+      fonts:
+        - asset: assets/fonts/Upload.ttf
+
+        
+  
+
+
+
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

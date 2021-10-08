@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/Password.dart';
-import 'Password.dart';
+import 'package:nabbda/icons/Password.dart';
 
 class NewPassword extends StatefulWidget {
   const NewPassword({Key? key}) : super(key: key);

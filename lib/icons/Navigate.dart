@@ -15,12 +15,12 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class Password {
-  Password._();
+class Navigate {
+  Navigate._();
 
-  static const _kFontFam = 'password';
+  static const _kFontFam = 'navigate';
   static const String? _kFontPkg = null;
 
-  static const IconData password =
-      IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData navigate =
+      IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'MyIcon.dart';
-import 'EnterCode.dart';
+import 'package:nabbda/icons/MyIcon.dart';
+import 'package:nabbda/EnterCode.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);

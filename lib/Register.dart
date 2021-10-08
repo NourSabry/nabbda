@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'colors.dart';
-import 'login.dart';
-import 'MyIcon.dart';
-import 'DateOfBirth.dart';
+import 'package:nabbda/colors.dart';
+import 'package:nabbda/login.dart';
+import 'package:nabbda/icons/MyIcon.dart';
+import 'package:nabbda/DateOfBirth.dart';
 
 class RegisterationScreen extends StatelessWidget {
   @override

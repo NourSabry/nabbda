@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'colors.dart';
+import 'package:nabbda/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -14,9 +14,10 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
+              clipBehavior: Clip.none,
               children: [
                 Container(
-                  height: size.height * 0.24,
+                  height: size.height * 0.30,
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   color: CustomizedColors.btnInAct.withOpacity(0.40),
@@ -40,23 +41,23 @@ class HomeScreen extends StatelessWidget {
                                   "Track Your Health Reports\nAnd Get Reminders For your\nMedications, Stay Healthy!",
                                   style: TextStyle(
                                       color: CustomizedColors.bck,
-                                      fontSize: 14))
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600))
                             ],
                           ),
                         ),
-                        SizedBox(width: size.width * 0.06),
-                        SvgPicture.asset(
-                          "assets/images/home.svg",
-                          height: size.height * 0.11,
+                        SizedBox(width: size.width * 0.04),
+                        Image.asset(
+                          "assets/images/home.png",
+                          height: size.height * 0.15,
                         ),
-                        SizedBox(width: 5),
                         Icon(Icons.share, size: 30, color: CustomizedColors.bck)
                       ],
                     ),
                   ),
                 ),
                 Positioned(
-                  bottom: -50,
+                  bottom: -30,
                   left: 0,
                   right: 0,
                   child: Padding(
@@ -75,7 +76,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                         hintText: "Search in your reports",
                         hintStyle: TextStyle(
-                            color: CustomizedColors.txtFT, fontSize: 14),
+                            color: CustomizedColors.txtFT,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
                             borderSide: BorderSide(
@@ -90,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: size.height * 0.06),
+            SizedBox(height: size.height * 0.09),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
@@ -125,6 +128,7 @@ class HomeScreen extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 18,
                                       color: CustomizedColors.bck,
+                                      fontWeight: FontWeight.w600,
                                       height: 1.3)),
                               SizedBox(height: 10),
                               Row(
@@ -136,6 +140,7 @@ class HomeScreen extends StatelessWidget {
                                   Text("10% Higher",
                                       style: TextStyle(
                                           fontSize: 12,
+                                          fontWeight: FontWeight.w600,
                                           color: CustomizedColors.txtFBo)),
                                 ],
                               )
@@ -173,6 +178,7 @@ class HomeScreen extends StatelessWidget {
                               Text("Vital Signs",
                                   style: TextStyle(
                                       fontSize: 18,
+                                      fontWeight: FontWeight.w600,
                                       color: CustomizedColors.bck,
                                       height: 1.3)),
                               SizedBox(height: 30),
@@ -185,6 +191,7 @@ class HomeScreen extends StatelessWidget {
                                   Text("5% Less",
                                       style: TextStyle(
                                           fontSize: 12,
+                                          fontWeight: FontWeight.w600,
                                           color: CustomizedColors.txtFBo)),
                                 ],
                               )
@@ -224,6 +231,7 @@ class HomeScreen extends StatelessWidget {
                               Text("Health\nMonitoring",
                                   style: TextStyle(
                                       fontSize: 18,
+                                      fontWeight: FontWeight.w600,
                                       color: CustomizedColors.bck,
                                       height: 1.3)),
                               SizedBox(height: 10),
@@ -236,6 +244,7 @@ class HomeScreen extends StatelessWidget {
                                   Text("4% Less",
                                       style: TextStyle(
                                           fontSize: 12,
+                                          fontWeight: FontWeight.w600,
                                           color: CustomizedColors.txtFBo)),
                                 ],
                               )
@@ -271,6 +280,7 @@ class HomeScreen extends StatelessWidget {
                               Text("Medical\nDocuments",
                                   style: TextStyle(
                                       fontSize: 18,
+                                      fontWeight: FontWeight.w600,
                                       color: CustomizedColors.bck,
                                       height: 1.3)),
                               SizedBox(height: 10),
@@ -283,6 +293,7 @@ class HomeScreen extends StatelessWidget {
                                   Text("12% Higher",
                                       style: TextStyle(
                                           fontSize: 12,
+                                          fontWeight: FontWeight.w600,
                                           color: CustomizedColors.txtFBo)),
                                 ],
                               )
@@ -306,9 +317,10 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text("Your Vital Signs",
                         style: TextStyle(
-                            fontSize: 18,
-                            color: CustomizedColors.btnInAct,
-                            fontWeight: FontWeight.w500)),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: CustomizedColors.btnInAct,
+                        )),
                     SizedBox(height: size.height * 0.025),
                     Text("in last 7 days",
                         style: TextStyle(
@@ -480,6 +492,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                          SizedBox(height: 50),
                         ],
                       ),
                     )
@@ -487,8 +500,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: size.height * 0.035),
-            Divider(color: Color(0xFFE4E4E4), thickness: 1),
             Container(
               color: Color(0xFFF5F5F5),
               width: double.infinity,
@@ -496,7 +507,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: size.height * 0.035),
+                  SizedBox(height: 40),
                   Text("Remember Your Medications",
                       style: TextStyle(
                           fontSize: 18,
@@ -509,7 +520,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Container(
                           width: size.width * 0.6,
-                          height: size.width * 0.15,
+                          height: size.width * 0.18,
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           decoration: BoxDecoration(
@@ -551,7 +562,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: size.height * 0.02),
                         Container(
                           width: size.width * 0.6,
-                          height: size.width * 0.15,
+                          height: size.width * 0.18,
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           decoration: BoxDecoration(
@@ -593,7 +604,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: size.height * 0.02),
                         Container(
                           width: size.width * 0.6,
-                          height: size.width * 0.15,
+                          height: size.width * 0.18,
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           decoration: BoxDecoration(
@@ -632,7 +643,7 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: size.height * 0.02),
+                        SizedBox(height: size.height * 0.05),
                       ],
                     ),
                   )

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'OnTappedDate.dart';
+import 'package:nabbda/OnTappedDate.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class DateOfBirth extends StatefulWidget {

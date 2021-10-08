@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'NewPassword.dart';
+import 'package:nabbda/NewPassword.dart';
 import 'package:custom_timer/custom_timer.dart';
 
 class EnterCode extends StatefulWidget {
