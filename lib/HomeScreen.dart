@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nabbda/HealthMonitoring.dart';
+import 'package:nabbda/MedicalDocumentScreen.dart';
+import 'package:nabbda/MedicalRecords1.dart';
 import 'package:nabbda/colors.dart';
+import 'package:nabbda/MedicalRecords.dart';
+import 'package:nabbda/VitalSigns.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -117,34 +122,54 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 20),
-                              SvgPicture.asset("assets/images/medical.svg",
-                                  height: size.height * 0.045),
-                              SizedBox(height: 15),
-                              Text("Medical\nRecords",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: CustomizedColors.bck,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.3)),
-                              SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MedicalRecords1(),
+                                ),
+                              );
+                            },
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MedicalRecords(),
+                                  ),
+                                );
+                              },
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SvgPicture.asset("assets/images/high.svg",
-                                      color: CustomizedColors.btnInAct),
-                                  SizedBox(width: 10),
-                                  Text("10% Higher",
+                                  SizedBox(height: 20),
+                                  SvgPicture.asset("assets/images/medical.svg",
+                                      height: size.height * 0.045),
+                                  SizedBox(height: 15),
+                                  Text("Medical\nRecords",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 18,
+                                          color: CustomizedColors.bck,
                                           fontWeight: FontWeight.w600,
-                                          color: CustomizedColors.txtFBo)),
+                                          height: 1.3)),
+                                  SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SvgPicture.asset("assets/images/high.svg",
+                                          color: CustomizedColors.btnInAct),
+                                      SizedBox(width: 10),
+                                      Text("10% Higher",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w600,
+                                              color: CustomizedColors.txtFBo)),
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -166,36 +191,46 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 20),
-                              SvgPicture.asset(
-                                "assets/images/vital.svg",
-                                height: size.height * 0.045,
-                              ),
-                              SizedBox(height: 15),
-                              Text("Vital Signs",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                      color: CustomizedColors.bck,
-                                      height: 1.3)),
-                              SizedBox(height: 30),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset("assets/images/low.svg",
-                                      color: CustomizedColors.btnInAct),
-                                  SizedBox(width: 10),
-                                  Text("5% Less",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                          color: CustomizedColors.txtFBo)),
-                                ],
-                              )
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => VitalSigns(),
+                                ),
+                              );
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 20),
+                                SvgPicture.asset(
+                                  "assets/images/vital.svg",
+                                  height: size.height * 0.045,
+                                ),
+                                SizedBox(height: 15),
+                                Text("Vital Signs",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: CustomizedColors.bck,
+                                        height: 1.3)),
+                                SizedBox(height: 30),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset("assets/images/low.svg",
+                                        color: CustomizedColors.btnInAct),
+                                    SizedBox(width: 10),
+                                    Text("5% Less",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                            color: CustomizedColors.txtFBo)),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -221,34 +256,43 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 20),
-                              SvgPicture.asset("assets/images/health.svg",
-                                  height: size.height * 0.045),
-                              SizedBox(height: 15),
-                              Text("Health\nMonitoring",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                      color: CustomizedColors.bck,
-                                      height: 1.3)),
-                              SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset("assets/images/low.svg",
-                                      color: CustomizedColors.btnInAct),
-                                  SizedBox(width: 10),
-                                  Text("4% Less",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                          color: CustomizedColors.txtFBo)),
-                                ],
-                              )
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          HealthMonitoring()));
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 20),
+                                SvgPicture.asset("assets/images/health.svg",
+                                    height: size.height * 0.045),
+                                SizedBox(height: 15),
+                                Text("Health\nMonitoring",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: CustomizedColors.bck,
+                                        height: 1.3)),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset("assets/images/low.svg",
+                                        color: CustomizedColors.btnInAct),
+                                    SizedBox(width: 10),
+                                    Text("4% Less",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                            color: CustomizedColors.txtFBo)),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -270,34 +314,43 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 20),
-                              SvgPicture.asset("assets/images/medical2.svg",
-                                  height: size.height * 0.045),
-                              SizedBox(height: 15),
-                              Text("Medical\nDocuments",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                      color: CustomizedColors.bck,
-                                      height: 1.3)),
-                              SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset("assets/images/high.svg",
-                                      color: CustomizedColors.btnInAct),
-                                  SizedBox(width: 10),
-                                  Text("12% Higher",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                          color: CustomizedColors.txtFBo)),
-                                ],
-                              )
-                            ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MedicalDocumentScreen()));
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 20),
+                                SvgPicture.asset("assets/images/medical2.svg",
+                                    height: size.height * 0.045),
+                                SizedBox(height: 15),
+                                Text("Medical\nDocuments",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: CustomizedColors.bck,
+                                        height: 1.3)),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset("assets/images/high.svg",
+                                        color: CustomizedColors.btnInAct),
+                                    SizedBox(width: 10),
+                                    Text("12% Higher",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w600,
+                                            color: CustomizedColors.txtFBo)),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  syncfusion_flutter_charts: ^19.3.45+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -27,6 +28,8 @@ dependencies:
   flutter_svg: ^0.22.0
   font_awesome_flutter: ^9.1.0
   responsive_framework: ^0.1.4
+  charts_flutter: ^0.11.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -76,7 +79,14 @@ flutter:
     - assets/images/calc1.svg
     - assets/images/calc2.svg
     - assets/images/calc3.svg
-    
+    - assets/images/Female.png
+    - assets/images/Male.png
+    - assets/images/med4.svg
+    - assets/images/med3.svg
+    - assets/images/med2.svg
+    - assets/images/med1.svg
+    - assets/images/docum.svg
+    - assets/images/medical.png
 
     
 
@@ -146,6 +156,12 @@ flutter:
     - family: Upload
       fonts:
         - asset: assets/fonts/Upload.ttf
+
+        
+        
+    - family: Correct
+      fonts:
+        - asset: assets/fonts/Correct.ttf
 
         
   

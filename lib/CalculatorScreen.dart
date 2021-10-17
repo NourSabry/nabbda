@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nabbda/ASCVDRisk.dart';
+import 'package:nabbda/AtherosclerosisRisk.dart';
+import 'package:nabbda/HeartRisk.dart';
+import 'package:nabbda/StrokeRisk.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/bmi_screen.dart';
 import 'package:nabbda/di_ris_screen.dart';
@@ -174,22 +178,31 @@ class CalculatorScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 20),
-                            SvgPicture.asset(
-                              "assets/images/calc3.svg",
-                              height: size.height * 0.045,
-                            ),
-                            SizedBox(height: 15),
-                            Text("Heart Risk",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: CustomizedColors.bck,
-                                    height: 1.3)),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HeartRisk()),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 20),
+                              SvgPicture.asset(
+                                "assets/images/calc3.svg",
+                                height: size.height * 0.045,
+                              ),
+                              SizedBox(height: 15),
+                              Text("Heart Risk",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: CustomizedColors.bck,
+                                      height: 1.3)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -215,22 +228,31 @@ class CalculatorScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 20),
-                            SvgPicture.asset(
-                              "assets/images/calc3.svg",
-                              height: size.height * 0.045,
-                            ),
-                            SizedBox(height: 15),
-                            Text("Atherosclerosis\Risk ",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: CustomizedColors.bck,
-                                    height: 1.3)),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AtherosclerosisRisk()),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 20),
+                              SvgPicture.asset(
+                                "assets/images/calc3.svg",
+                                height: size.height * 0.045,
+                              ),
+                              SizedBox(height: 15),
+                              Text("Atherosclerosis\Risk ",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: CustomizedColors.bck,
+                                      height: 1.3)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -252,22 +274,31 @@ class CalculatorScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 20),
-                            SvgPicture.asset(
-                              "assets/images/calc3.svg",
-                              height: size.height * 0.045,
-                            ),
-                            SizedBox(height: 15),
-                            Text("Stroke Risk",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: CustomizedColors.bck,
-                                    height: 1.3)),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StrokeRisk()),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 20),
+                              SvgPicture.asset(
+                                "assets/images/calc3.svg",
+                                height: size.height * 0.045,
+                              ),
+                              SizedBox(height: 15),
+                              Text("Stroke Risk",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: CustomizedColors.bck,
+                                      height: 1.3)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -293,25 +324,35 @@ class CalculatorScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 20),
-                            SvgPicture.asset(
-                              "assets/images/calc3.svg",
-                              height: size.height * 0.045,
-                            ),
-                            SizedBox(height: 15),
-                            Text("ASCVD Risk",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: CustomizedColors.bck,
-                                    height: 1.3)),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ASCVDRisk()),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 20),
+                              SvgPicture.asset(
+                                "assets/images/calc3.svg",
+                                height: size.height * 0.045,
+                              ),
+                              SizedBox(height: 15),
+                              Text("ASCVD Risk ",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: CustomizedColors.bck,
+                                      height: 1.3)),
+                            ],
+                          ),
                         ),
                       ),
                     ),
+                    SizedBox(width: 180),
                   ],
                 ),
               ],
