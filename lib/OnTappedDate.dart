@@ -16,7 +16,7 @@ class OnTapped extends StatelessWidget {
                 padding: EdgeInsets.only(left: 30, top: 20),
                 child: Text("March 1992",
                     style: TextStyle(
-                        color: Color(0xFF0880AE),
+                        color: Color(0xFF6E78F7),
                         fontSize: 18,
                         fontWeight: FontWeight.w600))),
             SizedBox(height: 20),

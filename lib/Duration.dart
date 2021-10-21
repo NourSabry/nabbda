@@ -19,7 +19,7 @@ class Duration extends StatelessWidget {
                   Container(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      icon: Icon(Icons.close, color: Color(0xFF0880AE)),
+                      icon: Icon(Icons.close, color: Color(0xFF6E78F7)),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -29,7 +29,7 @@ class Duration extends StatelessWidget {
                       margin: EdgeInsets.only(top: 0),
                       child: Text("Duration",
                           style: TextStyle(
-                              color: Color(0xFF0880AE),
+                              color: Color(0xFF6E78F7),
                               fontWeight: FontWeight.bold,
                               fontSize: 25))),
                 ]),
@@ -80,7 +80,7 @@ class Duration extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18)),
                           trailing: Icon(Correct.correct,
-                              color: Color(0xFF0880AE), size: 18),
+                              color: Color(0xFF6E78F7), size: 18),
                           onTap: () {}),
                       ListTile(
                         contentPadding: EdgeInsets.only(bottom: 0, top: 0),
@@ -115,7 +115,7 @@ class Duration extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     minimumSize: Size(110, 38),
-                    primary: Color(0xFF0880AE),
+                    primary: Color(0xFF6E78F7),
                     elevation: 0,
                   ),
                 ),

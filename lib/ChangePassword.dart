@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ChangePassword extends StatelessWidget {
   @override
@@ -13,15 +14,18 @@ class ChangePassword extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3B3C55)),
+            icon: Icon(Icons.arrow_back_ios, color: Color(0xFF2F2E41)),
           ),
           title: Text("Back",
-              style: TextStyle(color: Color(0xFF3B3C55), fontSize: 25))),
+              style: TextStyle(
+                  color: Color(0xFF2F2E41),
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold))),
       body: Column(children: [
         SizedBox(height: 70),
         Text("Change Password",
             style: TextStyle(
-                fontSize: 27,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF2D2D2D))),
         SizedBox(height: 40),
@@ -86,11 +90,12 @@ class ChangePassword extends StatelessWidget {
                                   height: 240,
                                   child: Column(
                                     children: [
-                                      Image.asset("assets/images/success.jpg"),
+                                      SvgPicture.asset(
+                                          "assets/images/success.svg"),
                                       SizedBox(height: 8),
                                       Text("Changed successfully!",
                                           style: TextStyle(
-                                            color: Color(0xFF34C759),
+                                            color: Color(0xFF6E78F7),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500,
                                           )),
@@ -108,14 +113,14 @@ class ChangePassword extends StatelessWidget {
                                         child: Text(
                                           "Done",
                                           style: TextStyle(
-                                              color: Color(0xFF0880AE),
+                                              color: Color(0xFF6E78F7),
                                               fontSize: 16),
                                         ),
                                         style: ElevatedButton.styleFrom(
                                           minimumSize: Size(242, 54),
                                           side: BorderSide(
                                               width: 1,
-                                              color: Color(0xFF0880AE)),
+                                              color: Color(0xFF6E78F7)),
                                           shape: new RoundedRectangleBorder(
                                             borderRadius:
                                                 new BorderRadius.circular(10.0),
@@ -134,7 +139,7 @@ class ChangePassword extends StatelessWidget {
                           fontSize: 22,
                           fontWeight: FontWeight.normal)),
                   style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFF0880AE),
+                      backgroundColor: Color(0xFF6E78F7),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                 ))),

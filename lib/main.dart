@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:nabbda/NavigationBar.dart';
+import 'package:nabbda/Error.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,9 +8,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBar(),
+      home: Error(),
     );
   }
 }

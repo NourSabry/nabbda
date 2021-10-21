@@ -22,11 +22,11 @@ class Logout extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: 30),
-                      Text("Amr Hassan",
+                      Text("Ahmed Abbas",
                           style: TextStyle(
                               color: Color(0xFF3B3C55),
-                              fontSize: 25,
-                              fontWeight: FontWeight.normal)),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600)),
                       SizedBox(height: 30),
                       Text("Are you sure you want to log out from PMR?",
                           textAlign: TextAlign.center,
@@ -47,11 +47,11 @@ class Logout extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 minimumSize: Size(400, 60),
                                 side: BorderSide(
-                                    width: 1, color: Color(0xFF0880AE)),
+                                    width: 1, color: Color(0xFF6E78F7)),
                                 shape: new RoundedRectangleBorder(
                                   borderRadius: new BorderRadius.circular(10.0),
                                 ),
-                                primary: Color(0xFF0880AE),
+                                primary: Color(0xFF6E78F7),
                                 elevation: 0.0,
                               ),
                             ),
@@ -65,11 +65,12 @@ class Logout extends StatelessWidget {
                             child: Text(
                               "Log out",
                               style: TextStyle(
-                                  color: Color(0xFF0880AE), fontSize: 17),
+                                  color: Color(0xFF6E78F7), fontSize: 17),
                             ),
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(300, 60),
-                              side: BorderSide(width: 1, color: Colors.blue),
+                              side: BorderSide(
+                                  width: 1, color: Color(0xFF6E78F7)),
                               shape: new RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(10.0),
                               ),

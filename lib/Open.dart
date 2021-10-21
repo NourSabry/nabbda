@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class OpenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue[100],
+        backgroundColor: Color(0xFF6E78F7),
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset("assets/images/heart.png"),
+          SvgPicture.asset("assets/images/heart.svg"),
           Text("NABBDA",
               style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold))
+                color: Colors.white,
+                fontSize: 27,
+              )),
+          SizedBox(height: 120),
+          SvgPicture.asset(
+            "assets/images/nabbda.svg",
+          ),
         ])));
   }
 }

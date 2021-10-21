@@ -34,15 +34,15 @@ class _NavigationBar extends State<NavigationBar> {
       body: Center(child: _children[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
         unselectedLabelStyle: TextStyle(color: Color(0xFF3B3C55)),
-        selectedLabelStyle: TextStyle(color: Color(0xFF0880AE)),
+        selectedLabelStyle: TextStyle(color: Color(0xFF6E78F7)),
         unselectedIconTheme: IconThemeData(color: Color(0xFF3B3C55)),
-        selectedIconTheme: IconThemeData(color: Color(0xFF0880AE)),
+        selectedIconTheme: IconThemeData(color: Color(0xFF6E78F7)),
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: onTabTapped,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFF0880AE),
+            backgroundColor: Color(0xFF6E78F7),
             icon: Icon(NewHome.newHome),
             label: "Home",
           ),
