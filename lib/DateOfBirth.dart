@@ -66,7 +66,7 @@ class _DateOfBirth extends State<DateOfBirth> {
                     isTodayHighlighted: false,
                     outsideDaysVisible: false,
                     selectedDecoration: BoxDecoration(
-                      color: Color(0xFF0880AE),
+                      color: Color(0xFF6E78F7),
                       shape: BoxShape.circle,
                     ),
                     defaultTextStyle: TextStyle(
@@ -91,9 +91,9 @@ class _DateOfBirth extends State<DateOfBirth> {
                     formatButtonShowsNext: false,
                     leftChevronVisible: false,
                     rightChevronIcon:
-                        Icon(Icons.chevron_right, color: Color(0xFF0880AE)),
+                        Icon(Icons.chevron_right, color: Color(0xFF6E78F7)),
                     titleTextStyle: TextStyle(
-                        color: Color(0xFF0880AE),
+                        color: Color(0xFF6E78F7),
                         fontSize: 18,
                         fontWeight: FontWeight.w600)),
                 daysOfWeekStyle: DaysOfWeekStyle(

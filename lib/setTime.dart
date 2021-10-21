@@ -19,7 +19,7 @@ class SetTime extends StatelessWidget {
                   Container(
                     alignment: Alignment.topRight,
                     child: IconButton(
-                      icon: Icon(Icons.close, color: Color(0xFF0880AE)),
+                      icon: Icon(Icons.close, color: Color(0xFF6E78F7)),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -29,7 +29,7 @@ class SetTime extends StatelessWidget {
                       margin: EdgeInsets.only(top: 0),
                       child: Text("Select Time",
                           style: TextStyle(
-                              color: Color(0xFF0880AE),
+                              color: Color(0xFF6E78F7),
                               fontWeight: FontWeight.bold,
                               fontSize: 25))),
                 ]),
@@ -54,11 +54,11 @@ class SetTime extends StatelessWidget {
                             VisualDensity(horizontal: 0, vertical: -4),
                         title: Text("10 : 30   AM",
                             style: TextStyle(
-                                color: Color(0xFF0880AE),
+                                color: Color(0xFF6E78F7),
                                 fontSize: 21,
                                 fontWeight: FontWeight.bold)),
                         trailing: Icon(Navigate.navigate,
-                            color: Color(0xFF0880AE), size: 40),
+                            color: Color(0xFF6E78F7), size: 40),
                       ),
                       ListTile(
                           onTap: () {},
@@ -91,7 +91,7 @@ class SetTime extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     minimumSize: Size(110, 38),
-                    primary: Color(0xFF0880AE),
+                    primary: Color(0xFF6E78F7),
                     elevation: 0,
                   ),
                 ),

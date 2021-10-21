@@ -55,15 +55,15 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:     
-    - assets/images/heart.png
+    - assets/images/heart.svg
     - assets/images/Track.jpg
     - assets/images/Reminders.png
     - assets/images/goo.svg
-    - assets/images/regist.png
-    - assets/images/lock.jpg
-    - assets/images/code.jpg
+    - assets/images/regist.svg
+    - assets/images/lock.svg
+    - assets/images/code.svg
     - assets/images/open.png
-    - assets/images/success.jpg
+    - assets/images/success.svg
     - assets/images/home.png
     - assets/images/medical.svg
     - assets/images/high.svg
@@ -74,7 +74,7 @@ flutter:
     - assets/images/mental.svg
     - assets/images/avatar.png
     - assets/images/changeProfilePicture.jpg
-    - assets/images/report.png
+    - assets/images/Report.jpg
     - assets/images/data.png
     - assets/images/calc1.svg
     - assets/images/calc2.svg
@@ -87,6 +87,10 @@ flutter:
     - assets/images/med1.svg
     - assets/images/docum.svg
     - assets/images/medical.png
+    - assets/images/nabbda.svg
+    - assets/images/Group.svg
+    - assets/images/Error.svg
+
 
     
 
@@ -162,6 +166,14 @@ flutter:
     - family: Correct
       fonts:
         - asset: assets/fonts/Correct.ttf
+
+        
+        
+        
+    - family: Hide
+      fonts:
+        - asset: assets/fonts/Hide.ttf
+
 
         
   
