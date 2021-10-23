@@ -44,14 +44,14 @@ class SmokingAlert extends StatelessWidget {
                     child: ListTile(
                       title: Text("6 months - 1.5 years ago ",
                           style: TextStyle(
-                              color: Color(0xFF2B65B4),
+                              color: Color(0xFF6E78F7),
                               fontSize: 16,
                               fontWeight: FontWeight.w600)),
                       visualDensity:
                           VisualDensity(horizontal: -4, vertical: -4),
                       onTap: () {},
                       trailing: Icon(Correct.correct,
-                          color: Color(0xFF0880AE), size: 15),
+                          color: Color(0xFF6E78F7), size: 15),
                     ),
                   ),
                   ListTile(
