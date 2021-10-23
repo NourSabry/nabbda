@@ -15,65 +15,62 @@ class ContainerOfVitalSigns extends StatelessWidget {
   Widget build(BuildContext context) {
     var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.0];
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 5),
-      child: Container(
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 50,
-                child: Center(
-                  child: SvgPicture.asset(
-                    images!,
-                  ),
+    return Container(
+      height: 80,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Container(
+              width: 50,
+              height: 50,
+              child: Center(
+                child: SvgPicture.asset(
+                  images!,
                 ),
-                decoration: BoxDecoration(
-                    color: Color(0xFF3D8BFF), shape: BoxShape.circle),
               ),
+              decoration: BoxDecoration(
+                  color: Color(0xFF3D8BFF), shape: BoxShape.circle),
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AutoSizeText(
-                    name!,
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AutoSizeText(
+                  name!,
+                  maxLines: 1,
+                  style: TextStyle(fontSize: 18),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: AutoSizeText(
+                    time!,
                     maxLines: 1,
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: AutoSizeText(
-                      time!,
-                      maxLines: 1,
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Container(
-                width: 100,
-                height: 50,
-                child: Sparkline(
-                  data: data,
-                  useCubicSmoothing: true,
-                  cubicSmoothingFactor: 0.2,
                 ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: 100,
+              height: 50,
+              child: Sparkline(
+                data: data,
+                useCubicSmoothing: true,
+                cubicSmoothingFactor: 0.2,
               ),
             ),
-            Expanded(
-              child: AutoSizeText(
-                quantity!,
-                style: TextStyle(fontSize: 16, color: Colors.black),
-              ),
+          ),
+          Expanded(
+            child: AutoSizeText(
+              quantity!,
+              style: TextStyle(fontSize: 16, color: Colors.black),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

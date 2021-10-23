@@ -51,115 +51,113 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-        body: SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ContainerOfHomeScreen(
-                functionShare: () {},
-                onChange: (v) {
-                  print(v);
-                },
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: ClampingScrollPhysics(),
-                    itemCount: labels.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 20,
-                        mainAxisSpacing: 20),
-                    itemBuilder: (BuildContext context, index) => Cards(
-                          label: labels[index],
-                          images: images[index],
-                          imageWave: imagesWave[index],
-                          percent: percent[index],
-                          function: () {
-                            if (index == 0) {
-                              print("index 0");
-                            }
-                           else if (index == 1) {
-                              print("index 1");
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>VitalSignsScreen()));
-                            }
-                          else  if (index == 2) {
-                              print("index 2");
-                            }else {
-                              print("index 3");
+    return Scaffold(
+      backgroundColor: Color(0xFFF5F5F5),
+      body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ContainerOfHomeScreen(
+              functionShare: () {},
+              onChange: (v) {
+                print(v);
+              },
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: labels.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20),
+                  itemBuilder: (BuildContext context, index) => Cards(
+                        label: labels[index],
+                        images: images[index],
+                        imageWave: imagesWave[index],
+                        percent: percent[index],
+                        function: () {
+                          if (index == 0) {
+                            print("index 0");
+                          }
+                         else if (index == 1) {
+                            print("index 1");
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>VitalSignsScreen()));
+                          }
+                        else  if (index == 2) {
+                            print("index 2");
+                          }else {
+                            print("index 3");
 
-                            }
-                          },
-                        )),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text("Remember Your Medications",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: CustomizedColors.blackk,
-                        fontWeight: FontWeight.w500)),
-              ),
-              SizedBox(
-                height: 120,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      physics: ClampingScrollPhysics(),
-                      itemCount: nameOfMedicine.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) => CardOfReminder(
-                            label: nameOfMedicine[index],
-                            time: timeOfMedicine[index],
-                            color: colorOfCard[index],
-                          )),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Doctors Nearby You",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: CustomizedColors.blackk,
-                            fontWeight: FontWeight.w500)),
-                    Text("See all",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: CustomizedColors.btnInAct,
-                            fontWeight: FontWeight.w500)),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 250,
+                          }
+                        },
+                      )),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text("Remember Your Medications",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: CustomizedColors.blackk,
+                      fontWeight: FontWeight.w500)),
+            ),
+            SizedBox(
+              height: 120,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     physics: ClampingScrollPhysics(),
-                    itemCount: 3,
-                    itemBuilder: (context, index) => CardOfProfile(
-                          label: "Dr:Mohamed Said",
-                          descriptions: "Dr:Mohamed Said",
-                          image: "assets/images/Male.png",
-                          rate: "3.5",
+                    itemCount: nameOfMedicine.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => CardOfReminder(
+                          label: nameOfMedicine[index],
+                          time: timeOfMedicine[index],
+                          color: colorOfCard[index],
                         )),
-              )
-            ],
-          ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Doctors Nearby You",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: CustomizedColors.blackk,
+                          fontWeight: FontWeight.w500)),
+                  Text("See all",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: CustomizedColors.btnInAct,
+                          fontWeight: FontWeight.w500)),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 250,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: 3,
+                  itemBuilder: (context, index) => CardOfProfile(
+                        label: "Dr:Mohamed Said",
+                        descriptions: "Dr:Mohamed Said",
+                        image: "assets/images/Male.png",
+                        rate: "3.5",
+                      )),
+            )
+          ],
         ),
       ),
     );

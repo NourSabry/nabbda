@@ -10,14 +10,16 @@ class VitalSignsScreen extends StatelessWidget {
     "Temperature",
     "Respiratory Rate",
     "O2Saturation level"
-  ]; final List<String> time = [
+  ];
+  final List<String> time = [
     "24 Apr 2021",
     "24 Apr 2021",
     "24 Apr 2021",
     "24 Apr 2021",
     "24 Apr 2021",
     "24 Apr 2021",
-  ];final List<String> quantity = [
+  ];
+  final List<String> quantity = [
     "200 mg/dl",
     "200 mg/dl",
     "200 mg/dl",
@@ -38,14 +40,14 @@ class VitalSignsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-        body: Stack(
+    return Scaffold(
+      backgroundColor: Color(0xFFF5F5F5),
+      body: SingleChildScrollView(
+        child: Stack(
           clipBehavior: Clip.none,
           children: [
             Container(
-              height: 150,
+              height: 180,
               width: size.width,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -62,25 +64,26 @@ class VitalSignsScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Color(0xFF6E78F7),
                   borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30))),
+                      bottomRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20))),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 150),
               child: Center(
-                child: Container(
-                  height: size.height ,
-                  width: size.width - 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white),
-                  child: SingleChildScrollView(
+                child: Material(
+                  borderRadius: BorderRadius.circular(20),
+                  elevation: 1,
+                  child: Container(
+                    width: size.width - 20,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 10),
+                              horizontal: 15, vertical: 15),
                           child: Text(
                             "Your Vital Signs",
                             style: TextStyle(
@@ -89,8 +92,7 @@ class VitalSignsScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 8,vertical: 5
-                          ),
+                              horizontal: 15),
                           child: Text(
                             "In Last 7 days",
                             style: TextStyle(

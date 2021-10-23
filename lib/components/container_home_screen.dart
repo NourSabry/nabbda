@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/textfield_search.dart';
+import 'package:nabbda/constants.dart';
 
 class ContainerOfHomeScreen extends StatelessWidget {
   final Function()? functionShare;
@@ -22,7 +23,7 @@ class ContainerOfHomeScreen extends StatelessWidget {
             height: 180,
             width: size.width,
             decoration: BoxDecoration(
-                color: Color(0xFF6E78F7),
+                color: K.mainColor,
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(30),
                     bottomLeft: Radius.circular(30))),
