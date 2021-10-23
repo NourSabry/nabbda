@@ -29,7 +29,10 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   responsive_framework: ^0.1.4
   charts_flutter: ^0.11.0
-  
+  auto_size_text: ^3.0.0-nullsafety.0
+  chart_sparkline: ^1.0.5
+  percent_indicator: ^3.4.0
+
 
 dev_dependencies:
   flutter_test:
@@ -55,39 +58,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:     
-    - assets/images/heart.png
-    - assets/images/Track.jpg
-    - assets/images/Reminders.png
-    - assets/images/goo.svg
-    - assets/images/regist.png
-    - assets/images/lock.jpg
-    - assets/images/code.jpg
-    - assets/images/open.png
-    - assets/images/success.jpg
-    - assets/images/home.png
-    - assets/images/medical.svg
-    - assets/images/high.svg
-    - assets/images/vital.svg
-    - assets/images/low.svg
-    - assets/images/health.svg
-    - assets/images/medical2.svg
-    - assets/images/mental.svg
-    - assets/images/avatar.png
-    - assets/images/changeProfilePicture.jpg
-    - assets/images/report.png
-    - assets/images/data.png
-    - assets/images/calc1.svg
-    - assets/images/calc2.svg
-    - assets/images/calc3.svg
-    - assets/images/Female.png
-    - assets/images/Male.png
-    - assets/images/med4.svg
-    - assets/images/med3.svg
-    - assets/images/med2.svg
-    - assets/images/med1.svg
-    - assets/images/docum.svg
-    - assets/images/medical.png
-
+    - assets/images/
     
 
 
