@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nabbda/constants.dart';
 
 class CardOfDoctorScreen extends StatelessWidget {
@@ -144,9 +145,14 @@ class CardOfDoctorScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.person,
-                            color: K.mainColor,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: SvgPicture.asset(
+                              "assets/images/person.svg",
+                              fit: BoxFit.cover,
+                              width: 17,
+                              height: 17,
+                            ),
                           ),
                           Expanded(
                             child: AutoSizeText(

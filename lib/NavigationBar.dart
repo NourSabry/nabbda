@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:nabbda/screens/HomeScreen.dart';
 import 'package:nabbda/icons/NewHome.dart';
 import 'package:nabbda/MedicationsScreen.dart';
-import 'package:nabbda/Profile.dart';
 import 'package:nabbda/CalculatorScreen.dart';
 import 'package:nabbda/icons/Calculator.dart';
 import 'package:nabbda/icons/Medications.dart';

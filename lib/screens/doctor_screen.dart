@@ -1,7 +1,7 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:nabbda/components/appbar_doctor_screen.dart';
 import 'package:nabbda/components/card_doctor_screen.dart';
+import 'package:nabbda/screens/doctor_profile_screen.dart';
 
 class DoctorsScreen extends StatelessWidget {
   @override
@@ -20,13 +20,16 @@ class DoctorsScreen extends StatelessWidget {
                   itemBuilder: (context, index) => CardOfDoctorScreen(
                         function: () {
                           print("doctor");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DoctorProfileScreen()));
                         },
                         image: "assets/images/Male.png",
                         name: "Dr Mohamed Said",
                         time: "20 min",
                         rate: "3.5",
-                        description:
-                            "Hong Ji-hong, whose birth name was Lee Ji-hong before his adoption, is a hard working man who lost .",
+                        description:"Ph.D. Cardiovascular Diseases - Professor and Consultant Cardiology and Cardiac Catheterization Al-Azhar University",
                         price: "250 L.E",
                         feedback: "44 ",
                         job: "senior",
