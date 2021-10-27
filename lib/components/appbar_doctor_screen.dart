@@ -84,7 +84,7 @@ class AppbarOfDoctorScreen extends StatelessWidget {
             right: 0,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: SizedBox(
+              child: Container(
                 height: 35,
                 child: ListView.builder(
                     shrinkWrap: true,

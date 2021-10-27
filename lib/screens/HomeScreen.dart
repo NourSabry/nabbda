@@ -64,12 +64,9 @@ class HomeScreen extends StatelessWidget {
                 print(v);
               },
             ),
-            SizedBox(
-              height: 20,
-            ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:nabbda/components/button_feedback.dart';
 import 'package:nabbda/constants.dart';
 
 class ContainerDetails extends StatelessWidget {
@@ -171,24 +172,25 @@ class ContainerDetails extends StatelessWidget {
                 endIndent: 5,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(
                     Icons.location_on,
                     color: K.mainColor,
                   ),
-                  RichText(
-                    text: TextSpan(
-                      text: location!,
-                      style: TextStyle(color: K.grayColor, fontSize: 18),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: distance!,
-                            style: TextStyle(color: K.grayColor)),
-                        TextSpan(
-                            text:"KM",
-                            style: TextStyle(color: K.grayColor)),
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: RichText(
+                      text: TextSpan(
+                        text: location!,
+                        style: TextStyle(color: K.grayColor, fontSize: 18),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: distance!,
+                              style: TextStyle(color: K.grayColor)),
+                          TextSpan(
+                              text: "KM", style: TextStyle(color: K.grayColor)),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -232,39 +234,9 @@ class ContainerDetails extends StatelessWidget {
                   style: TextStyle(color: K.blackColor, fontSize: 18),
                 ),
               ),
-              Container(
-                height: 50,
-                width: size.width,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: K.grayColor)),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextButton(
-                          onPressed: giveFeedback,
-                          child: Text(
-                            "Give Feedback",
-                            style: TextStyle(color: K.blackColor, fontSize: 18),
-                          )),
-                    ),
-                    Expanded(
-                      child: TextButton(
-                        onPressed: book,
-                        child: Text(
-                          "Book",
-                          style: TextStyle(color: K.WhiteColor, fontSize: 18),
-                        ),
-                        style: TextButton.styleFrom(
-                            fixedSize: Size.fromHeight(50),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            backgroundColor: K.mainColor),
-                      ),
-                    )
-                  ],
-                ),
+              ButtonFeedback(
+                giveFeedback: giveFeedback,
+                book: book,
               ),
               SizedBox(
                 height: 25,

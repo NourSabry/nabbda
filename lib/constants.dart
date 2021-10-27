@@ -6,5 +6,6 @@ class K {
   static const WhiteColor=Color(0xFDFDFFFF);
   static const blackColor=Color(0xFD000000);
   static const grayColor=Colors.grey;
+  static const textColor=Color(0xFF898A8F);
 
 }

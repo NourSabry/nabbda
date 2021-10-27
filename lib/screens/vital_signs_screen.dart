@@ -74,7 +74,7 @@ class VitalSignsScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   elevation: 1,
                   child: Container(
-                    width: size.width - 20,
+                    width: size.width - 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white),

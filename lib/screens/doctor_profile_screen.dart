@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nabbda/components/container_details_doctor_profile_screen.dart';
 import 'package:nabbda/components/container_doctor_profile_screen.dart';
+import 'package:nabbda/screens/booking_doctor.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   @override
@@ -27,6 +28,10 @@ class DoctorProfileScreen extends StatelessWidget {
               },
               bookClinic: () {
                 print("function book clinic");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BookingDoctorScreen()));
               },
               bookVideo: () {
                 print("function book video");

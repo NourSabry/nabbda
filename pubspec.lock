@@ -281,14 +281,14 @@ packages:
       name: syncfusion_flutter_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.3.45"
+    version: "19.3.46"
   table_calendar:
     dependency: "direct dev"
     description:
       name: table_calendar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.3"
   term_glyph:
     dependency: transitive
     description:

@@ -23,7 +23,7 @@ class ContainerOfProfile extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      width: size.width ,
+      width: size.width,
       height: 350,
       decoration: BoxDecoration(
           color: Color(0xFF6E78F7), borderRadius: BorderRadius.circular(30)),
@@ -88,6 +88,7 @@ class ContainerOfProfile extends StatelessWidget {
               width: MediaQuery.of(context).size.width - 100,
               animation: true,
               lineHeight: 5,
+              backgroundColor: Color(0xFF4066FF),
               animationDuration: 2000,
               percent: percent!,
               linearStrokeCap: LinearStrokeCap.roundAll,

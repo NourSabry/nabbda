@@ -28,7 +28,7 @@ class ContainerOfHomeScreen extends StatelessWidget {
                     bottomRight: Radius.circular(30),
                     bottomLeft: Radius.circular(30))),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -62,16 +62,13 @@ class ContainerOfHomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: AutoSizeText(
-                        "Track Your Health Reports\nAnd Get Reminders For your Medications, Stay Healthy!",
-                        maxLines: 3,
-                        style: TextStyle(
-                            color: CustomizedColors.txtF,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600)),
-                  )
+                  AutoSizeText(
+                      "Track Your Health Reports\nAnd Get Reminders For your Medications, Stay Healthy!",
+                      maxLines: 3,
+                      style: TextStyle(
+                          color: CustomizedColors.txtF,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600))
                 ],
               ),
             ),
@@ -81,9 +78,9 @@ class ContainerOfHomeScreen extends StatelessWidget {
             left: 0,
             right: 0,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SizedBox(
-                height: 45,
+                height: 35,
                 child: TextFieldSearch(
                   function: onChange!,
                   hint: "Search in your reports",
