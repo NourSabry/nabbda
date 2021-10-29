@@ -29,6 +29,9 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   responsive_framework: ^0.1.4
   charts_flutter: ^0.11.0
+  auto_size_text: ^3.0.0-nullsafety.0
+  chart_sparkline: ^1.0.5
+
   
 
 dev_dependencies:
@@ -99,6 +102,7 @@ flutter:
     - assets/images/Male.svg
     - assets/images/Female.svg
     - assets/images/Data.svg
+    - assets/images/DrMohamed.svg
     
 
 
@@ -118,74 +122,11 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: MyIcon
+    - family: nabbdaIcons
       fonts:
-        - asset: assets/fonts/MyIcon.ttf
+        - asset: assets/fonts/nabbdaIcons.ttf
 
 
-    - family: Password
-      fonts:
-        - asset: assets/fonts/Password.ttf
-
-
-    - family: calendar
-      fonts:
-        - asset: assets/fonts/Calendar.ttf
-
-
-    - family: Calculator
-      fonts:
-        - asset: assets/fonts/Calculator.ttf
-
-
-    - family: Home
-      fonts:
-        - asset: assets/fonts/Home.ttf
-
-
-
-    - family: Medications
-      fonts:
-        - asset: assets/fonts/Medications.ttf
-
-
-    - family: User
-      fonts:
-        - asset: assets/fonts/User.ttf
-
-
-    - family: NewHome
-      fonts:
-        - asset: assets/fonts/NewHome.ttf
-
-    - family: Navigate
-      fonts:
-        - asset: assets/fonts/Navigate.ttf
-
-    - family: Arrow
-      fonts:
-        - asset: assets/fonts/Arrow.ttf
-
-        
-    - family: Upload
-      fonts:
-        - asset: assets/fonts/Upload.ttf
-
-        
-        
-    - family: Correct
-      fonts:
-        - asset: assets/fonts/Correct.ttf
-
-        
-        
-        
-    - family: Hide
-      fonts:
-        - asset: assets/fonts/Hide.ttf
-
-
-        
   
 
 
