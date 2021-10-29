@@ -28,18 +28,18 @@ class ContainerProfile extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: 460,
+      height: 430,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
           Container(
-              height: 250,
+              height: 160,
               width: size.width,
               decoration: BoxDecoration(
                   color: K.mainColor,
                   borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40))),
+                      bottomLeft: Radius.circular(25),
+                      bottomRight: Radius.circular(25))),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
@@ -56,7 +56,7 @@ class ContainerProfile extends StatelessWidget {
           Positioned(
             right: 0,
             left: 0,
-            bottom: 0,
+            bottom: 5,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Container(

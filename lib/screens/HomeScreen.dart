@@ -8,7 +8,7 @@ import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
 import 'package:nabbda/screens/vital_signs_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class Home extends StatelessWidget {
   final List<String> labels = [
     "Medical Records",
     "Vital Signs",
@@ -153,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                         image: "assets/images/Male.png",
                         rate: "3.5",
                       )),
-            )
+            ),
           ],
         ),
       ),

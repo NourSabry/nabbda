@@ -5,9 +5,18 @@ import 'package:nabbda/constants.dart';
 class ContainerOfAlertDialog extends StatelessWidget {
   final double? height;
   final List<String>? labels;
-  final String?name;
+  final String? name;
+  final int value;
+  final int? groupValue;
+  final Function(int?)? function;
 
-  ContainerOfAlertDialog({this.labels, this.height,this.name});
+  ContainerOfAlertDialog(
+      {this.labels,
+      this.height,
+      this.name,
+      this.value = 0,
+      this.function,
+      this.groupValue});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +43,10 @@ class ContainerOfAlertDialog extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: ListView.builder(
                     itemCount: labels!.length,
-                    itemBuilder: (context, index) => RadioButtons(
+                    itemBuilder: (context, index) => RadioButtonRow(
+                          value: value,
+                          function: function,
+                          groupValue: groupValue,
                           label: labels![index],
                         )),
               ),

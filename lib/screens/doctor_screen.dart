@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nabbda/components/alert.dart';
 import 'package:nabbda/components/appbar_doctor_screen.dart';
 import 'package:nabbda/components/card_doctor_screen.dart';
 import 'package:nabbda/constants.dart';
+import 'package:nabbda/controller/doctor_screen_controller.dart';
 import 'package:nabbda/screens/doctor_profile_screen.dart';
 
 class DoctorsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _controller = Get.put(DoctorScreenController());
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       body: SingleChildScrollView(
@@ -49,7 +52,45 @@ class DoctorsScreen extends StatelessWidget {
               child: FloatingActionButton(
             backgroundColor: K.WhiteColor,
             onPressed: () {
-              showAlertDialog(context);
+              // showAlertDialog(context);
+              Get.defaultDialog(
+                  content:Obx(()=> Container(
+                height: 150,
+                child: Column(
+                  children: [
+                    Radio(
+                      value: 0,
+                      groupValue: _controller.value.value,
+                      activeColor: Colors.blue,
+                      onChanged: (int? v) {
+                        print(_controller.value);
+
+                        _controller.handleRadioChange(v);
+                      },
+                    ), Radio(
+
+                      value: 1,
+                      groupValue: _controller.value.value,
+                      activeColor: Colors.blue,
+
+                      onChanged: (int? v) {
+                        print(_controller.value);
+                        _controller.handleRadioChange(v);
+                      },
+                    ),Radio(
+                      value: 2,
+                      groupValue: _controller.value.value,
+                      activeColor: Colors.blue,
+
+                      onChanged: (int? v) {
+                        print(_controller.value);
+
+                        _controller.handleRadioChange(v);
+                      },
+                    ),
+                  ],
+                ),
+                  ) ));
             },
             child: Icon(
               Icons.filter_alt_outlined,

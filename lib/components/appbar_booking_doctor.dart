@@ -6,12 +6,12 @@ class AppbarBookingDoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      height: 180,
       decoration: BoxDecoration(
           color: K.mainColor,
           borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25))),
+              bottomRight: Radius.circular(15),
+              bottomLeft: Radius.circular(15))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -10,32 +10,29 @@ class SettingProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-      child: Column(
-        children: [
-          ListTile(
-            onTap: function,
-            leading: SvgPicture.asset(
-              images!,
-              width: 30,
-            ),
-            title: Text(
-              label!,
-              style: TextStyle(color: Colors.grey, fontSize: 20),
-            ),
-            trailing: Icon(
-              Icons.arrow_forward_ios,
-              color: Color(0xFF6E78F7),
-            ),
+    return Column(
+      children: [
+        ListTile(
+          onTap: function,
+          leading: SvgPicture.asset(
+            images!,
+            width: 30,
           ),
-          Divider(
-            color: Colors.grey,
-            endIndent: 5,
-            indent: 5,
-          )
-        ],
-      ),
+          title: Text(
+            label!,
+            style: TextStyle(color: Colors.grey, fontSize: 20),
+          ),
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            color: Color(0xFF6E78F7),
+          ),
+        ),
+        Divider(
+          color: Colors.grey,
+          endIndent: 5,
+          indent: 5,
+        )
+      ],
     );
   }
 }

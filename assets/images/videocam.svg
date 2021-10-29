@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.25" height="10.393" viewBox="0 0 17.25 10.393">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="17.25" height="10.393" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="videocam-outline" transform="translate(-1.625 -8.375)">
+    <g id="Repeat_Grid_1" data-name="Repeat Grid 1" transform="translate(1.625 8.375)" clip-path="url(#clip-path)">
+      <g transform="translate(-1.625 -8.375)">
+        <path id="Union_3" data-name="Union 3" d="M1.857,9.143A1.862,1.862,0,0,1,0,7.286V1.857A1.862,1.862,0,0,1,1.857,0H8.445a1.845,1.845,0,0,1,1.84,1.84V7.286A1.862,1.862,0,0,1,8.429,9.143ZM15.2,8.536,12.242,6.456h0A.574.574,0,0,1,12,5.99V3.153a.572.572,0,0,1,.242-.467L15.2.607a.572.572,0,0,1,.8.522V8.013a.572.572,0,0,1-.8.522Z" transform="translate(2.25 9)" fill="none" stroke="#3a58fc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+      </g>
+    </g>
+  </g>
+</svg>

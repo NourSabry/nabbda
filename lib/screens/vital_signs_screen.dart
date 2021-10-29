@@ -29,7 +29,7 @@ class VitalSignsScreen extends StatelessWidget {
   ];
   final List<String> images = [
     "assets/images/Shape.svg",
-    "assets/images/heart.svg",
+    "assets/images/hearts.svg",
     "assets/images/graphic.svg",
     "assets/images/thermometer.svg",
     "assets/images/lungs.svg",

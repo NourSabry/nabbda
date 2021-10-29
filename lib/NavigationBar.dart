@@ -17,7 +17,7 @@ class NavigationBar extends StatefulWidget {
 class _NavigationBar extends State<NavigationBar> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomeScreen(),
+    Home(),
     MedicationsScreen(),
     CalculatorScreen(),
     ProfileScreen(),
