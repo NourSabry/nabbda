@@ -31,8 +31,15 @@ dependencies:
   charts_flutter: ^0.11.0
   auto_size_text: ^3.0.0-nullsafety.0
   chart_sparkline: ^1.0.5
+<<<<<<< HEAD
 
   
+=======
+  percent_indicator: ^3.4.0
+  expansion_tile_card: ^2.0.0
+  google_maps_flutter: ^2.0.11
+
+>>>>>>> hesham
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +65,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:     
+<<<<<<< HEAD
     - assets/images/heart.svg
     - assets/images/Track.jpg
     - assets/images/Reminders.png
@@ -106,6 +114,9 @@ flutter:
     
 
 
+=======
+    - assets/images/
+>>>>>>> hesham
     
 
 

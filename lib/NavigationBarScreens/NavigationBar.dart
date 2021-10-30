@@ -1,10 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD:lib/NavigationBarScreens/NavigationBar.dart
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreen.dart';
 import 'package:nabbda/icons/MyIcon.dart';
 import 'package:nabbda/NavigationBarScreens/MedicationScreens/MedicationsScreen.dart';
 import 'package:nabbda/NavigationBarScreens/Profile/Profile.dart';
 import 'package:nabbda/NavigationBarScreens/Calculator/CalculatorScreen.dart';
+=======
+import 'package:nabbda/screens/HomeScreen.dart';
+import 'package:nabbda/icons/NewHome.dart';
+import 'package:nabbda/MedicationsScreen.dart';
+import 'package:nabbda/CalculatorScreen.dart';
+import 'package:nabbda/icons/Calculator.dart';
+import 'package:nabbda/icons/Medications.dart';
+import 'package:nabbda/icons/User.dart';
+import 'package:nabbda/screens/profile_screen.dart';
+>>>>>>> hesham:lib/NavigationBar.dart
 
 class NavigationBar extends StatefulWidget {
   @override
@@ -17,7 +28,7 @@ class _NavigationBar extends State<NavigationBar> {
     HomeScreen(),
     MedicationsScreen(),
     CalculatorScreen(),
-    Profile(),
+    ProfileScreen(),
   ];
   void onTabTapped(int index) {
     setState(() {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:nabbda/NavigationBarScreens/NavigationBar.dart';
+=======
+import 'package:nabbda/NavigationBar.dart';
+>>>>>>> hesham
 
 void main() {
   runApp(MyApp());
