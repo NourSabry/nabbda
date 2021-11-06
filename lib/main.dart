@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:nabbda/NavigationBarScreens/NavigationBar.dart';
-=======
-import 'package:nabbda/NavigationBar.dart';
->>>>>>> hesham
+import 'package:nabbda/PaymentMethods.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBar(),
+      home: PayemntMethods(),
     );
   }
 }

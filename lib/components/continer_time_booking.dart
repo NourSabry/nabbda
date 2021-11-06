@@ -51,7 +51,7 @@ class ContainerOfTimeBooking extends StatelessWidget {
                 child: Center(
                   child: Text(
                     time!,
-                    style: TextStyle(color: K.blackColor, fontSize: 15),
+                    style: TextStyle(color: Color(0xFF313450), fontSize: 14),
                   ),
                 ),
               ),

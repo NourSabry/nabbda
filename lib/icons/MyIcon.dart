@@ -55,4 +55,8 @@ class nabbdaIcons {
       IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData user =
       IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData right_1 =
+      IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData left_1 =
+      IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

@@ -35,7 +35,10 @@ class DoctorDescription extends StatelessWidget {
                 AutoSizeText(
                   name!,
                   maxLines: 1,
-                  style: TextStyle(fontSize: 17, color: K.blackColor),
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF313450),
+                      fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
                   height: 8,
@@ -43,7 +46,7 @@ class DoctorDescription extends StatelessWidget {
                 AutoSizeText(
                   description!,
                   maxLines: 4,
-                  style: TextStyle(color: K.grayColor, fontSize: 15),
+                  style: TextStyle(color: Color(0xFF898A8F), fontSize: 12),
                 ),
               ],
             ),

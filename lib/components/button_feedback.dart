@@ -25,15 +25,21 @@ class ButtonFeedback extends StatelessWidget {
                 onPressed: giveFeedback,
                 child: Text(
                   "Give Feedback",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: Color(0xFF313450),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 )),
           ),
           Expanded(
             child: TextButton(
               onPressed: book,
               child: Text(
-                "Book",
-                style: TextStyle(color: K.WhiteColor, fontSize: 18),
+                "Continue ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
               ),
               style: TextButton.styleFrom(
                   fixedSize: Size.fromHeight(50),

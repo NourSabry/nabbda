@@ -59,9 +59,9 @@ class ContainerOfHealthInterest extends StatelessWidget {
                   name!,
                   maxLines: 1,
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                      color: Color(0xFF3B3B3B),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
               Padding(
@@ -70,7 +70,7 @@ class ContainerOfHealthInterest extends StatelessWidget {
                 child: AutoSizeText(
                   description!,
                   maxLines: 2,
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                  style: TextStyle(fontSize: 14, color: Color(0xFFA8A8A8)),
                 ),
               ),
               Expanded(
@@ -78,25 +78,29 @@ class ContainerOfHealthInterest extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        onPressed: moreFunction, icon: Icon(Icons.more_vert,size: 25,)),
+                        onPressed: moreFunction,
+                        icon: Icon(Icons.more_vert,
+                            size: 15, color: Color(0xFF3B3B3B))),
                     IconButton(
-                        onPressed: shareFunction, icon: Icon(Icons.share,size: 25,)),
+                        onPressed: shareFunction,
+                        icon: Icon(Icons.share,
+                            size: 15, color: Color(0xFF3B3B3B))),
                     IconButton(
                         onPressed: StarFunction,
                         icon: Icon(
                           Icons.star_border,
-                          color: Colors.black,
-                          size: 25,
+                          color: Color(0xFF3B3B3B),
+                          size: 15,
                         )),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 25,right: 5),
+                        padding: const EdgeInsets.only(left: 25, right: 5),
                         child: AutoSizeText(
                           time!,
                           maxLines: 1,
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 22,
+                            color: Color(0xFF3B3B3B),
+                            fontSize: 11,
                           ),
                         ),
                       ),

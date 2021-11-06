@@ -31,8 +31,8 @@ class AppbarBookingDoctor extends StatelessWidget {
                 Text(
                   "Select a time slot",
                   style: TextStyle(
-                      fontSize: 18,
-                      color: K.WhiteColor,
+                      fontSize: 17,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
               ],
