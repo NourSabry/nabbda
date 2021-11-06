@@ -34,6 +34,8 @@ dependencies:
   percent_indicator: ^3.4.0
   expansion_tile_card: ^2.0.0
   google_maps_flutter: ^2.0.11
+  agora_rtc_engine: ^4.0.1
+
 
 
 dev_dependencies:
@@ -135,6 +137,14 @@ flutter:
     - family: nabbdaIcons
       fonts:
         - asset: assets/fonts/nabbdaIcons.ttf
+
+        
+    - family: NavigationBarIcons
+      fonts:
+        - asset: assets/fonts/NavigationIcons.ttf
+
+
+
 
 
   

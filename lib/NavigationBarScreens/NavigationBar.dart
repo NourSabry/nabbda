@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreen.dart';
-import 'package:nabbda/icons/MyIcon.dart';
 import 'package:nabbda/NavigationBarScreens/MedicationScreens/MedicationsScreen.dart';
 import 'package:nabbda/NavigationBarScreens/Calculator/CalculatorScreen.dart';
+import 'package:nabbda/icons/NavigationIcons.dart';
 import 'package:nabbda/screens/profile_screen.dart';
 
 class NavigationBar extends StatefulWidget {
@@ -32,24 +32,24 @@ class _NavigationBar extends State<NavigationBar> {
       body: Center(child: _children[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
         unselectedLabelStyle: TextStyle(color: Color(0xFF3B3C55)),
-        selectedLabelStyle: TextStyle(color: Color(0xFF6E78F7)),
+        selectedLabelStyle: TextStyle(color: Color(0xFF3B3C55)),
         unselectedIconTheme: IconThemeData(color: Color(0xFF3B3C55)),
-        selectedIconTheme: IconThemeData(color: Color(0xFF6E78F7)),
+        selectedIconTheme: IconThemeData(color: Color(0xFF3B3C55)),
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: onTabTapped,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Color(0xFF6E78F7),
-            icon: Icon(nabbdaIcons.newHome),
+            backgroundColor: Color(0xFF3B3C55),
+            icon: Icon(NavigationBarIcons.Home),
             label: "Home",
           ),
           BottomNavigationBarItem(
-              icon: Icon(nabbdaIcons.medications), label: "Medications"),
+              icon: Icon(NavigationBarIcons.Medications), label: "Medications"),
           BottomNavigationBarItem(
-              icon: Icon(nabbdaIcons.calculator), label: "Calculator"),
+              icon: Icon(NavigationBarIcons.Calc), label: "Calculator"),
           BottomNavigationBarItem(
-              icon: Icon(nabbdaIcons.user), label: "Profile"),
+              icon: Icon(NavigationBarIcons.Profile), label: "Profile"),
         ],
       ),
     );
