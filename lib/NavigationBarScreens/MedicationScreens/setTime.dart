@@ -37,7 +37,7 @@ class SetTime extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
                   child: Column(children: [
-                    ListTileMedications(tileName: "09"),
+                    OurlistTile(tileName: "09"),
                     ListTile(
                       onTap: () {},
                       contentPadding: EdgeInsets.only(top: 0, bottom: 0),
@@ -50,8 +50,8 @@ class SetTime extends StatelessWidget {
                       trailing: Icon(nabbdaIcons.navigate,
                           color: Color(0xFF6E78F7), size: 40),
                     ),
-                    ListTileMedications(tileName: "11"),
-                    ListTileMedications(tileName: "12"),
+                    OurlistTile(tileName: "11"),
+                    OurlistTile(tileName: "12"),
                   ])),
               SizedBox(height: 20),
               ElevatedButton(

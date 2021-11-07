@@ -36,12 +36,12 @@ class Duration extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                   child: Column(children: [
-                    ListTileMedications(tileName: "Never"),
-                    ListTileMedications(tileName: "2 Days"),
-                    ListTileMedications(tileName: "Week"),
-                    ListTileMedications(tileName: "2 Weeks"),
-                    ListTileMedications(tileName: "Month"),
-                    ListTileMedications(tileName: "Year"),
+                    OurlistTile(tileName: "Never"),
+                    OurlistTile(tileName: "2 Days"),
+                    OurlistTile(tileName: "Week"),
+                    OurlistTile(tileName: "2 Weeks"),
+                    OurlistTile(tileName: "Month"),
+                    OurlistTile(tileName: "Year"),
                   ])),
               SizedBox(height: 20),
               ElevatedButton(

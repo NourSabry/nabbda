@@ -36,22 +36,22 @@ class Repeat extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                   child: Column(children: [
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Never",
                     ),
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Every Day",
                     ),
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Every Week",
                     ),
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Every 2 Weeks",
                     ),
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Every Month",
                     ),
-                    ListTileMedications(
+                    OurlistTile(
                       tileName: "Every Year",
                     ),
                   ])),

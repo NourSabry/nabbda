@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nabbda/components/BackgroundContainer.dart';
+import 'package:nabbda/components/ListTile.dart';
 import 'package:nabbda/components/PurpleContainer.dart';
-import 'package:nabbda/components/RadioButton.dart';
+import 'package:nabbda/icons/MyIcon.dart';
 
 class AppSettings extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class _AppSettings extends State<AppSettings> {
   var option;
   var Radio1;
   var value;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,13 +55,89 @@ class _AppSettings extends State<AppSettings> {
                                 color: Color(0xFFF707070),
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12))),
-                    Row(children: [
-                      OurRadioButton(
-                        value: 1,
-                        groupValue: Radio1,
-                        option: "English",
-                      )
-                    ])
+                    Row(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "More :",
+                            style: TextStyle(
+                                color: Color(0xFF6E78F7),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              OurlistTile(
+                                tileName: "About us",
+                                lead: Icon(nabbdaIcons.arrow,
+                                    color: Color(0xFF0880AE), size: 30),
+                              ),
+                              Divider(
+                                color: Color(0xFFE4E4E4),
+                                thickness: 1,
+                                height: 1,
+                                indent: 15,
+                                endIndent: 20,
+                              ),
+                              OurlistTile(
+                                tileName: "Terms and conditions ",
+                                lead: Icon(nabbdaIcons.arrow,
+                                    color: Color(0xFF0880AE), size: 30),
+                              ),
+                              Divider(
+                                color: Color(0xFFE4E4E4),
+                                thickness: 1,
+                                height: 1,
+                                indent: 15,
+                                endIndent: 20,
+                              ),
+                              OurlistTile(
+                                tileName: "Privacy Policy",
+                                lead: Icon(nabbdaIcons.arrow,
+                                    color: Color(0xFF0880AE), size: 30),
+                              ),
+                              Divider(
+                                color: Color(0xFFE4E4E4),
+                                thickness: 1,
+                                height: 1,
+                                indent: 15,
+                                endIndent: 20,
+                              ),
+                              OurlistTile(
+                                tileName: "Change Password",
+                                lead: Icon(nabbdaIcons.arrow,
+                                    color: Color(0xFF0880AE), size: 30),
+                              ),
+                              Divider(
+                                color: Color(0xFFE4E4E4),
+                                thickness: 1,
+                                height: 1,
+                                indent: 15,
+                                endIndent: 20,
+                              ),
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "Logout",
+                                  style: TextStyle(
+                                      color: Color(0xFFFF3737),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 12),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
