@@ -79,7 +79,7 @@ class Duration extends StatelessWidget {
                                   color: Color(0xFFBDBDBD),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18)),
-                          trailing: Icon(nabbdaIcons.correct,
+                          trailing: Icon(NabdaIcons.correct,
                               color: Color(0xFF6E78F7), size: 18),
                           onTap: () {}),
                       ListTile(

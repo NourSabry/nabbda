@@ -25,7 +25,7 @@ class _DoctorTime extends State<DoctorTime> {
                       style: TextStyle(color: Colors.white, fontSize: 9)),
                 ),
                 Icon(
-                  nabbdaIcons.navigate,
+                  NabdaIcons.navigate,
                   color: Colors.white,
                 ),
               ],

@@ -135,7 +135,7 @@ class _EnterCodeState extends State<EnterCode> {
                                     autofocus: true,
                                     decoration: InputDecoration(
                                       prefixIcon: Icon(
-                                        nabbdaIcons.phone,
+                                        NabdaIcons.phone,
                                         size: 15,
                                         color: Color(0xFFBDBDBD),
                                       ),

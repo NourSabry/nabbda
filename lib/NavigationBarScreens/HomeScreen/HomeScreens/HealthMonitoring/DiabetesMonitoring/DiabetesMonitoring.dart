@@ -73,7 +73,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -90,7 +90,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 15,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -107,7 +107,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -124,7 +124,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -141,7 +141,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -158,7 +158,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -175,7 +175,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -192,7 +192,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -209,7 +209,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -226,7 +226,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                             Divider(
@@ -248,7 +248,7 @@ class DiabetesMonitoring extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF0880AE), size: 30),
                             ),
                           ],

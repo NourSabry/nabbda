@@ -72,7 +72,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -89,7 +89,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -106,7 +106,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -123,7 +123,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -140,7 +140,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -157,7 +157,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -174,7 +174,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -191,7 +191,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -208,7 +208,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -225,7 +225,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -242,7 +242,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                             Divider(
@@ -259,7 +259,7 @@ class GeneralHealth extends StatelessWidget {
                                       fontSize: 12,
                                       color: Color(0xFF707070),
                                       fontWeight: FontWeight.w500)),
-                              trailing: Icon(nabbdaIcons.arrow,
+                              trailing: Icon(NabdaIcons.arrow,
                                   color: Color(0xFF6E78F7), size: 30),
                             ),
                           ],

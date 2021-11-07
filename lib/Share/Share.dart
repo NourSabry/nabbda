@@ -70,7 +70,7 @@ class Share extends StatelessWidget {
                                   color: Color(0xFFF6F6F6),
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(children: [
-                                Icon(nabbdaIcons.upload,
+                                Icon(NabdaIcons.upload,
                                     color: Color(0xFFBDBDBD), size: 18),
                                 TextButton(
                                   onPressed: () {

@@ -1,8 +1,7 @@
-
 import 'package:flutter/widgets.dart';
 
-class nabbdaIcons {
-  nabbdaIcons._();
+class NabdaIcons {
+  NabdaIcons._();
 
   static const _kFontFam = 'nabbdaIcons';
   static const String? _kFontPkg = null;

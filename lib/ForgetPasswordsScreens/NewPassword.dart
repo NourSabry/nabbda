@@ -105,7 +105,7 @@ class _NewPassword extends State<NewPassword> {
                                   hintStyle: TextStyle(
                                       color: Color(0xFFBDBDBD), fontSize: 14),
                                   prefixIcon: Icon(
-                                    nabbdaIcons.lockpass,
+                                    NabdaIcons.lockpass,
                                     size: 17,
                                     color: Color(0xFFBDBDBD),
                                   ),
@@ -138,7 +138,7 @@ class _NewPassword extends State<NewPassword> {
                                   hintStyle: TextStyle(
                                       color: Color(0xFFBDBDBD), fontSize: 14),
                                   prefixIcon: Icon(
-                                    nabbdaIcons.lockpass,
+                                    NabdaIcons.lockpass,
                                     size: 17,
                                     color: Color(0xFFBDBDBD),
                                   ),

@@ -57,7 +57,7 @@ class SetTime extends StatelessWidget {
                                 color: Color(0xFF6E78F7),
                                 fontSize: 21,
                                 fontWeight: FontWeight.bold)),
-                        trailing: Icon(nabbdaIcons.navigate,
+                        trailing: Icon(NabdaIcons.navigate,
                             color: Color(0xFF6E78F7), size: 40),
                       ),
                       ListTile(

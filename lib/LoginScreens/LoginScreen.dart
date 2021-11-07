@@ -122,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                               child: Icon(Icons.lock_outline_rounded,
                                   color: CustomizedColors.txtFT),
                             ),
-                            suffixIcon: Icon(nabbdaIcons.hide, size: 15),
+                            suffixIcon: Icon(NabdaIcons.hide, size: 15),
                             hintText: "Password",
                             hintStyle: TextStyle(
                                 color: CustomizedColors.txtFT, fontSize: 14),
@@ -197,7 +197,7 @@ class LoginScreen extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        RegisterationScreen()));
+                                                        RegisterScreen()));
                                           },
                                         style: TextStyle(
                                             fontSize: 14,

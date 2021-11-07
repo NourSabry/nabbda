@@ -177,7 +177,7 @@ class _Profile extends State<Profile> {
                                   hintStyle:
                                       TextStyle(color: Color(0xFF3B3C55)),
                                   hintText: "12/11/1990",
-                                  suffixIcon: Icon(nabbdaIcons.calendar,
+                                  suffixIcon: Icon(NabdaIcons.calendar,
                                       color: Color(0xFF0880AE)),
                                   labelStyle: TextStyle(
                                       color: Color(0xFF707070),
@@ -356,7 +356,7 @@ class _Profile extends State<Profile> {
                                     fontSize: 17,
                                     color: Color(0xFF707070),
                                     fontWeight: FontWeight.w500)),
-                            trailing: Icon(nabbdaIcons.arrow,
+                            trailing: Icon(NabdaIcons.arrow,
                                 color: Color(0xFF0880AE), size: 30),
                           ),
                           const Divider(
@@ -374,7 +374,7 @@ class _Profile extends State<Profile> {
                                     fontSize: 17,
                                     color: Color(0xFF707070),
                                     fontWeight: FontWeight.w500)),
-                            trailing: Icon(nabbdaIcons.arrow,
+                            trailing: Icon(NabdaIcons.arrow,
                                 color: Color(0xFF0880AE), size: 30),
                           ),
                         ],
@@ -481,7 +481,7 @@ class _Profile extends State<Profile> {
                                         fontSize: 15,
                                         color: Color(0xFF707070),
                                         fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
+                                trailing: Icon(NabdaIcons.arrow,
                                     color: Color(0xFF0880AE), size: 30),
                               ),
                               Divider(
@@ -498,7 +498,7 @@ class _Profile extends State<Profile> {
                                         fontSize: 15,
                                         color: Color(0xFF707070),
                                         fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
+                                trailing: Icon(NabdaIcons.arrow,
                                     color: Color(0xFF0880AE), size: 30),
                               ),
                               Divider(
@@ -515,7 +515,7 @@ class _Profile extends State<Profile> {
                                         fontSize: 15,
                                         color: Color(0xFF707070),
                                         fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
+                                trailing: Icon(NabdaIcons.arrow,
                                     color: Color(0xFF0880AE), size: 30),
                               ),
                             ])),

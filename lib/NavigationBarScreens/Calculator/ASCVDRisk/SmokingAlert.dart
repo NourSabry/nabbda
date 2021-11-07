@@ -50,7 +50,7 @@ class SmokingAlert extends StatelessWidget {
                       visualDensity:
                           VisualDensity(horizontal: -4, vertical: -4),
                       onTap: () {},
-                      trailing: Icon(nabbdaIcons.correct,
+                      trailing: Icon(NabdaIcons.correct,
                           color: Color(0xFF6E78F7), size: 15),
                     ),
                   ),
