@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/container_vital_signs.dart';
 
@@ -39,7 +38,6 @@ class VitalSignsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),

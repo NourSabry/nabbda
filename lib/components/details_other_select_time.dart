@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/components/radio_button_row.dart';
 import 'package:nabbda/constants.dart';
 
 class DetailsOfOther extends StatelessWidget {
