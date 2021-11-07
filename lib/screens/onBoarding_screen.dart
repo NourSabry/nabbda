@@ -4,6 +4,7 @@ import 'package:nabbda/LoginScreens/LoginScreen.dart';
 import 'package:nabbda/components/page_view.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/onBoarding_controller.dart';
+import 'package:nabbda/screens/Home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -69,7 +70,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ? GestureDetector(
                           onTap: () {
                             if (controller.isLast.value) {
-                              Get.offAll(LoginScreen());
+                              Get.offAll(Home());
                             }
                           },
                           child: Text(

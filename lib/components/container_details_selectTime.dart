@@ -96,15 +96,15 @@ class ContainerDetailsSelectTime extends StatelessWidget {
                 ),
               ),
             ),
-            TextFieldBooking(
+            TextFieldInput(
               function: functionName!,
               hint: "Ahmed Abbas",
             ),
-            TextFieldBooking(
+            TextFieldInput(
               function: functionAccount!,
               hint: "info@gmail.com",
             ),
-            TextFieldBooking(
+            TextFieldInput(
               function: functionPhone!,
               hint: "+201022355169",
             ),

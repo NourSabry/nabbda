@@ -1,90 +1,218 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
-import 'package:nabbda/components/container_vital_signs.dart';
+import 'package:nabbda/constants.dart';
+import 'package:nabbda/screens/chart_screen.dart';
 
 class VitalSignsScreen extends StatelessWidget {
-  final List<String> names = [
-    "Glucose",
-    "Pules",
-    "Pressure",
-    "Temperature",
+  final List<String> labels = [
+    "Heart Rate",
     "Respiratory Rate",
-    "O2Saturation level"
-  ];
-  final List<String> time = [
-    "24 Apr 2021",
-    "24 Apr 2021",
-    "24 Apr 2021",
-    "24 Apr 2021",
-    "24 Apr 2021",
-    "24 Apr 2021",
-  ];
-  final List<String> quantity = [
-    "200 mg/dl",
-    "200 mg/dl",
-    "200 mg/dl",
-    "200 mg/dl",
-    "200 mg/dl",
-    "200 mg/dl",
-  ];
-  final List<String> images = [
-    "assets/images/Shape.svg",
-    "assets/images/hearts.svg",
-    "assets/images/graphic.svg",
-    "assets/images/thermometer.svg",
-    "assets/images/lungs.svg",
-    "assets/images/Union.svg",
+    "Body Temperature ",
+    "Blood Pressure ",
+    "Random Blood Glucose  ",
+    "O2 Saturation Level",
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
       body: SingleChildScrollView(
         child: Stack(
           children: [
             AppbarWithLabelAndIcon(
-              function: () {
-                Navigator.pop(context);
-              },
+              function: () {},
               label: "Vital Signs",
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 120, left: 10, right: 10),
+              padding: const EdgeInsets.only(top: 130, right: 10, left: 10),
               child: Material(
+                color: K.WhiteColor,
                 borderRadius: BorderRadius.circular(15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 15),
-                      child: Text(
-                        "Your Vital Signs",
-                        style:
-                            TextStyle(color: Color(0xFF6E78F7), fontSize: 20),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: labels.length,
+                  itemBuilder: (ctx, index) => Column(
+                    children: [
+                      ListTile(
+                        onTap: () {
+                          if (index == 0) {
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+                                  hint: "Heart Rate / Per minute",
+                                  typeRate: "Heart Rate : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "Heart Rate",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          } else if (index == 1) {
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+
+                              hint: "Breaths / Per minute",
+                                  typeRate: "Respiratory Rate : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "Respiratory Rate",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          } else if (index == 2) {
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+
+                              hint: "Temperature °C",
+                                  typeRate: "Body Temperature : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "Body Temperature ",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          } else if (index == 3) {
+
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+
+                              hint: "Systolic / diastolic",
+                                  typeRate: "Blood Pressure : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "Blood Pressure ",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          } else if (index == 4) {
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+
+                              hint: "Blood glucose mg/ dl",
+                                  typeRate: "Random Blood Glucose : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "Random Blood Glucose",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          } else if (index == 5) {
+
+                            Get.to(() => ChartScreen(
+                              functionClear: (){},
+
+                              hint: "oxygen saturation  spo2",
+                                  typeRate: "O2 Saturation Level : ",
+                                  date: "04/03/2020",
+                                  status: [
+                                    "Normal",
+                                    "abNormal",
+                                    "Normal",
+                                    "abNormal"
+                                  ],
+                                  rate: ["17", "20", "33", "40"],
+                                  onChange: (v) {
+                                    print(v);
+                                  },
+                                  nameOfScreen: "O2 Saturation Level : ",
+                                  values: [
+                                    FlSpot(1, 2.8),
+                                    FlSpot(3, 1.9),
+                                    FlSpot(6, 3),
+                                    FlSpot(10, 1.3),
+                                    FlSpot(13, 2.5),
+                                  ],
+                                ));
+                          }
+                        },
+                        leading: Text(
+                          labels[index],
+                          style: TextStyle(color: K.blackColor, fontSize: 12),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          color: K.mainColor,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(
-                        "In Last 7 days",
-                        style:
-                            TextStyle(color: Color(0xFF6E78F7), fontSize: 20),
-                      ),
-                    ),
-                    ListView.builder(
-                        physics: ClampingScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: names.length,
-                        itemBuilder: (context, index) => ContainerOfVitalSigns(
-                              images: images[index],
-                              name: names[index],
-                              time: time[index],
-                              quantity: quantity[index],
-                            ))
-                  ],
+                      Divider(
+                        color: K.grayColor,
+                        indent: 20,
+                        endIndent: 20,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

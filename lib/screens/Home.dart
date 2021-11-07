@@ -38,9 +38,9 @@ class Home extends StatelessWidget {
                 label: "Home",
               ),
               BottomNavigationBarItem(
-                  icon: Icon(NabdaIcons.gender), label: "Medications"),
+                  icon: Icon(Icons.home), label: "Medications"),
               BottomNavigationBarItem(
-                  icon: Icon(NabdaIcons.calculator), label: "Calculator"),
+                  icon: Icon(Icons.home), label: "Calculator"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person), label: "Profile"),
             ],

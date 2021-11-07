@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:nabbda/constants.dart';
 
 class ChartsExample extends StatelessWidget {
+  final List<FlSpot>? values;
+
+  ChartsExample({this.values});
+
   @override
   Widget build(BuildContext context) {
     return LineChart(
@@ -85,20 +89,13 @@ class ChartsExample extends StatelessWidget {
         ),
         lineBarsData: [
           LineChartBarData(
-            isCurved: true,
-            colors: const [Color(0xff27b6fc)],
-            barWidth: 3,
-            isStrokeCapRound: true,
-            dotData: FlDotData(show: false),
-            belowBarData: BarAreaData(show: false),
-            spots: const [
-              FlSpot(1, 2.8),
-              FlSpot(3, 1.9),
-              FlSpot(6, 3),
-              FlSpot(10, 1.3),
-              FlSpot(13, 2.5),
-            ],
-          )
+              isCurved: true,
+              colors: const [Color(0xff27b6fc)],
+              barWidth: 3,
+              isStrokeCapRound: true,
+              dotData: FlDotData(show: false),
+              belowBarData: BarAreaData(show: false),
+              spots: values)
         ],
         minX: 0,
         maxX: 15,

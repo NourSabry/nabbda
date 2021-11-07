@@ -6,7 +6,7 @@ import 'package:nabbda/components/card_profile.dart';
 import 'package:nabbda/components/card_reminder.dart';
 import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
-import 'package:nabbda/screens/vital_signs_screen.dart';
+import 'package:nabbda/screens/vital_signs_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<String> labels = [
@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => VitalSignsScreen()));
+                                    builder: (context) => VitalSignsDetailsScreen()));
                           } else if (index == 2) {
                             print("index 2");
                           } else {

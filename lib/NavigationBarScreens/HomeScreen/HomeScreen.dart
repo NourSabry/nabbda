@@ -205,12 +205,12 @@ class HomeScreen extends StatelessWidget {
                             ),
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => VitalSigns(),
-                                  ),
-                                );
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => VitalSigns(),
+                                //   ),
+                                // );
                               },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

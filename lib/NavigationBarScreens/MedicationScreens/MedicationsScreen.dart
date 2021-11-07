@@ -327,11 +327,11 @@ class MedicationsScreen extends StatelessWidget {
                                       SizedBox(width: size.width * 0.06),
                                       Expanded(
                                         child: GestureDetector(
-                                          onTap: () => showDialog<String>(
-                                            context: context,
-                                            builder: (BuildContext context) =>
-                                                Duration(),
-                                          ),
+                                          // onTap: () => showDialog<String>(
+                                          //   context: context,
+                                          //   builder: (BuildContext context) =>
+                                          //       Duration(),
+
                                           child: Container(
                                             height: 110,
                                             padding: EdgeInsets.only(

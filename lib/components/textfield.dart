@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nabbda/constants.dart';
 
-class TextFieldBooking extends StatelessWidget {
+class TextFieldInput extends StatelessWidget {
   final String? hint;
   final Function(String)? function;
 
-  TextFieldBooking({this.function, this.hint});
+  TextFieldInput({this.function, this.hint});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,17 @@ class TextFieldBooking extends StatelessWidget {
         child: TextFormField(
           onChanged: function,
           decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 30),
             hintText: hint!,
+            hintStyle: TextStyle(color: K.grayColor.shade400),
             filled: true,
-            fillColor: Color(0xFFF6F6F6),
+            fillColor: Color(0xFFF1F1F1),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: K.grayColor.shade400)),
+                borderSide: BorderSide(color: K.grayColor.shade100)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: K.grayColor.shade400)),
+                borderSide: BorderSide(color: K.grayColor.shade100)),
           ),
         ),
       ),
