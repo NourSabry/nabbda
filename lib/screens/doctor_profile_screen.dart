@@ -20,7 +20,7 @@ class DoctorProfileScreen extends StatelessWidget {
               rate: "3.6",
               name: "DR. Mohamed Saeed Al Gamal",
               imageProfile: "assets/images/Male.png",
-              images: "assets/images/heart.png",
+              images: "assets/images/Male.png",
             ),
             ContainerDetails(
               book: () {

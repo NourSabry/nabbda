@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/components/alert.dart';
 import 'package:nabbda/components/appbar_doctor_screen.dart';
 import 'package:nabbda/components/card_doctor_screen.dart';
 import 'package:nabbda/constants.dart';
@@ -24,10 +23,7 @@ class DoctorsScreen extends StatelessWidget {
                 itemBuilder: (context, index) => CardOfDoctorScreen(
                       function: () {
                         print("doctor");
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DoctorProfileScreen()));
+                        Get.to(() => DoctorProfileScreen());
                       },
                       image: "assets/images/Male.png",
                       name: "Dr Mohamed Said",
@@ -54,43 +50,42 @@ class DoctorsScreen extends StatelessWidget {
             onPressed: () {
               // showAlertDialog(context);
               Get.defaultDialog(
-                  content:Obx(()=> Container(
-                height: 150,
-                child: Column(
-                  children: [
-                    Radio(
-                      value: 0,
-                      groupValue: _controller.value.value,
-                      activeColor: Colors.blue,
-                      onChanged: (int? v) {
-                        print(_controller.value);
+                  content: Obx(() => Container(
+                        height: 150,
+                        child: Column(
+                          children: [
+                            Radio(
+                              value: 0,
+                              groupValue: _controller.value.value,
+                              activeColor: Colors.blue,
+                              onChanged: (int? v) {
+                                print(_controller.value);
 
-                        _controller.handleRadioChange(v);
-                      },
-                    ), Radio(
+                                _controller.handleRadioChange(v);
+                              },
+                            ),
+                            Radio(
+                              value: 1,
+                              groupValue: _controller.value.value,
+                              activeColor: Colors.blue,
+                              onChanged: (int? v) {
+                                print(_controller.value);
+                                _controller.handleRadioChange(v);
+                              },
+                            ),
+                            Radio(
+                              value: 2,
+                              groupValue: _controller.value.value,
+                              activeColor: Colors.blue,
+                              onChanged: (int? v) {
+                                print(_controller.value);
 
-                      value: 1,
-                      groupValue: _controller.value.value,
-                      activeColor: Colors.blue,
-
-                      onChanged: (int? v) {
-                        print(_controller.value);
-                        _controller.handleRadioChange(v);
-                      },
-                    ),Radio(
-                      value: 2,
-                      groupValue: _controller.value.value,
-                      activeColor: Colors.blue,
-
-                      onChanged: (int? v) {
-                        print(_controller.value);
-
-                        _controller.handleRadioChange(v);
-                      },
-                    ),
-                  ],
-                ),
-                  ) ));
+                                _controller.handleRadioChange(v);
+                              },
+                            ),
+                          ],
+                        ),
+                      )));
             },
             child: Icon(
               Icons.filter_alt_outlined,

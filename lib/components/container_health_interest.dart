@@ -45,8 +45,8 @@ class ContainerOfHealthInterest extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25))),
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
                 child: Image.asset(
                   image!,
                   fit: BoxFit.cover,
@@ -59,9 +59,9 @@ class ContainerOfHealthInterest extends StatelessWidget {
                   name!,
                   maxLines: 1,
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
                 ),
               ),
               Padding(
@@ -69,8 +69,8 @@ class ContainerOfHealthInterest extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                 child: AutoSizeText(
                   description!,
-                  maxLines: 2,
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                  maxLines: 3,
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
                 ),
               ),
               Expanded(
@@ -78,25 +78,33 @@ class ContainerOfHealthInterest extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        onPressed: moreFunction, icon: Icon(Icons.more_vert,size: 25,)),
+                        onPressed: moreFunction,
+                        icon: Icon(
+                          Icons.more_vert,
+                          size: 20,
+                        )),
                     IconButton(
-                        onPressed: shareFunction, icon: Icon(Icons.share,size: 25,)),
+                        onPressed: shareFunction,
+                        icon: Icon(
+                          Icons.share,
+                          size: 20,
+                        )),
                     IconButton(
                         onPressed: StarFunction,
                         icon: Icon(
                           Icons.star_border,
                           color: Colors.black,
-                          size: 25,
+                          size: 20,
                         )),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 25,right: 5),
+                        padding: const EdgeInsets.only(left: 25, right: 5),
                         child: AutoSizeText(
                           time!,
                           maxLines: 1,
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 22,
+                            fontSize: 11,
                           ),
                         ),
                       ),

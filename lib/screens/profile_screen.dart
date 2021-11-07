@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nabbda/components/setting_profile_screen.dart';
 import 'package:nabbda/components/container_profile_screen.dart';
 import 'package:nabbda/screens/doctor_screen.dart';
@@ -35,20 +36,18 @@ class ProfileScreen extends StatelessWidget {
             ContainerOfProfile(
               name: "Ahmed",
               phone: "01004478885",
-              image: "assets/images/heart.png",
-              functionSetting: () {
+              image: "assets/images/Male.png",
+              functionComplete: () {
                 print("function");
               },
               percent: 0.5,
               percentText: "50%",
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              child: Material(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25),
                 child: ListView.builder(
                     shrinkWrap: true,
                     physics: ClampingScrollPhysics(),
@@ -59,10 +58,7 @@ class ProfileScreen extends StatelessWidget {
                           function: () {
                             if (index == 0) {
                               print("index=0");
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DoctorsScreen()));
+                              Get.to(() => DoctorsScreen());
                             } else if (index == 1) {
                               print("index=1");
                             } else if (index == 2) {

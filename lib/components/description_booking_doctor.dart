@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nabbda/components/container_image_profile.dart';
 import 'package:nabbda/constants.dart';
 
 class DoctorDescription extends StatelessWidget {
@@ -13,22 +14,12 @@ class DoctorDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 70,
-          width: 70,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(shape: BoxShape.circle, color: K.mainColor),
-          child: Image.asset(
-            image!,
-            fit: BoxFit.cover,
-          ),
-        ),
-        SizedBox(
-          width: 20,
+        ImageProfile(
+          image: image,
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

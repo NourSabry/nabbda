@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/NavigationBarScreens/NavigationBar.dart';
+import 'package:get/get.dart';
+import 'package:nabbda/screens/Home.dart';
+import 'package:nabbda/screens/chart_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,9 +10,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBar(),
+      home: ChartScreen(),
     );
   }
 }
+

@@ -8,7 +8,7 @@ import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
 import 'package:nabbda/screens/vital_signs_screen.dart';
 
-class Home extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final List<String> labels = [
     "Medical Records",
     "Vital Signs",
@@ -65,8 +65,7 @@ class Home extends StatelessWidget {
               },
             ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),
@@ -83,16 +82,16 @@ class Home extends StatelessWidget {
                         function: () {
                           if (index == 0) {
                             print("index 0");
-                          }
-                         else if (index == 1) {
+                          } else if (index == 1) {
                             print("index 1");
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>VitalSignsScreen()));
-                          }
-                        else  if (index == 2) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => VitalSignsScreen()));
+                          } else if (index == 2) {
                             print("index 2");
-                          }else {
+                          } else {
                             print("index 3");
-
                           }
                         },
                       )),

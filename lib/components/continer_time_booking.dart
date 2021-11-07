@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:nabbda/constants.dart';
 
 class ContainerOfTimeBooking extends StatelessWidget {
-  final List<String>? labelsTime;
   final String? time;
   final LinearGradient? linearGradient;
+  final Widget? widget;
 
-  ContainerOfTimeBooking({this.time, this.labelsTime, this.linearGradient});
+  ContainerOfTimeBooking(
+      {this.time, this.linearGradient, this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +23,11 @@ class ContainerOfTimeBooking extends StatelessWidget {
               left: 0,
               right: 0,
               child: Container(
-                height: 70,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: K.grayColor.shade400)),
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: labelsTime!.length,
-                    itemBuilder: (context, index) => Center(
-                            child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            labelsTime![index],
-                            style: TextStyle(color: K.blackColor, fontSize: 15),
-                          ),
-                        ))),
-              ),
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: K.grayColor.shade400)),
+                  child: widget!),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
