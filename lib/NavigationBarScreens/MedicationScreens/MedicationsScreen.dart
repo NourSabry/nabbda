@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nabbda/NavigationBarScreens/MedicationScreens/Repeat.dart';
-import 'package:nabbda/NavigationBarScreens/MedicationScreens/Duration.dart';
 import 'package:nabbda/NavigationBarScreens/MedicationScreens/setTime.dart';
 import 'package:nabbda/colors.dart';
 

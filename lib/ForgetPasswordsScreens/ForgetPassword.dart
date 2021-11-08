@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nabbda/icons/MyIcon.dart';
-import 'package:nabbda/ForgetPasswordsScreens/EnterCode.dart';
+import 'package:nabbda/screens/EnterCode.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);

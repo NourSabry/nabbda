@@ -5,7 +5,6 @@ import 'package:nabbda/NavigationBarScreens/MedicationScreens/MedicationsScreen.
 import 'package:nabbda/controller/base_controller.dart';
 import 'package:nabbda/screens/HomeScreen.dart';
 import 'package:nabbda/screens/profile_screen.dart';
-import 'package:nabbda/icons/MyIcon.dart';
 
 class Home extends StatelessWidget {
   final _controller = Get.put(BaseController());

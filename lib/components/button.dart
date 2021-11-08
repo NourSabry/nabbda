@@ -10,8 +10,8 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 250,
+      height: 50,
+      width: 200,
       child: TextButton(
         onPressed: function,
         child: Text(

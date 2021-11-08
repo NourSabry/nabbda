@@ -6,7 +6,6 @@ import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/HealthMonitor
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedRecords/MedicalRecords.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedRecords/MedicalRecords1.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedicalDocuments/MedicalDocumentScreen.dart';
-import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/Vital/VitalSigns.dart';
 import 'package:nabbda/colors.dart';
 
 class HomeScreen extends StatelessWidget {

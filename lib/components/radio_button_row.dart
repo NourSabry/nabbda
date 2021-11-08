@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nabbda/constants.dart';
 
 class RadioButtonRow extends StatelessWidget {
   final int value;
@@ -16,7 +17,7 @@ class RadioButtonRow extends StatelessWidget {
         Radio(
           value: value,
           groupValue: groupValue,
-          activeColor: Colors.blue,
+          activeColor: K.mainColor,
           onChanged: function,
           toggleable: true,
         ),

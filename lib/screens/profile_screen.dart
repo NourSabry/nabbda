@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:nabbda/components/setting_profile_screen.dart';
 import 'package:nabbda/components/container_profile_screen.dart';
 import 'package:nabbda/screens/doctor_screen.dart';
+import 'package:nabbda/screens/health_interest.dart';
 
 class ProfileScreen extends StatelessWidget {
   final List<String> images = [
@@ -68,6 +69,7 @@ class ProfileScreen extends StatelessWidget {
                             } else if (index == 4) {
                               print("index==4");
                             } else if (index == 5) {
+                              Get.to(()=>HealthInterest());
                               print("index==5");
                             } else if (index == 6) {
                               print("index=6");

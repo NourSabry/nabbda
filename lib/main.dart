@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/LoginScreens/Register.dart';
-import 'package:nabbda/screens/Home.dart';
-import 'package:nabbda/screens/chart_screen.dart';
+import 'package:nabbda/screens/onBoarding_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
