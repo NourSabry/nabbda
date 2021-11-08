@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/NavigationBarScreens/Calculator/BMI/bmi_screen.dart';
+import 'package:nabbda/screens/bmi_screen.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/card_calculator_screen.dart';
 
