@@ -27,19 +27,18 @@ class ContainerOfHealthInterest extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Material(
         elevation: 1,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(15),
         child: Container(
-          height: 280,
-          width: size.width - 50,
+          height: 240,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(15),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 150,
+                height: 130,
                 width: size.width,
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(

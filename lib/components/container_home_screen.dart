@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/textfield_search.dart';
 import 'package:nabbda/constants.dart';
@@ -12,35 +13,29 @@ class ContainerOfHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
 
     return Container(
-      height: 180,
+      height: 200,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Container(
+         Container(
             height: 180,
-            width: size.width,
             decoration: BoxDecoration(
                 color: K.mainColor,
                 borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(30),
-                    bottomLeft: Radius.circular(30))),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+                    bottomRight: Radius.circular(15),
+                    bottomLeft: Radius.circular(15))),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("NABBDA",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: CustomizedColors.txtF)),
+                      Text("NABBDA", style: Style.textStyleHomeText),
                       Row(
                         children: [
                           SizedBox(
@@ -55,26 +50,23 @@ class ContainerOfHomeScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: functionShare,
-                            child: Icon(Icons.share,
-                                size: 30, color: CustomizedColors.txtF),
+                            child:
+                                Icon(Icons.share, size: 30, color: K.WhiteColor),
                           ),
                         ],
                       )
                     ],
                   ),
-                  AutoSizeText(
-                      "Track Your Health Reports\nAnd Get Reminders For your Medications, Stay Healthy!",
-                      maxLines: 3,
-                      style: TextStyle(
-                          color: CustomizedColors.txtF,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600))
-                ],
-              ),
+                ),
+                AutoSizeText(
+                    "Track Your Health Reports\nAnd Get Reminders For your Medications, Stay Healthy!",
+                    maxLines: 3,
+                    style:Style.textStyleHomeText)
+              ],
             ),
           ),
           Positioned(
-            bottom: -20,
+            bottom: 5,
             left: 0,
             right: 0,
             child: Padding(

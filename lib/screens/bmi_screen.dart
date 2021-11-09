@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +8,7 @@ import 'package:nabbda/components/container_image_profile.dart';
 import 'package:nabbda/components/radio_button_row.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/bmi_controller.dart';
+import 'package:nabbda/screens/caculate_bmi_screen.dart';
 
 class BMIScreen extends StatelessWidget {
   @override
@@ -32,13 +32,16 @@ class BMIScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         "What is Body Mass Calculator?",
                         style: Style.textStyleBmiScreen,
                       ),
-                      AutoSizeText(
-                        "Body Mass Index (BMI) Calculator is a tool\nfor assessing normal weight or overweight.\nWeight is assessed by using body mass index,\nwhich examines the relationship between height\nand body weight.",
-                        style: Style.textStyleBmiText,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: const Text(
+                          "Body Mass Index (BMI) Calculator is a tool\nfor assessing normal weight or overweight.\nWeight is assessed by using body mass index,\nwhich examines the relationship between height\nand body weight.",
+                          style: Style.textStyleBmiText,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15),
@@ -78,7 +81,7 @@ class BMIScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("   Age"),
+                        const  Text("   Age"),
                           Obx(() => Slider(
                               value: _controller.valueAge.value,
                               activeColor: K.mainColor,
@@ -107,7 +110,7 @@ class BMIScreen extends StatelessWidget {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text("Years"),
+                                child:const Text("Years"),
                               )
                             ],
                           ),
@@ -116,7 +119,7 @@ class BMIScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Height"),
+                       const   Text("Height"),
                           Obx(() => Slider(
                               value: _controller.valueHeight.value,
                               activeColor: K.mainColor,
@@ -154,7 +157,7 @@ class BMIScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Weight"),
+                        const  Text("Weight"),
                           Obx(() => Slider(
                               value: _controller.valueWeight.value,
                               activeColor: K.mainColor,
@@ -183,7 +186,7 @@ class BMIScreen extends StatelessWidget {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text("Weight"),
+                                child:const Text("Weight"),
                               )
                             ],
                           ),
@@ -192,7 +195,9 @@ class BMIScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 15),
                         child: RegisterButton(
-                          function: () {},
+                          function: () {
+                            Get.to(() => CalculateBmiScreen());
+                          },
                           label: "Calculate",
                         ),
                       )

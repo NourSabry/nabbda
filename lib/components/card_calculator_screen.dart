@@ -19,9 +19,10 @@ class CardCalculatorScreen extends StatelessWidget {
         color: K.WhiteColor,
         borderRadius: BorderRadius.circular(10),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 child: SvgPicture.asset(
@@ -34,6 +35,7 @@ class CardCalculatorScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 child: AutoSizeText(
                   label!,
+                  maxLines: 3,
                   style: TextStyle(fontSize: 18),
                 ),
               )

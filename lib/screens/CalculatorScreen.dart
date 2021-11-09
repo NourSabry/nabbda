@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nabbda/NavigationBarScreens/Calculator/HeartRisk/HeartRisk.dart';
 import 'package:nabbda/screens/bmi_screen.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/card_calculator_screen.dart';
+import 'package:nabbda/screens/bmr_screen.dart';
+import 'package:nabbda/screens/hear_risk_screen.dart';
 
 class CalculatorScreen extends StatelessWidget {
   final List<String> label = [
@@ -39,16 +42,16 @@ class CalculatorScreen extends StatelessWidget {
               label: "Calculator",
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 itemCount: label.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
-                  childAspectRatio: 1.25,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 15,
+                  childAspectRatio: 1.2,
                 ),
                 itemBuilder: (ctx, index) => CardCalculatorScreen(
                   label: label[index],
@@ -58,7 +61,9 @@ class CalculatorScreen extends StatelessWidget {
                       Get.to(() => BMIScreen());
                     } else if (index == 1) {
                     } else if (index == 2) {
+                      Get.to(() => BmrScreen());
                     } else if (index == 3) {
+                      Get.to(() => HeartRiskScreen());
                     } else if (index == 4) {
                     } else if (index == 5) {
                     } else if (index == 6) {

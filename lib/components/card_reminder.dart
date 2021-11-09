@@ -7,7 +7,7 @@ class CardOfReminder extends StatelessWidget {
   final String? time;
   final Color? color;
 
-  CardOfReminder({this.label, this.time,this.color});
+  CardOfReminder({this.label, this.time, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CardOfReminder extends StatelessWidget {
         width: 250,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color:color,
+          color: color,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),

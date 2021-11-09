@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nabbda/constants.dart';
 
 class TextFieldSearch extends StatelessWidget {
   final Function(String)? function;
@@ -9,7 +10,6 @@ class TextFieldSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 280,
         height: 35,
         child: TextField(
           onChanged: function,
@@ -25,12 +25,12 @@ class TextFieldSearch extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(color: Colors.white)),
+                borderSide: BorderSide(color: K.grayColor.shade200)),
             filled: true,
-            fillColor: Colors.white,
+            fillColor: K.WhiteColor,
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(color: Colors.white)),
+                borderSide: BorderSide(color:K.grayColor.shade200)),
           ),
         ));
   }

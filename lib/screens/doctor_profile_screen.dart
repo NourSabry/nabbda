@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/container_details_doctor_profile_screen.dart';
 import 'package:nabbda/components/container_doctor_profile_screen.dart';
 import 'package:nabbda/screens/booking_doctor.dart';
@@ -11,16 +12,26 @@ class DoctorProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ContainerProfile(
-              vote: "89%",
-              job: " Senior Cardiologist",
-              feedback: "44",
-              description:
-                  "Ph.D. Cardiovascular Diseases - Professor and Consultant Cardiology and Cardiac Catheterization Al-Azhar University",
-              rate: "3.6",
-              name: "DR. Mohamed Saeed Al Gamal",
-              imageProfile: "assets/images/Male.png",
-              images: "assets/images/Male.png",
+            Stack(
+              children: [
+                AppbarWithLabelAndIcon(
+                  label: "",
+                  function: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ContainerProfile(
+                  vote: "89%",
+                  job: " Senior Cardiologist",
+                  feedback: "44",
+                  description:
+                      "Ph.D. Cardiovascular Diseases - Professor and Consultant Cardiology and Cardiac Catheterization Al-Azhar University",
+                  rate: "3.6",
+                  name: "DR. Mohamed Saeed Al Gamal",
+                  imageProfile: "assets/images/Male.png",
+                  images: "assets/images/Male.png",
+                ),
+              ],
             ),
             ContainerDetails(
               book: () {

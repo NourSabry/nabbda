@@ -1,12 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:get/get.dart';
+import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/card_profile.dart';
 import 'package:nabbda/components/card_reminder.dart';
 import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
+import 'package:nabbda/constants.dart';
+import 'package:nabbda/screens/bmr_screen.dart';
 import 'package:nabbda/screens/vital_signs_details_screen.dart';
+import 'package:nabbda/screens/vital_signs_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<String> labels = [
@@ -64,8 +69,9 @@ class HomeScreen extends StatelessWidget {
                 print(v);
               },
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            Container(
+              height: 430,
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),
@@ -84,10 +90,7 @@ class HomeScreen extends StatelessWidget {
                             print("index 0");
                           } else if (index == 1) {
                             print("index 1");
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => VitalSignsDetailsScreen()));
+                            Get.to(() => VitalSignsScreen());
                           } else if (index == 2) {
                             print("index 2");
                           } else {
@@ -97,18 +100,14 @@ class HomeScreen extends StatelessWidget {
                       )),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Text("Remember Your Medications",
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: CustomizedColors.blackk,
-                      fontWeight: FontWeight.w500)),
+                  style: Style.textStyleHomeScreenText),
             ),
             SizedBox(
-              height: 120,
+              height: 110,
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: ListView.builder(
                     shrinkWrap: true,
                     physics: ClampingScrollPhysics(),
@@ -127,10 +126,7 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Doctors Nearby You",
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: CustomizedColors.blackk,
-                          fontWeight: FontWeight.w500)),
+                      style: Style.textStyleHomeScreenText),
                   Text("See all",
                       style: TextStyle(
                           fontSize: 18,

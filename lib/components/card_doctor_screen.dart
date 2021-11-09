@@ -1,6 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nabbda/TextStyles/text_styles.dart';
+import 'package:nabbda/components/book_button_appointment.dart';
+import 'package:nabbda/components/const_rich_text.dart';
+import 'package:nabbda/components/const_value_doctor_screen.dart';
+import 'package:nabbda/components/container_image_profile.dart';
+import 'package:nabbda/components/rate_row.dart';
+import 'package:nabbda/components/text_value_doctor_screen.dart';
 import 'package:nabbda/constants.dart';
 
 class CardOfDoctorScreen extends StatelessWidget {
@@ -34,275 +41,165 @@ class CardOfDoctorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Material(
-        elevation: 1,
-        shadowColor: Colors.grey,
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          height: 300,
-          decoration: BoxDecoration(
-              color: K.WhiteColor, borderRadius: BorderRadius.circular(20)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        borderRadius: BorderRadius.circular(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: Column(
+                    children: [
+                      ImageProfile(
+                        image: image!,
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: RateRow(
+                            rate: rate,
+                          ))
+                    ],
+                  ),
+                ),
+                Column(
+                  children: [
+                    SizedBox(
+                      width: 250,
+                      child: AutoSizeText(name!,
+                          maxLines: 1, style: Style.textStyleName),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Container(
+                        height: 80,
+                        width: 250,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: K.grayColor.shade200),
+                            color: K.WhiteColor),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 5),
+                          child: AutoSizeText(description!,
+                              maxLines: 5, style: Style.textStyleDescription),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ConstRichText(
+                    leftText: vote!,
+                    rightText: "Vote",
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: SvgPicture.asset(
+                          "assets/images/person.svg",
+                          fit: BoxFit.cover,
+                          width: 17,
+                          height: 17,
+                        ),
+                      ),
+                      AutoSizeText(
+                        job!,
+                        maxLines: 1,
+                        style: TextStyle(color: K.grayColor, fontSize: 15),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        color: K.mainColor,
+                      ),
+                      AutoSizeText(
+                        location!,
+                        maxLines: 1,
+                        style: TextStyle(color: K.grayColor, fontSize: 15),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ConstRichText(
+                      leftText: feedback!,
+                      rightText: "Feedback",
+                    ),
+                    Row(
+                      children: [
+                        ConstTextValue(
+                          label: "Checkup Price:",
+                        ),
+                        TextDetails(
+                          label: price,
+                        ),
+                      ],
+                    ),
+                  ],
+                )),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 10),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
-                    child: Column(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Row(
                       children: [
-                        Container(
-                          clipBehavior: Clip.antiAlias,
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: K.mainColor),
-                          child: Image.asset(
-                            image!,
-                            fit: BoxFit.cover,
-                          ),
+                        ConstTextValue(
+                          label: "WaitingTime:",
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              ),
-                              Text(
-                                rate!,
-                                style: TextStyle(color: K.grayColor),
-                              ),
-                            ],
-                          ),
-                        )
+                        TextDetails(
+                          label: time,
+                        ),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: 250,
-                          child: AutoSizeText(
-                            name!,
-                            maxLines: 1,
-                            style: TextStyle(fontSize: 22, color: K.blackColor),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
-                          child: Container(
-                            height: 80,
-                            width: 250,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: K.grayColor.shade200),
-                                color: K.WhiteColor),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 5),
-                              child: AutoSizeText(
-                                description!,
-                                maxLines: 5,
-                                style:
-                                    TextStyle(fontSize: 15, color: K.grayColor),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
+                  Row(
+                    children: [
+                      ConstTextValue(
+                        label: "Contact:",
+                      ),
+                      TextDetails(
+                        label: phoneNumber,
+                      )
+                    ],
+                  ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          AutoSizeText(
-                            vote!,
-                            maxLines: 1,
-                            style: TextStyle(color: K.grayColor, fontSize: 15),
-                          ),
-                          AutoSizeText(
-                            "Vote",
-                            maxLines: 1,
-                            style: TextStyle(color: K.grayColor, fontSize: 15),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
-                            child: SvgPicture.asset(
-                              "assets/images/person.svg",
-                              fit: BoxFit.cover,
-                              width: 17,
-                              height: 17,
-                            ),
-                          ),
-                          Expanded(
-                            child: AutoSizeText(
-                              job!,
-                              maxLines: 1,
-                              style:
-                                  TextStyle(color: K.grayColor, fontSize: 15),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                            color: K.mainColor,
-                          ),
-                          Expanded(
-                            child: AutoSizeText(
-                              location!,
-                              maxLines: 1,
-                              style:
-                                  TextStyle(color: K.grayColor, fontSize: 15),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                child: Row(
-                  children: [
-                    AutoSizeText(
-                      feedback!,
-                      style: TextStyle(color: K.blackColor, fontSize: 18),
-                    ),
-                    AutoSizeText(
-                      "Feedback",
-                      style: TextStyle(color: K.blackColor, fontSize: 18),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 2, vertical: 10),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          AutoSizeText(
-                            "Checkup Price:",
-                            maxLines: 1,
-                            style: TextStyle(color: K.mainColor, fontSize: 10),
-                          ),
-                          Expanded(
-                            child: AutoSizeText(
-                              price!,
-                              maxLines: 1,
-                              style: TextStyle(
-                                  color: K.blackColor,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Row(
-                          children: [
-                            AutoSizeText(
-                              "WaitingTime:",
-                              maxLines: 1,
-                              style:
-                                  TextStyle(color: K.mainColor, fontSize: 10),
-                            ),
-                            Expanded(
-                              child: AutoSizeText(
-                                time!,
-                                maxLines: 1,
-                                style: TextStyle(
-                                    color: K.blackColor,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          AutoSizeText(
-                            "Contact:",
-                            maxLines: 1,
-                            style: TextStyle(color: K.mainColor, fontSize: 10),
-                          ),
-                          Expanded(
-                            child: AutoSizeText(
-                              phoneNumber!,
-                              maxLines: 1,
-                              style: TextStyle(
-                                  color: K.blackColor,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: BookButtonAppointment(
+                  function: function,
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: SizedBox(
-                    height: 50,
-                    width: 250,
-                    child: TextButton(
-                      onPressed: function,
-                      child: Text(
-                        "Book an Appointment",
-                        style: TextStyle(
-                          color: K.WhiteColor,
-                          fontSize: 18,
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25)),
-                          backgroundColor: K.mainColor),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

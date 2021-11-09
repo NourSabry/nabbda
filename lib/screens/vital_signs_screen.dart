@@ -22,7 +22,9 @@ class VitalSignsScreen extends StatelessWidget {
         child: Stack(
           children: [
             AppbarWithLabelAndIcon(
-              function: () {},
+              function: () {
+                Navigator.pop(context);
+              },
               label: "Vital Signs",
             ),
             Padding(
