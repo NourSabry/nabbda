@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
-import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/textfield_search.dart';
 import 'package:nabbda/constants.dart';
 

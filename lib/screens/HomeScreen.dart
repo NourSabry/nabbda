@@ -8,9 +8,6 @@ import 'package:nabbda/components/card_profile.dart';
 import 'package:nabbda/components/card_reminder.dart';
 import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
-import 'package:nabbda/constants.dart';
-import 'package:nabbda/screens/bmr_screen.dart';
-import 'package:nabbda/screens/vital_signs_details_screen.dart';
 import 'package:nabbda/screens/vital_signs_screen.dart';
 
 class HomeScreen extends StatelessWidget {
