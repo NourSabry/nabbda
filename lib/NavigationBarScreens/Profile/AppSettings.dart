@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:nabbda/Controller/AppSettingController.dart';
+import 'package:nabbda/NavigationBarScreens/Profile/ChangePassword.dart';
+import 'package:nabbda/NavigationBarScreens/Profile/Logout.dart';
 import 'package:nabbda/components/BackgroundContainer.dart';
 import 'package:nabbda/components/ListTile.dart';
+import 'package:nabbda/components/OurCustomerDivider.dart';
 import 'package:nabbda/components/PurpleContainer.dart';
-import 'package:nabbda/icons/MyIcon.dart';
+import 'package:nabbda/components/myAppBar.dart';
+import 'package:nabbda/components/radio_button_row.dart';
+import 'package:get/get.dart';
 
-class AppSettings extends StatefulWidget {
-  @override
-  _AppSettings createState() => _AppSettings();
-}
-
-class _AppSettings extends State<AppSettings> {
-  var option;
-  var Radio1;
-  var value;
-
+class AppSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _controller = Get.put(AppSettingController());
+
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
-      appBar: AppBar(
-        backgroundColor: Color(0xFF6E78F7),
-        elevation: 0,
-        title: Text(
-          "App setting",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 22),
-        ),
+      appBar: myAppBar(
+        Title: "App Settings",
+        myIcon: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
       ),
       body: Stack(
         clipBehavior: Clip.none,
@@ -45,98 +43,88 @@ class _AppSettings extends State<AppSettings> {
             bottom: 20,
             child: BackgroundContainer(
               widget: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: Text("Choose Language",
-                            style: TextStyle(
-                                color: Color(0xFFF707070),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12))),
+                    Text("Choose Language",
+                        style: TextStyle(
+                            color: Color(0xFF707070),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "More :",
-                            style: TextStyle(
-                                color: Color(0xFF6E78F7),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              OurlistTile(
-                                tileName: "About us",
-                                lead: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              OurlistTile(
-                                tileName: "Terms and conditions ",
-                                lead: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              OurlistTile(
-                                tileName: "Privacy Policy",
-                                lead: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              OurlistTile(
-                                tileName: "Change Password",
-                                lead: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Text(
-                                  "Logout",
-                                  style: TextStyle(
-                                      color: Color(0xFFFF3737),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        Obx(() => RadioButtonRow(
+                              label: "English",
+                              value: 0,
+                              groupValue: _controller.value.value,
+                              function: (v) {
+                                _controller.handleRadioChange(v);
+                              },
+                            )),
+                        SizedBox(width: 50),
+                        Obx(() => RadioButtonRow(
+                              label: "Arabic",
+                              value: 1,
+                              groupValue: _controller.value.value,
+                              function: (v) {
+                                _controller.handleRadioChange(v);
+                              },
+                            )),
                       ],
+                    ),
+                    SizedBox(height: 40),
+                    Text(
+                      "More :",
+                      style: TextStyle(
+                          color: Color(0xFF6E78F7),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    OurlistTile(
+                      tileName: "About us",
+                      lead: Icon(Icons.arrow_forward_ios,
+                          color: Color(0xFF6E78F7), size: 20),
+                    ),
+                    CustomDivider(),
+                    OurlistTile(
+                      tileName: "Terms and conditions ",
+                      lead: Icon(Icons.arrow_forward_ios,
+                          color: Color(0xFF6E78F7), size: 20),
+                    ),
+                    CustomDivider(),
+                    OurlistTile(
+                      tileName: "Privacy Policy",
+                      lead: Icon(Icons.arrow_forward_ios,
+                          color: Color(0xFF6E78F7), size: 20),
+                    ),
+                    CustomDivider(),
+                    OurlistTile(
+                      function: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChangePassword()));
+                      },
+                      tileName: "Change Password",
+                      lead: Icon(Icons.arrow_forward_ios,
+                          color: Color(0xFF6E78F7), size: 20),
+                    ),
+                    CustomDivider(),
+                    SizedBox(height: 20),
+                    TextButton(
+                      onPressed: () => showDialog<String>(
+                          barrierColor: Color(0xFF707070),
+                          context: context,
+                          builder: (BuildContext context) => Logout()),
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(
+                            color: Color(0xFFFF3737),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16),
+                      ),
                     ),
                   ],
                 ),

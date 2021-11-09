@@ -1,40 +1,29 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-class RadioButtons extends StatefulWidget {
+class RadioButtonRow extends StatelessWidget {
+  final int value;
+  final int? groupValue;
   final String? label;
+  final Function(int?)? function;
 
-  RadioButtons({this.label});
-
-  @override
-  State<RadioButtons> createState() => _RadioButtonsState();
-}
-
-class _RadioButtonsState extends State<RadioButtons> {
-  var _radioSelected;
-
-  String? radioVal;
+  RadioButtonRow({this.value = 0, this.groupValue, this.function, this.label});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Radio(
-          value: 1,
-          groupValue: _radioSelected,
-          activeColor: Colors.blue,
-          onChanged: (value) {
-            setState(() {
-              _radioSelected = value;
-            });
-          },
+          visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+          value: value,
+          groupValue: groupValue,
+          activeColor: Color(0xFF6E78F7),
+          onChanged: function,
           toggleable: true,
         ),
         AutoSizeText(
-          widget.label!,
-          style: TextStyle(
-            fontSize: 18,
-          ),
+          label!,
+          style: TextStyle(fontSize: 14, color: Color(0xFF3B3C55)),
         )
       ],
     );

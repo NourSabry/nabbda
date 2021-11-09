@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 class OurTextField extends StatelessWidget {
-  final Function(String)? function;
+  final Function()? function;
   final String? hint;
   final Icon? prefix;
+  final String? initial;
 
-  OurTextField({this.function, this.hint, this.prefix});
+  OurTextField({this.function, this.hint, this.prefix, this.initial});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: function,
+      onTap: function ,
+      initialValue: initial,
+      style: TextStyle(color: Color(0xFF3B3C55), fontSize: 14),
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorColor: Color(0xFFF1F1F1),

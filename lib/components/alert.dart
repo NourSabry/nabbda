@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/components/container_alert_dialog.dart';
 import 'package:nabbda/constants.dart';
 
 final List<String> labels = [
@@ -38,7 +37,7 @@ showAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           contentPadding: EdgeInsets.all(0),
-          insetPadding: EdgeInsets.symmetric(horizontal:20),
+          insetPadding: EdgeInsets.symmetric(horizontal: 20),
           backgroundColor: Colors.transparent,
           clipBehavior: Clip.antiAlias,
           content: Container(
@@ -48,21 +47,12 @@ showAlertDialog(BuildContext context) {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 children: <Widget>[
-                  ContainerOfAlertDialog(
-                    height: 300,
-                    name: "Sort By",
-                    labels: labels,
-                  ),
                   Container(
                     height: 300,
                     child: Stack(
                       children: [
-                        ContainerOfAlertDialog(
-                          height: 270,
-                          name: "Availability",
-                          labels: labelsAvailability,
-                        ),
-                        Align(alignment: Alignment.bottomRight,
+                        Align(
+                          alignment: Alignment.bottomRight,
                           child: SizedBox(
                             width: 200,
                             height: 50,
@@ -73,7 +63,8 @@ showAlertDialog(BuildContext context) {
                               child: Center(
                                 child: Text(
                                   "Apply",
-                                  style: TextStyle(fontSize: 18, color: K.WhiteColor),
+                                  style: TextStyle(
+                                      fontSize: 18, color: K.WhiteColor),
                                 ),
                               ),
                               style: TextButton.styleFrom(
@@ -85,26 +76,6 @@ showAlertDialog(BuildContext context) {
                         )
                       ],
                     ),
-                  ),
-                  ContainerOfAlertDialog(
-                    height: 100,
-                    name: "In Hospital",
-                    labels: ['In Hospital'],
-                  ),
-                  ContainerOfAlertDialog(
-                    height: 250,
-                    name: "Doctor Title",
-                    labels: labelsJobs,
-                  ),
-                  ContainerOfAlertDialog(
-                    height: 250,
-                    name: " ",
-                    labels: labelsSalary,
-                  ),
-                  ContainerOfAlertDialog(
-                    height: 150,
-                    name: "Gender",
-                    labels: labelsGender,
                   ),
                 ]),
           ),

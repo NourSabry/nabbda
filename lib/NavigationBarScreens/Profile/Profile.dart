@@ -1,531 +1,197 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/NavigationBarScreens/Profile/ChangePassword.dart';
-import 'package:nabbda/NavigationBarScreens/Profile/Logout.dart';
+import 'package:nabbda/Controller/ProfileController.dart';
 import 'package:nabbda/NavigationBarScreens/Profile/changeProfilePicture.dart';
-import 'package:nabbda/icons/MyIcon.dart';
+import 'package:nabbda/components/BackgroundContainer.dart';
+import 'package:nabbda/components/ProfileTextField.dart';
+import 'package:nabbda/components/PurpleContainer.dart';
+import 'package:nabbda/components/myAppBar.dart';
+import 'package:get/get.dart';
+import 'package:nabbda/components/radio_button_row.dart';
 
 class Profile extends StatefulWidget {
   _Profile createState() => _Profile();
 }
 
 class _Profile extends State<Profile> {
-  var val;
-  var val2;
-  var val3;
-  var val4;
-  var email;
-  var name;
-  var mobilePhone;
-  var dateOfBirth;
-
   @override
   Widget build(BuildContext context) {
+    final _controller = Get.put(ProfileController());
+
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
-      appBar: AppBar(
-          backgroundColor: Color(0xFFF5F5F5),
-          elevation: 0,
-          title: Text("  Profile",
-              style: TextStyle(
-                  color: Color(0xFF3B3C55),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500))),
-      body: Theme(
-        data: ThemeData(unselectedWidgetColor: Color(0xFF0880AE)),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/images/avatar.png"),
-                radius: 40,
-              ),
-              Center(
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ChangeProfilePicture()),
-                        );
-                      },
-                      icon: Icon(Icons.edit, color: Colors.blue[700]))),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Your info:",
-                        style: TextStyle(
-                            color: Color(0xFF0880AE),
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
-                      padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextFormField(
-                            onSaved: (value) {
-                              email = value;
-                            },
-                            textAlign: TextAlign.left,
-                            decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(bottom: 0, top: 0),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFCCCCCC)),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFCCCCCC)),
-                                ),
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                hintText: "Info@gmail.com",
-                                hintStyle: TextStyle(color: Color(0xFF3B3C55)),
-                                labelText: "Email",
-                                labelStyle: TextStyle(
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 22)),
+      appBar: myAppBar(
+        myIcon: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
+        Title: "Profile ",
+      ),
+      body: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.topCenter,
+        children: [
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 450,
+            child: PurpleContainer(),
+          ),
+          Positioned(
+            left: 15,
+            right: 15,
+            top: 20,
+            bottom: 20,
+            child: BackgroundContainer(
+              widget: Theme(
+                data: ThemeData(unselectedWidgetColor: Color(0xFF0880AE)),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage("assets/images/avatar.png"),
+                            radius: 40,
                           ),
-                          TextFormField(
-                            onSaved: (value) {
-                              name = value;
-                            },
-                            textAlign: TextAlign.left,
-                            decoration: InputDecoration(
-                              contentPadding:
-                                  EdgeInsets.only(bottom: 0, top: 20),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFCCCCCC)),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFCCCCCC)),
-                              ),
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.always,
-                              hintText: "Amr",
-                              hintStyle: TextStyle(color: Color(0xFF3B3C55)),
-                              labelText: "Name",
-                              labelStyle: TextStyle(
-                                  color: Color(0xFF707070),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 22),
-                            ),
-                          ),
-                          TextFormField(
-                              onSaved: (value) {
-                                mobilePhone = value;
-                              },
-                              textAlign: TextAlign.left,
-                              decoration: InputDecoration(
-                                  contentPadding:
-                                      EdgeInsets.only(bottom: 0, top: 20),
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFCCCCCC)),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFCCCCCC)),
-                                  ),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Phone Number",
-                                  hintStyle:
-                                      TextStyle(color: Color(0xFF3B3C55)),
-                                  hintText: "01099377839",
-                                  labelStyle: TextStyle(
-                                      color: Color(0xFF707070),
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 22))),
-                          TextFormField(
-                              onSaved: (value) {
-                                dateOfBirth = value;
-                              },
-                              textAlign: TextAlign.left,
-                              decoration: InputDecoration(
-                                  contentPadding:
-                                      EdgeInsets.only(bottom: 0, top: 15),
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFCCCCCC)),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFCCCCCC)),
-                                  ),
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Date of Birth",
-                                  hintStyle:
-                                      TextStyle(color: Color(0xFF3B3C55)),
-                                  hintText: "12/11/1990",
-                                  suffixIcon: Icon(nabbdaIcons.calendar,
-                                      color: Color(0xFF0880AE)),
-                                  labelStyle: TextStyle(
-                                      color: Color(0xFF707070),
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 22))),
-                          Container(
-                            padding: EdgeInsets.only(top: 20),
-                            alignment: Alignment.topLeft,
-                            child: Text("Choose Gender",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17)),
-                          ),
-                          Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Radio(
-                                    visualDensity: VisualDensity(
-                                        horizontal: 0, vertical: -4),
-                                    value: 1,
-                                    groupValue: val,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("Male",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              ),
-                              SizedBox(width: 60),
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 2,
-                                    groupValue: val,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("Female",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              )
-                            ],
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(top: 10),
-                            alignment: Alignment.topLeft,
-                            child: Text("Do you make Cardiac catheterization?",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17)),
-                          ),
-                          Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Radio(
-                                    visualDensity: VisualDensity(
-                                        horizontal: 0, vertical: -4),
-                                    value: 1,
-                                    groupValue: val4,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val4 = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("Yes",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              ),
-                              SizedBox(width: 60),
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 2,
-                                    groupValue: val4,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val4 = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("No",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              )
-                            ],
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(top: 10),
-                            alignment: Alignment.topLeft,
-                            child: Text("Do you make Open Heart surgery",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17)),
-                          ),
-                          Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Radio(
-                                    visualDensity: VisualDensity(
-                                        horizontal: 0, vertical: -4),
-                                    value: 1,
-                                    groupValue: val3,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val3 = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("Yes",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              ),
-                              SizedBox(width: 60),
-                              Row(
-                                children: [
-                                  Radio(
-                                    value: 2,
-                                    groupValue: val3,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        val3 = value;
-                                      });
-                                    },
-                                    activeColor: Colors.blue[700],
-                                  ),
-                                  Text("No",
-                                      style: TextStyle(
-                                          color: Color(0xFF3B3C55),
-                                          fontSize: 17))
-                                ],
-                              )
-                            ],
-                          ),
-                          ListTile(
-                            contentPadding: EdgeInsets.only(left: 0),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ChangePassword()),
-                              );
-                            },
-                            title: Text("Change Password",
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500)),
-                            trailing: Icon(nabbdaIcons.arrow,
-                                color: Color(0xFF0880AE), size: 30),
-                          ),
-                          const Divider(
-                              height: 1,
-                              thickness: 1,
-                              color: Color(0xFFCCCCCC)),
-                          ListTile(
-                            contentPadding: EdgeInsets.only(left: 0),
-                            onTap: () => showDialog<String>(
-                              context: context,
-                              builder: (BuildContext context) => Logout(),
-                            ),
-                            title: Text("Logout",
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    color: Color(0xFF707070),
-                                    fontWeight: FontWeight.w500)),
-                            trailing: Icon(nabbdaIcons.arrow,
-                                color: Color(0xFF0880AE), size: 30),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "App setting:",
-                        style: TextStyle(
-                            color: Color(0xFF0880AE),
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 10),
-                      padding: EdgeInsets.only(left: 20, right: 20),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white),
-                      child: Column(
+                        ),
+                        Center(
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChangeProfilePicture()),
+                                  );
+                                },
+                                icon: Icon(Icons.edit,
+                                    color: Color(0xFF6E78F7)))),
+                        Text(
+                          "Personal Information",
+                          style: TextStyle(
+                              color: Color(0xFF6E78F7),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        ProfileTextField(
+                          hint: "Info@gmail.com",
+                          label: "Email",
+                        ),
+                        ProfileTextField(
+                          hint: "Ahmed Abbas",
+                          label: "Name",
+                        ),
+                        ProfileTextField(
+                          hint: "01022355169",
+                          label: "Phone number",
+                        ),
+                        ProfileTextField(
+                          hint: "06/01/1990",
+                          label: "Date of Birth",
+                        ),
+                        SizedBox(height: 20),
+                        Text("Choose Gender",
+                            style: TextStyle(
+                                color: Color(0xFF707070),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16)),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              alignment: Alignment.topLeft,
-                              child: Text("Choose Language",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: Color(0xFF707070),
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 17)),
+                            Obx(() => RadioButtonRow(
+                                  label: "Male",
+                                  value: 0,
+                                  groupValue: _controller.value.value,
+                                  function: (v) {
+                                    _controller.handleRadioChange(v);
+                                  },
+                                )),
+                            SizedBox(width: 50),
+                            Obx(
+                              () => RadioButtonRow(
+                                label: "Female",
+                                value: 1,
+                                groupValue: _controller.value.value,
+                                function: (v) {
+                                  _controller.handleRadioChange(v);
+                                },
+                              ),
                             ),
-                            Row(
-                              children: [
-                                Row(
-                                  children: [
-                                    Radio(
-                                      value: 1,
-                                      groupValue: val2,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          val2 = value;
-                                        });
-                                      },
-                                      activeColor: Colors.blue[700],
-                                    ),
-                                    Text("English",
-                                        style: TextStyle(
-                                            color: Color(0xFF3B3C55),
-                                            fontSize: 17))
-                                  ],
-                                ),
-                                SizedBox(width: 60),
-                                Row(
-                                  children: [
-                                    Radio(
-                                      value: 2,
-                                      groupValue: val2,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          val2 = value;
-                                        });
-                                      },
-                                      activeColor: Colors.blue[700],
-                                    ),
-                                    Text("Arabic",
-                                        style: TextStyle(
-                                            color: Color(0xFF3B3C55),
-                                            fontSize: 17))
-                                  ],
-                                )
-                              ],
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Text("Do you make Cardiac catheterization?",
+                            style: TextStyle(
+                                color: Color(0xFF707070),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Obx(() => RadioButtonRow(
+                                  label: "Yes",
+                                  value: 0,
+                                  groupValue: _controller.value2.value,
+                                  function: (v2) {
+                                    _controller.handleRadio2Change(v2);
+                                  },
+                                )),
+                            SizedBox(width: 50),
+                            Obx(
+                              () => RadioButtonRow(
+                                label: "No",
+                                value: 1,
+                                groupValue: _controller.value2.value,
+                                function: (v2) {
+                                  _controller.handleRadio2Change(v2);
+                                },
+                              ),
                             ),
-                          ]),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Text("Do you make Open Heart surgery",
+                            style: TextStyle(
+                                color: Color(0xFF707070),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Obx(() => RadioButtonRow(
+                                  label: "Yes",
+                                  value: 0,
+                                  groupValue: _controller.value3.value,
+                                  function: (v3) {
+                                    _controller.handleRadio3Change(v3);
+                                  },
+                                )),
+                            SizedBox(width: 50),
+                            Obx(
+                              () => RadioButtonRow(
+                                label: "No",
+                                value: 1,
+                                groupValue: _controller.value3.value,
+                                function: (v3) {
+                                  _controller.handleRadio3Change(v3);
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 30),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "More:",
-                        style: TextStyle(
-                            color: Color(0xFF0880AE),
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(top: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                onTap: () {},
-                                title: Text("About us",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xFF707070),
-                                        fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              ListTile(
-                                onTap: () {},
-                                title: Text("Terms and conditions ",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xFF707070),
-                                        fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                              Divider(
-                                color: Color(0xFFE4E4E4),
-                                thickness: 1,
-                                height: 1,
-                                indent: 15,
-                                endIndent: 20,
-                              ),
-                              ListTile(
-                                onTap: () {},
-                                title: Text("Privacy Policy",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Color(0xFF707070),
-                                        fontWeight: FontWeight.w500)),
-                                trailing: Icon(nabbdaIcons.arrow,
-                                    color: Color(0xFF0880AE), size: 30),
-                              ),
-                            ])),
-                    SizedBox(height: 30)
-                  ],
+                  ),
                 ),
-              )
-            ],
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
