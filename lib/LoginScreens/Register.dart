@@ -32,7 +32,7 @@ class RegisterationScreen extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Positioned(
-              left: 0, right: 0, top: 0, bottom: 450, child: PurpleContainer()),
+              left: 0, right: 0, top: 0, bottom: 550, child: PurpleContainer()),
           Positioned(
             left: 15,
             right: 15,

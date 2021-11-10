@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nabbda/NavigationBarScreens/Calculator/AtherosclerosisRisk/AtherosclerosisRisk1.dart';
+import 'package:nabbda/components/OurCheckboxListTile.dart';
+import 'package:nabbda/components/PurpleContainer.dart';
+import 'package:nabbda/components/myAppBar.dart';
+import 'package:nabbda/components/BackgroundContainer.dart';
+import 'package:nabbda/components/NabbdaButton.dart';
 
 class AtherosclerosisRisk extends StatefulWidget {
   const AtherosclerosisRisk({Key? key}) : super(key: key);
@@ -20,210 +25,117 @@ class _AtherosclerosisRisk extends State<AtherosclerosisRisk> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
-      body: Container(
-        color: Color(0xFFF5F5F5),
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 550,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF6E78F7),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 10,
-              right: 10,
-              top: 25,
-              bottom: 570,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
-                  Text("Atherosclerosis Risk ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22,
-                      )),
-                ],
-              ),
-            ),
-            Positioned(
-              left: 15,
-              right: 15,
-              top: 100,
-              bottom: 20,
-              child: SingleChildScrollView(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Color(0xFF6E78F7),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
-                  ),
-                  child: Container(
-                    height: 800,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Theme(
-                      data: ThemeData(unselectedWidgetColor: Color(0xFF6E78F7)),
-                      child: Container(
-                        margin: EdgeInsets.only(top: 20),
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Column(
-                          children: [
-                            Text(
-                                "Have you ever had any of the following conditions or procedures?",
-                                style: TextStyle(
-                                    color: Color(0xFF707070),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600)),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "Heart attack or coronary bypass surgery ",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              },
-                            ),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "Stroke or transient ischemic attack (TIA)",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked1,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked1 = value!;
-                                });
-                              },
-                            ),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "Peripheral artery disease — reduced blood flow in arteries in your legs, arms or other areas",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked2,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked2 = value!;
-                                });
-                              },
-                            ),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "Angioplasty or stent placement — a procedure to open narrowed or clogged arteries by placing a small tube (stent) in an artery to keep it open and prevent it from narrowing",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked3,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked3 = value!;
-                                });
-                              },
-                            ),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "Abdominal aortic aneurysm — enlargement of the lower area of the major blood vessel (aorta) that supplies blood to the body",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked4,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked4 = value!;
-                                });
-                              },
-                            ),
-                            CheckboxListTile(
-                              contentPadding: EdgeInsets.all(0),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              activeColor: Color(0xFF6E78F7),
-                              title: Text(
-                                "None of the above",
-                                style: TextStyle(
-                                    color: Color(0XFF707070), fontSize: 14),
-                              ),
-                              value: isChecked5,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  isChecked5 = value!;
-                                });
-                              },
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            AtherosclerosisRisk1()));
-                              },
-                              child: Text("Calculate",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 16)),
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xFF6E78F7),
-                                minimumSize: Size(155, 48),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                              ),
-                            ),
-                          ],
-                        ),
+      appBar: myAppBar(
+        myIcon: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
+        Title: "Atherosclerosis Risk ",
+      ),
+      body: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.topCenter,
+        children: [
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 550,
+            child: PurpleContainer(),
+          ),
+          Positioned(
+            left: 15,
+            right: 15,
+            top: 20,
+            bottom: 20,
+            child: BackgroundContainer(
+              widget: Theme(
+                data: ThemeData(unselectedWidgetColor: Color(0xFF6E78F7)),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  child: Column(
+                    children: [
+                      Text(
+                          "Have you ever had any of the following conditions or procedures?",
+                          style: TextStyle(
+                              color: Color(0xFF707070),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600)),
+                      OurCheckboxListTile(
+                        text: "Heart attack or coronary bypass surgery ",
+                        isChecked: isChecked,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked = value!;
+                          });
+                        },
                       ),
-                    ),
+                      OurCheckboxListTile(
+                        text: "Stroke or transient ischemic attack (TIA)",
+                        isChecked: isChecked1,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked1 = value!;
+                          });
+                        },
+                      ),
+                      OurCheckboxListTile(
+                        text:
+                            "Peripheral artery disease — reduced blood flow in arteries in your legs, arms or other areas",
+                        isChecked: isChecked2,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked2 = value!;
+                          });
+                        },
+                      ),
+                      OurCheckboxListTile(
+                        text:
+                            "Angioplasty or stent placement — a procedure to open narrowed or clogged arteries by placing a small tube (stent) in an artery to keep it open and prevent it from narrowing",
+                        isChecked: isChecked3,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked3 = value!;
+                          });
+                        },
+                      ),
+                      OurCheckboxListTile(
+                        text:
+                            "Abdominal aortic aneurysm — enlargement of the lower area of the major blood vessel (aorta) that supplies blood to the body",
+                        isChecked: isChecked4,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked4 = value!;
+                          });
+                        },
+                      ),
+                      OurCheckboxListTile(
+                        text: "None of the above",
+                        isChecked: isChecked5,
+                        function: (bool? value) {
+                          setState(() {
+                            isChecked5 = value!;
+                          });
+                        },
+                      ),
+                      NabbdaButton(
+                        Name: "Next",
+                        function: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      AtherosclerosisRisk1()));
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

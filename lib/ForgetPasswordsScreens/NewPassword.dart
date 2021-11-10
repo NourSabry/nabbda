@@ -40,7 +40,7 @@ class _NewPassword extends State<NewPassword> {
             left: 0,
             right: 0,
             top: 0,
-            bottom: 450,
+            bottom: 550,
             child: PurpleContainer(),
           ),
           Positioned(

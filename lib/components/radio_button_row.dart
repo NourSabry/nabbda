@@ -23,7 +23,7 @@ class RadioButtonRow extends StatelessWidget {
         ),
         AutoSizeText(
           label!,
-          style: TextStyle(fontSize: 14, color: Color(0xFF3B3C55)),
+          style: TextStyle(fontSize: 12, color: Color(0xFF3B3C55)),
         )
       ],
     );
