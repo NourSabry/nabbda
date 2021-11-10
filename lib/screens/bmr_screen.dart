@@ -7,6 +7,7 @@ import 'package:nabbda/components/container_image_profile.dart';
 import 'package:nabbda/components/radio_button_row.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/bmr_controller.dart';
+import 'package:nabbda/screens/calculate_bmr.dart';
 
 class BmrScreen extends StatelessWidget {
   final List<String> labels = [
@@ -282,7 +283,9 @@ class BmrScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: RegisterButton(
-                          function: () {},
+                          function: () {
+                            Get.to(()=>CalculateBmrScreen());
+                          },
                           label: "Calculate",
                         ),
                       )

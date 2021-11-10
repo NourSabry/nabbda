@@ -11,7 +11,7 @@ class RegisterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: 200,
+      width: 160,
       child: TextButton(
         onPressed: function,
         child: Text(
