@@ -18,6 +18,8 @@ class Style {
       TextStyle(fontSize: 10, color: Color(0xFF898A8F));
   static const textStyleCalculatorBmiText =
       TextStyle(fontSize: 16, color: K.mainColor);
+  static const textStyleAlertText =
+      TextStyle(fontSize: 22, color: K.mainColor);
   static const textStyleHomeText = TextStyle(fontSize: 16, color: K.WhiteColor);
   static const textStyleProfileText =
       TextStyle(color: Colors.white, fontSize: 17);

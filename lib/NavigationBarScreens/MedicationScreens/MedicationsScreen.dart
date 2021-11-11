@@ -1,524 +1,404 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/NavigationBarScreens/MedicationScreens/Repeat.dart';
-import 'package:nabbda/NavigationBarScreens/MedicationScreens/setTime.dart';
-import 'package:nabbda/colors.dart';
+import 'package:get/get.dart';
+import 'package:nabbda/TextStyles/text_styles.dart';
+import 'package:nabbda/components/appbar_with_icon_lable.dart';
+import 'package:nabbda/components/button.dart';
+import 'package:nabbda/components/container_medications.dart';
+import 'package:nabbda/components/medications_card.dart';
+import 'package:nabbda/constants.dart';
+import 'package:nabbda/controller/medications_controller.dart';
 
 class MedicationsScreen extends StatelessWidget {
+  final List<String> labelsRepeat = [
+    "Never",
+    "Every Day",
+    "Every Week",
+    "Every 2 Weeks",
+    "Every Month",
+    "Every Year"
+  ];
+  final List<String> labelsDuration = [
+    "Never",
+    "2 Days",
+    "Week",
+    "2 Week",
+    "Month",
+    "Year"
+  ];
+  final List<String> labelsTime = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final _controller = Get.put(MedicationsController());
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF6E78F7),
-        elevation: 0,
-        title: Text(
-          "Medications ",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 22),
-        ),
-      ),
-      body: Container(
-        color: Colors.white,
+      body: SingleChildScrollView(
         child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.topCenter,
           children: [
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 450,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF6E78F7),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)),
-                ),
-              ),
+            AppbarWithLabelAndIcon(
+              function: () {
+                Navigator.pop(context);
+              },
+              label: "Medications ",
             ),
-            Positioned(
-              left: 15,
-              right: 15,
-              top: 20,
-              bottom: 20,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF6E78F7),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)),
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
+            Padding(
+              padding: const EdgeInsets.only(top: 130, right: 10, left: 10),
+              child: Material(
+                borderRadius: BorderRadius.circular(15),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      MedicationContainer1(),
+                      SizedBox(height: size.height * 0.03),
+                      Row(
                         children: [
-                          SafeArea(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: size.width * 0.07, vertical: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 110,
-                                    padding: EdgeInsets.only(
-                                        top: 15, left: 20, right: 15),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFF6F6F6),
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.1),
-                                          spreadRadius: 5,
-                                          blurRadius: 7,
-                                          offset: Offset(0,
-                                              3), // changes position of shadow
-                                        ),
-                                      ],
+                          Expanded(
+                              child: MedicationContainers(
+                            hint: "———— pills",
+                            text: "Amount",
+                          )),
+                          SizedBox(width: size.width * 0.06),
+                          Expanded(
+                              child: MedicationContainers(
+                            hint: "——— g",
+                            text: "Weight ",
+                          )),
+                        ],
+                      ),
+                      SizedBox(height: size.height * 0.06),
+                      Text("Reminder Settings",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16)),
+                      SizedBox(height: size.height * 0.03),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.defaultDialog(
+                                    title: "Repeat",
+                                    titleStyle: Style.textStyleAlertText,
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 50, vertical: 10),
+                                    confirm: RegisterButton(
+                                      function: () {
+                                        Navigator.pop(context);
+                                      },
+                                      label: "Save",
                                     ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Medicine",
-                                                  style: TextStyle(
-                                                      color: CustomizedColors
-                                                          .txtFBo,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 14)),
-                                              TextField(
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        CustomizedColors.bck),
-                                                decoration: InputDecoration(
-                                                    hintText:
-                                                        "Write the medicine name",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: CustomizedColors
-                                                            .txtFT),
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 15),
-                                          child: Icon(Icons.add_circle,
-                                              size: size.height * 0.04,
-                                              color: Color(0xFF6E78F7)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: size.height * 0.03),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          height: 110,
-                                          padding: EdgeInsets.only(
-                                              top: 15, left: 20, right: 15),
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFF6F6F6),
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.1),
-                                                spreadRadius: 5,
-                                                blurRadius: 7,
-                                                offset: Offset(0,
-                                                    3), // changes position of shadow
-                                              ),
-                                            ],
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Amount",
-                                                  style: TextStyle(
-                                                      color: CustomizedColors
-                                                          .txtFBo,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 14)),
-                                              TextField(
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        CustomizedColors.bck),
-                                                decoration: InputDecoration(
-                                                    hintText: "—————— pills",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: CustomizedColors
-                                                            .txtFT),
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: size.width * 0.06),
-                                      Expanded(
-                                        child: Container(
-                                          height: 110,
-                                          padding: EdgeInsets.only(
-                                              top: 15, left: 20, right: 15),
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFF6F6F6),
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.1),
-                                                spreadRadius: 5,
-                                                blurRadius: 7,
-                                                offset: Offset(0,
-                                                    3), // changes position of shadow
-                                              ),
-                                            ],
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Weight",
-                                                  style: TextStyle(
-                                                      color: CustomizedColors
-                                                          .txtFBo,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 14)),
-                                              TextField(
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        CustomizedColors.bck),
-                                                decoration: InputDecoration(
-                                                    hintText: "————— g",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: CustomizedColors
-                                                            .txtFT),
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: size.height * 0.06),
-                                  Text("Reminder Settings",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16)),
-                                  SizedBox(height: size.height * 0.03),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: GestureDetector(
-                                            onTap: () => showDialog<String>(
-                                                  context: context,
-                                                  builder:
-                                                      (BuildContext context) =>
-                                                          Repeat(),
-                                                ),
-                                            child: Container(
-                                                height: 110,
-                                                padding: EdgeInsets.only(
-                                                    top: 15,
-                                                    left: 20,
-                                                    right: 15),
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF6F6F6),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          20.0),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Colors.grey
-                                                          .withOpacity(0.1),
-                                                      spreadRadius: 5,
-                                                      blurRadius: 7,
-                                                      offset: Offset(0,
-                                                          3), // changes position of shadow
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                    titlePadding: EdgeInsets.only(top: 15),
+                                    content: SizedBox(
+                                        height: 250,
+                                        width: 220,
+                                        child: ListView.builder(
+                                          itemCount: labelsRepeat.length,
+                                          shrinkWrap: true,
+                                          itemBuilder: (ctx, index) => Obx(() =>
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    Text("Repeat",
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        _controller
+                                                            .selectRepeatValue(
+                                                                index);
+                                                        _controller.selectRepeat
+                                                                .value =
+                                                            labelsRepeat[index];
+                                                      },
+                                                      child: Text(
+                                                        labelsRepeat[index],
                                                         style: TextStyle(
-                                                            color:
-                                                                CustomizedColors
-                                                                    .txtFBo,
+                                                            fontSize: 18,
+                                                            color: _controller
+                                                                        .valueRepeat ==
+                                                                    index
+                                                                ? K.mainColor
+                                                                : Color(
+                                                                    0xFF707070),
                                                             fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 14)),
-                                                    TextField(
-                                                      style: TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          color:
-                                                              CustomizedColors
-                                                                  .bck),
-                                                      decoration: InputDecoration(
-                                                          hintText:
-                                                              "Select days",
-                                                          hintStyle: TextStyle(
-                                                              fontSize: 16,
-                                                              color:
-                                                                  CustomizedColors
-                                                                      .txtFT),
-                                                          enabledBorder:
-                                                              InputBorder.none,
-                                                          focusedBorder:
-                                                              InputBorder.none),
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
                                                     ),
+                                                    if (_controller
+                                                            .valueRepeat ==
+                                                        index)
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .symmetric(
+                                                                horizontal: 30),
+                                                        child: Icon(
+                                                          Icons.check,
+                                                          color: K.mainColor,
+                                                          size: 25,
+                                                        ),
+                                                      ) else
+                                                      Container()
                                                   ],
-                                                ))),
-                                      ),
-                                      SizedBox(width: size.width * 0.06),
-                                      Expanded(
-                                        child: GestureDetector(
-                                          // onTap: () => showDialog<String>(
-                                          //   context: context,
-                                          //   builder: (BuildContext context) =>
-                                          //       Duration(),
-
-                                          child: Container(
-                                            height: 110,
-                                            padding: EdgeInsets.only(
-                                                top: 15, left: 20, right: 15),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFF6F6F6),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.grey
-                                                      .withOpacity(0.1),
-                                                  spreadRadius: 5,
-                                                  blurRadius: 7,
-                                                  offset: Offset(0,
-                                                      3), // changes position of shadow
                                                 ),
-                                              ],
-                                            ),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text("Duration",
-                                                    style: TextStyle(
-                                                        color: CustomizedColors
-                                                            .txtFBo,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 14)),
-                                                TextField(
-                                                  style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color:
-                                                          CustomizedColors.bck),
-                                                  decoration: InputDecoration(
-                                                      hintText: "Select weeks",
-                                                      hintStyle: TextStyle(
-                                                          fontSize: 16,
-                                                          color:
-                                                              CustomizedColors
-                                                                  .txtFT),
-                                                      enabledBorder:
-                                                          InputBorder.none,
-                                                      focusedBorder:
-                                                          InputBorder.none),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: size.height * 0.03),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: GestureDetector(
-                                          onTap: () => showDialog<String>(
-                                            context: context,
-                                            builder: (BuildContext context) =>
-                                                SetTime(),
-                                          ),
-                                          child: Container(
-                                            height: 110,
-                                            padding: EdgeInsets.only(
-                                                top: 15, left: 20, right: 15),
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFF6F6F6),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.grey
-                                                      .withOpacity(0.1),
-                                                  spreadRadius: 5,
-                                                  blurRadius: 7,
-                                                  offset: Offset(0,
-                                                      3), // changes position of shadow
-                                                ),
-                                              ],
-                                            ),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text("Start Time",
-                                                    style: TextStyle(
-                                                        color: CustomizedColors
-                                                            .txtFBo,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 14)),
-                                                TextField(
-                                                  style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color:
-                                                          CustomizedColors.bck),
-                                                  decoration: InputDecoration(
-                                                      hintText: "Select time",
-                                                      hintStyle: TextStyle(
-                                                          fontSize: 16,
-                                                          color:
-                                                              CustomizedColors
-                                                                  .txtFT),
-                                                      enabledBorder:
-                                                          InputBorder.none,
-                                                      focusedBorder:
-                                                          InputBorder.none),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: size.width * 0.06),
-                                      Expanded(
-                                        child: Container(
-                                          height: 110,
-                                          padding: EdgeInsets.only(
-                                              top: 15, left: 20, right: 15),
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFF6F6F6),
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.1),
-                                                spreadRadius: 5,
-                                                blurRadius: 7,
-                                                offset: Offset(0,
-                                                    3), // changes position of shadow
-                                              ),
-                                            ],
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("End Time",
-                                                  style: TextStyle(
-                                                      color: CustomizedColors
-                                                          .txtFBo,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 14)),
-                                              TextField(
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        CustomizedColors.bck),
-                                                decoration: InputDecoration(
-                                                    hintText: "Select time",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: CustomizedColors
-                                                            .txtFT),
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                              )),
+                                        )));
+                              },
+                              child: Obx(() => MedicationContainers(
+                                    text: "Repeat",
+                                    hint: _controller.selectRepeat.value,
+                                    onchange: (v) {
+                                      _controller.selectRepeat.value = v;
+                                      print(_controller.selectRepeat.value);
+                                    },
+                                  )),
                             ),
+                          ),
+                          SizedBox(width: size.width * 0.06),
+                          Expanded(
+                            child: GestureDetector(
+                                onTap: () {
+                                  Get.defaultDialog(
+                                      title: "Duration",
+                                      titlePadding: EdgeInsets.only(top: 15),
+                                      titleStyle: Style.textStyleAlertText,
+                                      contentPadding: EdgeInsets.symmetric(
+                                          horizontal: 50, vertical: 10),
+                                      confirm: RegisterButton(
+                                        function: () {
+                                          Navigator.pop(context);
+                                        },
+                                        label: "Save",
+                                      ),
+                                      content: SizedBox(
+                                          height: 250,
+                                          width: 200,
+                                          child: ListView.builder(
+                                            itemCount: labelsDuration.length,
+                                            itemBuilder: (ctx, index) =>
+                                                Obx(() => Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              _controller
+                                                                  .selectDurationValue(
+                                                                      index);
+                                                              _controller
+                                                                      .selectDuration
+                                                                      .value =
+                                                                  labelsDuration[
+                                                                      index];
+                                                            },
+                                                            child: Text(
+                                                              labelsDuration[
+                                                                  index],
+                                                              style: TextStyle(
+                                                                  fontSize: 18,
+                                                                  color: _controller
+                                                                              .valueDuration ==
+                                                                          index
+                                                                      ? K
+                                                                          .mainColor
+                                                                      : Color(
+                                                                          0xFF707070),
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                          ),
+                                                          if (_controller
+                                                                  .valueDuration ==
+                                                              index)
+                                                            Padding(
+                                                              padding: const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      30),
+                                                              child: Icon(
+                                                                Icons.check,
+                                                                size: 30,
+                                                                color:
+                                                                    K.mainColor,
+                                                              ),
+                                                            )
+                                                          else
+                                                            Container()
+                                                        ],
+                                                      ),
+                                                    )),
+                                          )));
+                                },
+                                child: Obx(() => MedicationContainers(
+                                      text: "Duration",
+                                      hint: _controller.selectDuration.value,
+                                      onchange: (v) {
+                                        _controller.selectDuration.value = v;
+                                      },
+                                    ))),
                           ),
                         ],
                       ),
-                    ),
+                      SizedBox(height: size.height * 0.03),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: GestureDetector(
+                            onTap: () {
+                              Get.defaultDialog(
+                                  title: "Select Time",
+                                  titleStyle: Style.textStyleAlertText,
+                                  confirm: RegisterButton(
+                                    function: () {
+                                      Navigator.pop(context);
+                                    },
+                                    label: "Save",
+                                  ),
+                                  content: Container(
+                                      height: 200,
+                                      width: 200,
+                                      child: ListView.builder(
+                                        shrinkWrap: true,
+                                        physics: ClampingScrollPhysics(),
+                                        itemCount: labelsTime.length,
+                                        itemBuilder: (ctx, index) => Obx(() =>
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Row(
+                                                children: [
+                                                  GestureDetector(
+                                                      onTap: () {
+                                                        _controller
+                                                                .selectTimeValue
+                                                                .value =
+                                                            labelsTime[index];
+                                                        _controller
+                                                            .selectTime(index);
+                                                      },
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(4),
+                                                        child: Text(
+                                                          labelsTime[index],
+                                                          style: TextStyle(
+                                                              fontSize: _controller
+                                                                          .timeIndex
+                                                                          .value ==
+                                                                      index
+                                                                  ? 25
+                                                                  : 15,
+                                                              color: _controller
+                                                                          .timeIndex
+                                                                          .value ==
+                                                                      index
+                                                                  ? K.mainColor
+                                                                  : Color(
+                                                                      0xFF707070),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      )),
+                                                  if (_controller.timeIndex ==
+                                                      index)
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Text(
+                                                        ": 30",
+                                                        style: TextStyle(
+                                                            color: K.mainColor,
+                                                            fontSize: 25,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                    )
+                                                  else
+                                                    Container(),
+                                                  if (_controller
+                                                          .timeIndex.value ==
+                                                      index)
+                                                    Row(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .end,
+                                                      children: [
+                                                        _controller.check.value
+                                                            ? Text(
+                                                                "AM",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        25,
+                                                                    color: K
+                                                                        .mainColor),
+                                                              )
+                                                            : Text(
+                                                                "PM",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        25,
+                                                                    color: K
+                                                                        .mainColor),
+                                                              ),
+                                                        GestureDetector(
+                                                          onTap: () {
+                                                            _controller
+                                                                .selectCheck();
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .arrow_drop_down,
+                                                            color: K.mainColor,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    )
+                                                  else
+                                                    Container(),
+                                                ],
+                                              ),
+                                            )),
+                                      )));
+                            },
+                            child: Obx(() => MedicationContainers(
+                                text: "Start Time",
+                                hint: _controller.selectTimeValue.value)),
+                          )),
+                          SizedBox(width: size.width * 0.06),
+                          Expanded(
+                              child: MedicationContainers(
+                                  text: "End Time", hint: "Select time")),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
