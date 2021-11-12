@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/NavigationBarScreens/MedicationScreens/MedicationsScreen.dart';
 import 'package:nabbda/screens/onBoarding_screen.dart';
 
 void main() {

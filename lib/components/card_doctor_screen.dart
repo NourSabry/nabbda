@@ -192,8 +192,7 @@ class CardOfDoctorScreen extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                padding: const EdgeInsets.only(top: 10, bottom: 10, right: 15),
                 child: BookButtonAppointment(
                   function: function,
                 ),

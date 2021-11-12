@@ -9,8 +9,8 @@ class BookButtonAppointment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35,
-      width: 150,
+      height: 45,
+      width: 160,
       child: TextButton(
         onPressed: function,
         child: Text(
