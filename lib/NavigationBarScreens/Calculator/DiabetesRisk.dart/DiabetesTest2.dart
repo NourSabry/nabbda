@@ -163,7 +163,7 @@ class DiabetesTest2 extends StatelessWidget {
                             Obx(
                               () => RadioButtonRow(
                                 label: "90 cm or more",
-                                value: 0,
+                                value: 2,
                                 groupValue: _controller.value4.value,
                                 function: (v4) {
                                   _controller.handleRadio4Change(v4);
