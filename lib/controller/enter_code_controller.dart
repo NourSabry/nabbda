@@ -7,4 +7,6 @@ class EnterCodeController extends BaseController {
   startTimer() {
     controller.start();
   }
+
+
 }

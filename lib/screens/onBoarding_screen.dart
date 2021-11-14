@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/screens/LoginScreen.dart';
+import 'package:nabbda/screens/login_screen.dart';
 import 'package:nabbda/components/page_view.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/onBoarding_controller.dart';

@@ -50,7 +50,31 @@ class EnterCode extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 15),
                       child: TextFieldInput(
-                        function: (c) {},
+                        function: (c) {
+                          if (c.length < 10) {
+                            Get.snackbar("",
+                                "Sorry, this number isn’t registered before!",
+                                colorText: K.WhiteColor,
+                                duration: Duration(seconds: 1),
+                                backgroundColor: Color(0xFFEC4B3E),
+                                icon: Icon(
+                                  Icons.clear,
+                                  color: K.WhiteColor,
+                                ),
+                                snackPosition: SnackPosition.BOTTOM);
+                          } else {
+                            Get.snackbar("",
+                                "Code successfully send, please check your phone",
+                                colorText: K.WhiteColor,
+                                duration: Duration(seconds: 1),
+                                backgroundColor: Color(0xFF2EC38B),
+                                icon: Icon(
+                                  Icons.check,
+                                  color: K.WhiteColor,
+                                ),
+                                snackPosition: SnackPosition.BOTTOM);
+                          }
+                        },
                         hint: "Enter code",
                       ),
                     ),
@@ -122,7 +146,7 @@ class EnterCode extends StatelessWidget {
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:nabbda/ForgetPasswordsScreens/NewPassword.dart';
+// import 'package:nabbda/ForgetPasswordsScreens/new_password_screen.dart';
 // import 'package:custom_timer/custom_timer.dart';
 // import 'package:nabbda/icons/MyIcon.dart';
 //

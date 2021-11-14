@@ -31,8 +31,8 @@ class SelectTimeScreen extends StatelessWidget {
                         physics: ClampingScrollPhysics(),
                         itemBuilder: (ctx, index) => Obx(() => RadioButtonRow(
                               label: labels[index],
-                              function: (int? v) {
-                                _controller.handleRadioChange(v);
+                              function: (v) {
+                                _controller.handleRadioChange(v==null?_controller.i.value:v);
                                 if (index == 0) {
                                   print(0);
                                 } else if (index == 1) {

@@ -5,14 +5,15 @@ class TextFieldInput extends StatelessWidget {
   final String? hint;
   final Function(String)? function;
   final Icon? icon;
-
-  TextFieldInput({this.function, this.hint, this.icon});
+final Function()?onTap;
+  TextFieldInput({this.function, this.hint, this.icon,this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical:8),
       child: TextFormField(
+        onTap: onTap,
         onChanged: function,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 30),

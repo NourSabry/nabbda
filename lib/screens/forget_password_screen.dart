@@ -5,7 +5,7 @@ import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
 import 'package:nabbda/components/textfield.dart';
 import 'package:nabbda/constants.dart';
-import 'package:nabbda/screens/NewPassword.dart';
+import 'package:nabbda/screens/new_password_screen.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   @override

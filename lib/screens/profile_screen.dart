@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nabbda/components/setting_profile_screen.dart';
 import 'package:nabbda/components/container_profile_screen.dart';
 import 'package:nabbda/screens/doctor_screen.dart';
-import 'package:nabbda/screens/health_interest.dart';
+import 'package:nabbda/screens/health_interest_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   final List<String> images = [

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabbda/screens/CalculatorScreen.dart';
-import 'package:nabbda/NavigationBarScreens/MedicationScreens/MedicationsScreen.dart';
+import 'package:nabbda/screens/calculator_screen.dart';
+import 'package:nabbda/screens/medications_screen.dart';
 import 'package:nabbda/controller/base_controller.dart';
-import 'package:nabbda/screens/HomeScreen.dart';
+import 'package:nabbda/screens/home_screen.dart';
 import 'package:nabbda/screens/profile_screen.dart';
 
 class Home extends StatelessWidget {
