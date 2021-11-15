@@ -19,7 +19,7 @@ class TextFormFieldWithUnderText extends StatelessWidget {
               labelText: label!,
               labelStyle: TextStyle(
                   color: Color(0xFF707070),
-                  fontSize: 22,
+                  fontSize: 14,
                   fontWeight: FontWeight.w600),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: Color(0xFFCCCCCC)),

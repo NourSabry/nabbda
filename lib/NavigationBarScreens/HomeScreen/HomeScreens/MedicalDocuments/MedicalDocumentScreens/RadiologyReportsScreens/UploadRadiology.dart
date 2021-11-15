@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedicalDocuments/MedicalDocumentScreens/RadiologyReportsScreens/RadiologyReports.dart';
+import 'package:nabbda/components/myAppBar.dart';
+import 'package:nabbda/components/BackgroundContainer.dart';
+
+import 'package:nabbda/components/PurpleContainer.dart';
 
 class UploadRadiology extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
+      appBar: myAppBar(
+        Title: "Radiology Reports ",
+        myIcon: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
+      ),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -15,48 +27,15 @@ class UploadRadiology extends StatelessWidget {
             right: 0,
             top: 0,
             bottom: 550,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF6E78F7),
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20)),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 10,
-            right: 10,
-            top: 25,
-            bottom: 570,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
-                Text("Radiology Reports ",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
-                    )),
-              ],
-            ),
+            child: PurpleContainer(),
           ),
           Positioned(
             left: 15,
             right: 15,
-            top: 110,
+            top: 20,
             bottom: 20,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Center(
+            child: BackgroundContainer(
+              widget: Center(
                 child: Column(
                   children: [
                     SizedBox(height: 60),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nabbda/components/BackgroundContainer.dart';
 import 'package:nabbda/components/NabbdaButton.dart';
 import 'package:nabbda/components/OurCustomerDivider.dart';
-import 'package:nabbda/components/ProfileTextField.dart';
+import 'package:nabbda/components/NewTextField.dart';
 import 'package:nabbda/components/PurpleContainer.dart';
 import 'package:nabbda/components/myAppBar.dart';
 
@@ -55,10 +55,10 @@ class _YourReport extends State<YourReport> {
                         style:
                             TextStyle(color: Color(0xFF707070), fontSize: 13)),
                     SizedBox(height: 20),
-                    ProfileTextField(
+                    NewTextField(
                         hint: "Write your report name", label: "File Name"),
                     CustomDivider(),
-                    ProfileTextField(
+                    NewTextField(
                         hint: "Write any notes about it", label: "Notes"),
                     SizedBox(height: 30),
                     NabbdaButton(Name: "Share")

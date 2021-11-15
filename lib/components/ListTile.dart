@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class OurlistTile extends StatelessWidget {
   final String? tileName;
-  final Icon? lead;
+  final Icon? trail;
   final Function()? function;
 
-  OurlistTile({this.tileName, this.lead, this.function});
+  OurlistTile({this.tileName, this.trail, this.function});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class OurlistTile extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontSize: 14)),
       onTap: function,
-      trailing: lead,
+      trailing: trail,
     );
   }
 }

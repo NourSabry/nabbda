@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nabbda/Controller/ProfileController.dart';
 import 'package:nabbda/NavigationBarScreens/Profile/changeProfilePicture.dart';
 import 'package:nabbda/components/BackgroundContainer.dart';
-import 'package:nabbda/components/ProfileTextField.dart';
+import 'package:nabbda/components/NewTextField.dart';
 import 'package:nabbda/components/PurpleContainer.dart';
 import 'package:nabbda/components/myAppBar.dart';
 import 'package:get/get.dart';
@@ -78,19 +78,19 @@ class _Profile extends State<Profile> {
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
                         ),
-                        ProfileTextField(
+                        NewTextField(
                           hint: "Info@gmail.com",
                           label: "Email",
                         ),
-                        ProfileTextField(
+                        NewTextField(
                           hint: "Ahmed Abbas",
                           label: "Name",
                         ),
-                        ProfileTextField(
+                        NewTextField(
                           hint: "01022355169",
                           label: "Phone number",
                         ),
-                        ProfileTextField(
+                        NewTextField(
                           hint: "06/01/1990",
                           label: "Date of Birth",
                         ),

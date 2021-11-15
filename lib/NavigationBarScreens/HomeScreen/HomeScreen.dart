@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeAlert.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/HealthMonitoring/HealthMonitoring.dart';
-import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedRecords/MedicalRecords.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedRecords/MedicalRecords1.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/MedicalDocuments/MedicalDocumentScreen.dart';
 import 'package:nabbda/NavigationBarScreens/HomeScreen/HomeScreens/Vital/VitalSigns.dart';
@@ -144,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => MedicalRecords(),
+                                      builder: (context) => MedicalRecords1(),
                                     ),
                                   );
                                 },

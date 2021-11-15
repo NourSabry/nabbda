@@ -84,19 +84,19 @@ class AppSettings extends StatelessWidget {
                     ),
                     OurlistTile(
                       tileName: "About us",
-                      lead: Icon(Icons.arrow_forward_ios,
+                      trail: Icon(Icons.arrow_forward_ios,
                           color: Color(0xFF6E78F7), size: 20),
                     ),
                     CustomDivider(),
                     OurlistTile(
                       tileName: "Terms and conditions ",
-                      lead: Icon(Icons.arrow_forward_ios,
+                      trail: Icon(Icons.arrow_forward_ios,
                           color: Color(0xFF6E78F7), size: 20),
                     ),
                     CustomDivider(),
                     OurlistTile(
                       tileName: "Privacy Policy",
-                      lead: Icon(Icons.arrow_forward_ios,
+                      trail: Icon(Icons.arrow_forward_ios,
                           color: Color(0xFF6E78F7), size: 20),
                     ),
                     CustomDivider(),
@@ -108,7 +108,7 @@ class AppSettings extends StatelessWidget {
                                 builder: (context) => ChangePassword()));
                       },
                       tileName: "Change Password",
-                      lead: Icon(Icons.arrow_forward_ios,
+                      trail: Icon(Icons.arrow_forward_ios,
                           color: Color(0xFF6E78F7), size: 20),
                     ),
                     CustomDivider(),
