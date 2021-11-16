@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedM  odeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: MedicalDocumentScreen(),
     );
   }
