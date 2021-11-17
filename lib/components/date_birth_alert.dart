@@ -10,7 +10,6 @@ class DateOfBirth extends StatelessWidget {
   Widget build(BuildContext context) {
     CalendarFormat format = CalendarFormat.month;
     DateTime selectedDay = DateTime.now();
-    DateTime focusedDay = DateTime.now();
 
     return Container(
         width: 600,

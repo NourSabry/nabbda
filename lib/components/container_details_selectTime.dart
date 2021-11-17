@@ -79,7 +79,7 @@ class ContainerDetailsSelectTime extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color(0xFFF6F6F6),
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: K.grayColor.shade400)),
+                    border: Border.all(color: K.grayColor.shade300)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

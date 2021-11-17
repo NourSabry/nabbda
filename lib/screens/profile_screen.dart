@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/setting_profile_screen.dart';
 import 'package:nabbda/components/container_profile_screen.dart';
+import 'package:nabbda/screens/app_setting_screen.dart';
 import 'package:nabbda/screens/doctor_screen.dart';
 import 'package:nabbda/screens/health_interest_screen.dart';
+import 'package:nabbda/screens/payment_method_screen.dart';
+import 'package:nabbda/screens/profile_client_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   final List<String> images = [
@@ -30,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFFEEEEEE),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,6 +42,7 @@ class ProfileScreen extends StatelessWidget {
               phone: "01004478885",
               image: "assets/images/Male.png",
               functionComplete: () {
+                Get.to(() => ProfilePersonScreen());
                 print("function");
               },
               percent: 0.5,
@@ -69,14 +73,15 @@ class ProfileScreen extends StatelessWidget {
                             } else if (index == 4) {
                               print("index==4");
                             } else if (index == 5) {
-                              Get.to(()=>HealthInterest());
+                              Get.to(() => HealthInterest());
                               print("index==5");
                             } else if (index == 6) {
+                              Get.to(()=>PaymentMethodScreen());
                               print("index=6");
                             } else if (index == 7) {
+                              Get.to(() => AppSettingScreen());
+
                               print("index=7");
-                            } else {
-                              print("index=8");
                             }
                           },
                         )),

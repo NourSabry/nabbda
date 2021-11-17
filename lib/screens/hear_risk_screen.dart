@@ -6,6 +6,7 @@ import 'package:nabbda/components/container_image_profile.dart';
 import 'package:nabbda/components/radio_button_row.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/heart_risk_controller.dart';
+import 'package:nabbda/screens/heart_risk_checkbox.dart';
 
 class HeartRiskScreen extends StatelessWidget {
   @override
@@ -172,7 +173,9 @@ class HeartRiskScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
                     child: RegisterButton(
-                      function: () {},
+                      function: () {
+                        Get.to(() => HeartRiskCheckBoxScreen());
+                      },
                       label: "Start Test",
                     ),
                   )

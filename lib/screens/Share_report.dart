@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/text_field_share.dart';
+import 'package:nabbda/components/text_field_medical_records.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/screens/error_screen.dart';
 
@@ -38,19 +38,25 @@ class ShareReport extends StatelessWidget {
                       SizedBox(
                         height: 50,
                       ),
-                      TextFieldShare(
-                        label: "File Name",
-                        hint: "Write your report name",
-                        function: (v) {
-                          print(v);
-                        },
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        child: NewTextField(
+                          hint: "Write your report name",
+                          label: "File Name",
+                          function: (v) {
+                            print(v);
+                          },
+                        ),
                       ),
-                      TextFieldShare(
-                        label: "Notes",
-                        hint: "Write any notes about it",
-                        function: (v) {
-                          print(v);
-                        },
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                        child: NewTextField(
+                          label: "Notes",
+                          hint: "Write any notes about it",
+                          function: (v) {
+                            print(v);
+                          },
+                        ),
                       ),
                       SizedBox(
                         height: 40,

@@ -15,16 +15,17 @@ class RadioButtonRow extends StatelessWidget {
     return Row(
       children: [
         Radio(
+
           value: value,
+          visualDensity: VisualDensity(horizontal: -4 , vertical: -4),
           groupValue: groupValue,
           activeColor: K.mainColor,
-
           onChanged: function,
           toggleable: true,
         ),
         AutoSizeText(
           label!,
-          style: TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: 15, color: Color(0xFF3B3C55)),
         )
       ],
     );

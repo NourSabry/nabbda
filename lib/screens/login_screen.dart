@@ -19,8 +19,11 @@ class LoginScreen extends StatelessWidget {
         child: Stack(
           children: [
             AppbarWithLabelAndIcon(
-              function: () {},
+              function: () {
+                Get.back();
+              },
               label: "Back",
+
             ),
             Padding(
               padding: const EdgeInsets.only(top: 130, right: 10, left: 10),
@@ -56,17 +59,14 @@ class LoginScreen extends StatelessWidget {
                       TextFieldInput(
                         function: (v) {},
                         hint: "login",
-                        icon:
-                            Icon(Icons.lock, color: Color(0xFFBDBDBD), size: 20),
+                        icon: Icon(Icons.lock,
+                            color: Color(0xFFBDBDBD), size: 20),
                       ),
                       Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ForgetPasswordScreen()));
+                            Get.to(() => ForgetPasswordScreen());
                           },
                           child: Text("Forgot Password?",
                               style: TextStyle(
@@ -89,12 +89,14 @@ class LoginScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 25),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
                               child: FaIcon(FontAwesomeIcons.facebook,
                                   size: 25, color: CustomizedColors.fac),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 25),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 25),
                               child: SvgPicture.asset(
                                 "assets/images/goo.svg",
                                 height: 25,

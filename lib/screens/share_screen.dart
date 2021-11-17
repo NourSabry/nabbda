@@ -56,7 +56,8 @@ class ShareScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       child: Text(
                         "Or",
-                        style: TextStyle(color: K.blackColor, fontSize: 16),
+                        style:
+                            TextStyle(color: Color(0xFF3B3C55), fontSize: 16),
                       ),
                     ),
                     ButtonShare(
@@ -77,32 +78,36 @@ class ShareScreen extends StatelessWidget {
                                   ListView.builder(
                                       shrinkWrap: true,
                                       itemCount: labels.length,
-                                      itemBuilder: (ctx, index) =>
-                                          Obx(() => Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    labels[index],
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        color: _controller
-                                                                .value[index]
-                                                            ? K.mainColor
-                                                            : K.blackColor),
-                                                  ),
-                                                  Checkbox(
-                                                      activeColor: K.mainColor,
-                                                      value: _controller
-                                                          .value[index],
-                                                      onChanged: (bool? v) {
-                                                        _controller
-                                                            .value[index] = v!;
-                                                      })
-                                                ],
-                                              ))),
+                                      itemBuilder: (ctx, index) => Obx(() =>
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                labels[index],
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: _controller
+                                                            .value[index]
+                                                        ? K.mainColor
+                                                        : Color(0xFF3B3C55)),
+                                              ),
+                                              Checkbox(
+                                                  activeColor: K.mainColor,
+                                                  value:
+                                                      _controller.value[index],
+                                                  onChanged: (bool? v) {
+                                                    _controller.value[index] =
+                                                        v!;
+                                                  })
+                                            ],
+                                          ))),
                                   ButtonShareAlert(
-                                    function: () {},
+                                    function: () {
+                                      Get.back();
+                                    },
+                                    label: "Done",
                                   ),
                                 ],
                               ),

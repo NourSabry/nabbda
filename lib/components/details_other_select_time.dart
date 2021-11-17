@@ -19,7 +19,7 @@ class DetailsOfOther extends StatelessWidget {
             children: [
               Container(
                 width: 80,
-                height: 50,
+                height: 35,
                 decoration: BoxDecoration(
                     color: Color(0xFFF6F6F6),
                     borderRadius: BorderRadius.circular(10),
@@ -35,7 +35,7 @@ class DetailsOfOther extends StatelessWidget {
               ),
               Container(
                 width: 80,
-                height: 50,
+                height: 35,
                 decoration: BoxDecoration(
                   color: Color(0xFFF6F6F6),
                   borderRadius: BorderRadius.circular(10),

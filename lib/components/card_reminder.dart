@@ -31,7 +31,7 @@ class CardOfReminder extends StatelessWidget {
                   AutoSizeText(
                     label!,
                     style:
-                        TextStyle(color: CustomizedColors.txtF, fontSize: 18),
+                        TextStyle(color: Colors.white, fontSize: 18, fontWeight : FontWeight.w500),
                   ),
                   Icon(
                     Icons.notifications,

@@ -4,8 +4,9 @@ import 'package:nabbda/constants.dart';
 
 class ButtonShareAlert extends StatelessWidget {
   final Function()? function;
+  final String? label;
 
-  ButtonShareAlert({this.function});
+  ButtonShareAlert({this.function, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ButtonShareAlert extends StatelessWidget {
       child: TextButton(
         onPressed: function,
         child: Text(
-          "Done",
+          label!,
           style: Style.textStyleCalculatorBmiText,
         ),
         style: TextButton.styleFrom(

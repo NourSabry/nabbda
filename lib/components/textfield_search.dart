@@ -17,7 +17,7 @@ class TextFieldSearch extends StatelessWidget {
             contentPadding: EdgeInsets.symmetric(vertical: 5),
             hintText: hint!,
             hintStyle: TextStyle(
-                color: Colors.grey, fontSize: 18, fontWeight: FontWeight.w500),
+                fontSize: 14, color : Color(0xFFC7C7C7)),
             prefixIcon: Icon(
               Icons.search,
               size: 30,

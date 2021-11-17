@@ -15,13 +15,13 @@ class TextFieldSearchRate extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 20),
           filled: true,
-          fillColor: Color(0xFFE4E4E4),
+          fillColor: Color(0xFFF6F6F6),
           hintText: label!,
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(40),
               borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(40),
               borderSide: BorderSide.none),
         ),
       ),

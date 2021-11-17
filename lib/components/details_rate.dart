@@ -50,7 +50,7 @@ final Color? colors;
             ),
             Row(
               children: [
-                AutoSizeText(date!),
+                AutoSizeText(date!,style: TextStyle(fontSize: 14,color: Color(0xFF3B3C55)),),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: ConstRichTextRate(

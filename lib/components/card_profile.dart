@@ -40,12 +40,12 @@ class CardOfProfile extends StatelessWidget {
                           label!,
                           maxLines: 2,
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                            color : Color(0xFF313450),  fontSize: 10, fontWeight: FontWeight.bold),
                         ),
                         AutoSizeText(
                           descriptions!,
                           maxLines: 2,
-                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                          style: TextStyle(fontSize: 10, color: Color(0xFF898A8F), fontWeight : FontWeight.w400),
                         ),
                         RateRow(
                           rate: rate,

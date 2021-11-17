@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
 import 'package:nabbda/components/textfield.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/screens/Home.dart';
+import 'package:nabbda/utility/alerts.dart';
 
 class NewPasswordScreen extends StatelessWidget {
   @override
@@ -15,7 +15,9 @@ class NewPasswordScreen extends StatelessWidget {
         child: Stack(
           children: [
             AppbarWithLabelAndIcon(
-              function: () {},
+              function: () {
+                Get.back();
+              },
               label: "Back",
             ),
             Padding(
@@ -62,61 +64,8 @@ class NewPasswordScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 25, bottom: 50),
                         child: RegisterButton(
                           function: () {
-                            Get.defaultDialog(
-                              title: "",
-                              content: Builder(builder: (context) {
-                                return Container(
-                                    width: 500,
-                                    height: 240,
-                                    child: Column(
-                                      children: [
-                                        SvgPicture.asset(
-                                            "assets/images/success.svg"),
-                                        SizedBox(height: 8),
-                                        Text("Changed successfully!",
-                                            style: TextStyle(
-                                              color: Color(0xFF6E78F7),
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500,
-                                            )),
-                                        SizedBox(height: 10),
-                                        Text(
-                                          "Password has been changed, return to login and try login again",
-                                          style: TextStyle(
-                                              color: Color(0xFF9E9E9E),
-                                              fontSize: 14),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        SizedBox(height: 30),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text(
-                                            "Go to login",
-                                            style: TextStyle(
-                                                color: Color(0xFF6E78F7),
-                                                fontSize: 16),
-                                          ),
-                                          style: ElevatedButton.styleFrom(
-                                            minimumSize: Size(242, 54),
-                                            side: BorderSide(
-                                                width: 1,
-                                                color: Color(0xFF6E78F7)),
-                                            shape: new RoundedRectangleBorder(
-                                              borderRadius:
-                                                  new BorderRadius.circular(
-                                                      10.0),
-                                            ),
-                                            primary: Colors.white,
-                                            elevation: 0.0,
-                                          ),
-                                        ),
-                                      ],
-                                    ));
-                              }),
-                            );
-                            // Get.to(()=>Home());
+                            Utility.showAlertSuccess(context);
+                             Get.to(()=>Home());
                           },
                           label: "Change",
                         ),
