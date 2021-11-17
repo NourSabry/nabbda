@@ -8,13 +8,16 @@ import 'package:nabbda/components/card_profile.dart';
 import 'package:nabbda/components/card_reminder.dart';
 import 'package:nabbda/components/cards_home_screen.dart';
 import 'package:nabbda/components/container_home_screen.dart';
+import 'package:nabbda/screens/healthmontring_screen.dart';
+import 'package:nabbda/screens/medical_documents_screen.dart';
+import 'package:nabbda/screens/medical_records_screen.dart';
 import 'package:nabbda/screens/vital_signs_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<String> labels = [
     "Medical Records",
     "Vital Signs",
-    "Healthy Monitoring",
+    "Health Monitoring",
     "Medical Documents"
   ];
   final List<String> images = [
@@ -54,7 +57,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFFEEEEEE),
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
@@ -84,13 +87,16 @@ class HomeScreen extends StatelessWidget {
                         percent: percent[index],
                         function: () {
                           if (index == 0) {
+                            Get.to(() => MedicalRecordsScreen());
                             print("index 0");
                           } else if (index == 1) {
                             print("index 1");
                             Get.to(() => VitalSignsScreen());
                           } else if (index == 2) {
+                            Get.to(() => HealthMonitoringScreen());
                             print("index 2");
-                          } else {
+                          } else if (index == 3) {
+                            Get.to(() => MedicalDocumentScreen());
                             print("index 3");
                           }
                         },

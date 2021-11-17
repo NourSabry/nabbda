@@ -29,10 +29,11 @@ class BMIScreen extends StatelessWidget {
               child: Material(
                 borderRadius: BorderRadius.circular(15),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
                   child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                       Text(
                         "What is Body Mass Calculator?",
                         style: Style.textStyleBmiScreen,
                       ),
@@ -194,11 +195,13 @@ class BMIScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15),
-                        child: RegisterButton(
-                          function: () {
-                            Get.to(() => CalculateBmiScreen());
-                          },
-                          label: "Calculate",
+                        child: Center(
+                          child: RegisterButton(
+                            function: () {
+                              Get.to(() => CalculateBmiScreen());
+                            },
+                            label: "Calculate",
+                          ),
                         ),
                       )
                     ],

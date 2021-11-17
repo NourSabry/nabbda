@@ -36,7 +36,7 @@ class Cards extends StatelessWidget {
                 child: AutoSizeText(
                   label!,
                   maxLines: 2,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, color: Color(0xFF3B3C55), fontWeight : FontWeight.w600),
                 ),
               ),
               Row(

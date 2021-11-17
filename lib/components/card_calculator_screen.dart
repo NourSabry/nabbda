@@ -36,7 +36,7 @@ class CardCalculatorScreen extends StatelessWidget {
                 child: AutoSizeText(
                   label!,
                   maxLines: 3,
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color : Color(0xFF3B3C55), fontWeight : FontWeight.w600),
                 ),
               )
             ],

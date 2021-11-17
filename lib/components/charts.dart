@@ -25,9 +25,9 @@ class ChartsExample extends StatelessWidget {
             margin: 10,
             interval: 1,
             getTextStyles: (context, value) => const TextStyle(
-              color: Color(0xff72719b),
+              color: Color(0xFF7C9CBF),
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 12,
             ),
             getTitles: (value) {
               switch (value.toInt()) {
@@ -57,9 +57,9 @@ class ChartsExample extends StatelessWidget {
             interval: 1,
             reservedSize: 40,
             getTextStyles: (context, value) => const TextStyle(
-              color: Color(0xff75729e),
+              color: Color(0xFF7C9CBF),
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              fontSize: 12,
             ),
             getTitles: (value) {
               switch (value.toInt()) {

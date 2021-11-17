@@ -5,7 +5,7 @@ import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
 import 'package:nabbda/components/textfield.dart';
 import 'package:nabbda/constants.dart';
-import 'package:nabbda/screens/new_password_screen.dart';
+import 'package:nabbda/screens/enter_code_screen.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             AppbarWithLabelAndIcon(
               label: "Back",
               function: () {
-                Navigator.pop(context);
+                Get.back();
               },
             ),
             Padding(
@@ -54,7 +54,83 @@ class ForgetPasswordScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 30, vertical: 25),
                         child: TextFieldInput(
-                          function: (v) {},
+                          function: (c) {
+                            if (c.length < 10) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Colors.white,
+                                  content: Container(
+                                    alignment: Alignment.center,
+                                    width: 200,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFD9544F),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      border: Border.all(
+                                        width: 0.5,
+                                        color: Colors.red,
+                                        style: BorderStyle.solid,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 15),
+                                        Icon(Icons.cancel,
+                                            color: Colors.white, size: 30),
+                                        TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                              "Sorry, this number isn’t registered before!",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Colors.white,
+                                  content: Container(
+                                    alignment: Alignment.center,
+                                    width: 200,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF2EC38B),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      border: Border.all(
+                                        width: 0.5,
+                                        color: Colors.red,
+                                        style: BorderStyle.solid,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 15),
+                                        Icon(Icons.check,
+                                            color: Colors.white, size: 30),
+                                        TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                              "Code successfully send, please check your phone",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                          },
                           icon: Icon(
                             Icons.phone,
                             color: Color(0xFFBDBDBD),
@@ -66,7 +142,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 50),
                         child: RegisterButton(
                           function: () {
-                            Get.to(()=>NewPasswordScreen());
+                            Get.to(() => EnterCode());
                           },
                           label: "Send",
                         ),

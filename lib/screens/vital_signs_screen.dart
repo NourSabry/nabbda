@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/constants.dart';
-import 'package:nabbda/screens/chart_screen.dart';
+import 'package:nabbda/screens/chart_vital_screen.dart';
 
 class VitalSignsScreen extends StatelessWidget {
   final List<String> labels = [
@@ -41,7 +41,7 @@ class VitalSignsScreen extends StatelessWidget {
                       ListTile(
                         onTap: () {
                           if (index == 0) {
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
                                   hint: "Heart Rate / Per minute",
                                   typeRate: "Heart Rate : ",
@@ -66,7 +66,7 @@ class VitalSignsScreen extends StatelessWidget {
                                   ],
                                 ));
                           } else if (index == 1) {
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
 
                               hint: "Breaths / Per minute",
@@ -92,7 +92,7 @@ class VitalSignsScreen extends StatelessWidget {
                                   ],
                                 ));
                           } else if (index == 2) {
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
 
                               hint: "Temperature °C",
@@ -119,7 +119,7 @@ class VitalSignsScreen extends StatelessWidget {
                                 ));
                           } else if (index == 3) {
 
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
 
                               hint: "Systolic / diastolic",
@@ -145,7 +145,7 @@ class VitalSignsScreen extends StatelessWidget {
                                   ],
                                 ));
                           } else if (index == 4) {
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
 
                               hint: "Blood glucose mg/ dl",
@@ -172,7 +172,7 @@ class VitalSignsScreen extends StatelessWidget {
                                 ));
                           } else if (index == 5) {
 
-                            Get.to(() => ChartScreen(
+                            Get.to(() => ChartVitalScreen(
                               functionClear: (){},
 
                               hint: "oxygen saturation  spo2",
@@ -201,7 +201,7 @@ class VitalSignsScreen extends StatelessWidget {
                         },
                         leading: Text(
                           labels[index],
-                          style: TextStyle(color: K.blackColor, fontSize: 12),
+                          style: TextStyle(color: Color(0xFF707070), fontSize: 12, fontWeight: FontWeight.w600),
                         ),
                         trailing: Icon(
                           Icons.arrow_forward_ios,

@@ -12,13 +12,12 @@ class ContainerOfHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: 200,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-         Container(
+          Container(
             height: 180,
             decoration: BoxDecoration(
                 color: K.mainColor,
@@ -27,6 +26,7 @@ class ContainerOfHomeScreen extends StatelessWidget {
                     bottomLeft: Radius.circular(15))),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -49,8 +49,8 @@ class ContainerOfHomeScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: functionShare,
-                            child:
-                                Icon(Icons.share, size: 30, color: K.WhiteColor),
+                            child: Icon(Icons.share,
+                                size: 30, color: K.WhiteColor),
                           ),
                         ],
                       )
@@ -58,9 +58,9 @@ class ContainerOfHomeScreen extends StatelessWidget {
                   ),
                 ),
                 AutoSizeText(
-                    "Track Your Health Reports\nAnd Get Reminders For your Medications, Stay Healthy!",
+                    "Track Your Health Reports And Get Reminders\n For your Medications, Stay Healthy!",
                     maxLines: 3,
-                    style:Style.textStyleHomeText)
+                    style: Style.textStyleHomeText)
               ],
             ),
           ),
@@ -75,6 +75,7 @@ class ContainerOfHomeScreen extends StatelessWidget {
                 child: TextFieldSearch(
                   function: onChange!,
                   hint: "Search in your reports",
+                  
                 ),
               ),
             ),

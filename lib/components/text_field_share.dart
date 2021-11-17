@@ -21,7 +21,7 @@ class TextFieldShare extends StatelessWidget {
           labelStyle: Style.textStyleBmiText,
           helperStyle: Style.textStyleDescription,
           enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: K.grayColor,)),
+              borderSide: BorderSide(color: K.grayColor)),
           focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: K.grayColor,)),
         ),
