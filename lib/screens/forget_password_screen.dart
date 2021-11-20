@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
 import 'package:nabbda/components/textfield.dart';
 import 'package:nabbda/constants.dart';
+import 'package:nabbda/controller/forget_password_controller.dart';
 import 'package:nabbda/screens/enter_code_screen.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _controller = Get.put(ForgetPasswordController());
+    String label;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -54,8 +58,21 @@ class ForgetPasswordScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 30, vertical: 25),
                         child: TextFieldInput(
-                          function: (c) {
-                            if (c.length < 10) {
+                          function: (v) {
+                            _controller.value.value = v;
+                          },
+                          icon: Icon(
+                            Icons.phone,
+                            color: Color(0xFFBDBDBD),
+                          ),
+                          hint: "Mobile Number",
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: RegisterButton(
+                          function: () {
+                            if (_controller.value.trim().length < 10) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   backgroundColor: Colors.white,
@@ -92,57 +109,45 @@ class ForgetPasswordScreen extends StatelessWidget {
                                   ),
                                 ),
                               );
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  backgroundColor: Colors.white,
-                                  content: Container(
-                                    alignment: Alignment.center,
-                                    width: 200,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF2EC38B),
-                                      borderRadius: BorderRadius.circular(15.0),
-                                      border: Border.all(
-                                        width: 0.5,
-                                        color: Colors.red,
-                                        style: BorderStyle.solid,
-                                      ),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        SizedBox(width: 15),
-                                        Icon(Icons.check,
-                                            color: Colors.white, size: 30),
-                                        TextButton(
-                                          onPressed: () {},
-                                          child: Text(
-                                              "Code successfully send, please check your phone",
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold,
-                                              )),
-                                        ),
-                                      ],
+                            } else if (_controller.value.trim().length == 11) {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                duration: Duration(seconds: 3),
+                                backgroundColor: Colors.white,
+                                content: Container(
+                                  alignment: Alignment.center,
+                                  width: 200,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF2EC38B),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    border: Border.all(
+                                      width: 0.5,
+                                      color: Colors.red,
+                                      style: BorderStyle.solid,
                                     ),
                                   ),
+                                  child: Row(
+                                    children: [
+                                      SizedBox(width: 15),
+                                      Icon(Icons.check,
+                                          color: Colors.white, size: 30),
+                                      TextButton(
+                                        onPressed: () {},
+                                        child: Text(
+                                            "Code successfully send, please check your phone",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              );
+                              ));
+                              Get.to(() => EnterCode());
                             }
-                          },
-                          icon: Icon(
-                            Icons.phone,
-                            color: Color(0xFFBDBDBD),
-                          ),
-                          hint: "Mobile Number",
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 50),
-                        child: RegisterButton(
-                          function: () {
-                            Get.to(() => EnterCode());
                           },
                           label: "Send",
                         ),
