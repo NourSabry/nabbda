@@ -15,11 +15,9 @@ class DiabetesCalculate extends StatelessWidget {
 
     return Scaffold(
         body: SingleChildScrollView(
-      child:Theme(
-        data: ThemeData(
-        unselectedWidgetColor: K.mainColor
-    ),
-    child: Stack(children: [
+            child: Theme(
+      data: ThemeData(unselectedWidgetColor: K.mainColor),
+      child: Stack(children: [
         AppbarWithLabelAndIcon(
           function: () {
             Get.back();
@@ -180,6 +178,6 @@ class DiabetesCalculate extends StatelessWidget {
               )),
         )
       ]),
-      )));
+    )));
   }
 }

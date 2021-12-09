@@ -1,4 +1,3 @@
-import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:nabbda/constants.dart';
 
@@ -38,25 +37,7 @@ class AppbarBookingDoctor extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: 150,
-            child: ExpansionTileCard(
-                shadowColor: K.mainColor,
-                baseColor: K.mainColor,
-                elevation: 0,
-                trailing: Icon(
-                  Icons.arrow_drop_down,
-                  color: K.WhiteColor,
-                  size: 20,
-                ),
-                title: Text(
-                  "Giza",
-                  style: TextStyle(color: K.WhiteColor, fontSize: 18),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 35),
-                expandedTextColor: K.mainColor,
-                children: <Widget>[]),
-          )
+
         ],
       ),
     );

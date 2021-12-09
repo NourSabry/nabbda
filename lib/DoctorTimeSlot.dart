@@ -97,14 +97,14 @@ class _DoctorTime extends State<DoctorTime> {
                             Column(
                               children: [
                                 Text(
-                                  "DR. Mohamed Saeed Al Gamal",
+                                  "DR. Mohamed Saeed Al Gama",
                                   style: TextStyle(
                                       color: Color(0xFF313450),
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                    "Ph.D. Cardiovascular Diseases - Professor and Consultant Cardiology and Cardiac Catheterization Al-Azhar University",
+                                    "Ph.D. Cardiovascular Diseases - Professor and Consultant Cardiology and Cardiac Categorization Al-Azra University",
                                     style: TextStyle(
                                       color: Color(0xFF898A8F),
                                       fontSize: 12,

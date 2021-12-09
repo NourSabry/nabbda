@@ -9,7 +9,7 @@ class BookButtonAppointment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45,
+      height: 50,
       width: 160,
       child: TextButton(
         onPressed: function,
@@ -17,7 +17,7 @@ class BookButtonAppointment extends StatelessWidget {
           "Book an Appointment",
           style: TextStyle(
             color: K.WhiteColor,
-            fontSize: 9,
+            fontSize: 12,
           ),
         ),
         style: TextButton.styleFrom(
