@@ -3,7 +3,7 @@ import 'package:nabbda/components/button_feedback.dart';
 import 'package:nabbda/components/description_booking_doctor.dart';
 import 'package:nabbda/components/details_booking_time.dart';
 import 'package:nabbda/components/details_other_select_time.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
 
 class ContainerDetailsSelectTime extends StatelessWidget {

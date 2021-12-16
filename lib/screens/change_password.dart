@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/utility/alerts.dart';
 
 class ChangePasswordScreen extends StatelessWidget {

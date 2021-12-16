@@ -24,39 +24,46 @@ class HeartRiskCheckBoxScreen extends StatelessWidget {
               child: Material(
                 color: K.WhiteColor,
                 borderRadius: BorderRadius.circular(15),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      "Have you ever had any of the following\nconditions or procedures?",
-                      style: Style.textStyleBmiScreen,
-                    ),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: _controller.labels.length,
-                        itemBuilder: (ctx, index) => Obx(() => Row(
-                              children: [
-                                Checkbox(
-                                  value: _controller.value[index],
-                                  onChanged: (bool? v) {
-                                    _controller.value[index] = v!;
-                                  },
-                                  activeColor: K.mainColor,
-                                  side: BorderSide(color: K.mainColor),
-                                ),
-                                Text(
-                                  _controller.labels[index],
-                                  style: TextStyle(
-                                      color: Color(0xFF3B3C55), fontSize: 14),
-                                ),
-                              ],
-                            ))),
-                    SizedBox(
-                      height: 50,
-                    )
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                        "Have you ever had any of the following\nconditions or procedures?",
+                        style: Style.textStyleBmiScreen,
+                      ),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: _controller.labels.length,
+                          itemBuilder: (ctx, index) => Obx(() => Row(
+                                children: [
+                                  Checkbox(
+                                    value: _controller.value[index],
+                                    onChanged: (bool? v) {
+                                      _controller.value[index] = v!;
+                                      if (index == 0) {
+                                        print(1);
+                                      }
+                                    },
+                                    activeColor: K.mainColor,
+                                    side: BorderSide(color: K.mainColor),
+                                  ),
+                                  Text(
+                                    _controller.labels[index],
+                                    style: TextStyle(
+                                        color: Color(0xFF3B3C55), fontSize: 14),
+                                  ),
+                                ],
+                              ))),
+                      SizedBox(
+                        height: 50,
+                      )
+                    ],
+                  ),
                 ),
               ),
             )

@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_balloon_slider/flutter_balloon_slider.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
@@ -47,16 +46,19 @@ class CalculateBmiScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: BalloonSlider(
-                          value: _controller.value.value,
-                          ropeLength: 40,
-                          showRope: true,
-                          onChanged: (val) {
-                            _controller.handleSlider(val);
-                          },
-                          color: K.mainColor),
-                    ),
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Obx(() => Slider(
+                              min: 0.0,
+                              max: 100.0,
+                              value: _controller.value.value,
+                              divisions: 10,
+                              activeColor: K.mainColor,
+                              thumbColor: K.mainColor,
+                              label: '${_controller.value.value.round()}',
+                              onChanged: (value) {
+                                _controller.handleSlider(value);
+                              },
+                            ))),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: RegisterButton(

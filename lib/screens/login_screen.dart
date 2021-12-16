@@ -8,7 +8,7 @@ import 'package:nabbda/screens/register_screen.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
 
 class LoginScreen extends StatelessWidget {
