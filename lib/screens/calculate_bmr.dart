@@ -37,6 +37,7 @@ class CalculateBmrScreen extends StatelessWidget {
                       child: Text(
                         "Your daily calorie needs are\n2,344 calories",
                         style: Style.textStyleBmiScreen,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                     Padding(
@@ -47,7 +48,7 @@ class CalculateBmrScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30),
+                      padding: const EdgeInsets.only(top: 30, left: 20),
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: Text(

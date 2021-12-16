@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
 import 'package:custom_timer/custom_timer.dart';
 import 'package:nabbda/controller/enter_code_controller.dart';

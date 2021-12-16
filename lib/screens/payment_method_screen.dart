@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/payment_method_controller.dart';
 import 'package:nabbda/screens/checkout_screen.dart';

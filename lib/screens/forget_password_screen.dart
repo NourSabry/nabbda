@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
-import 'package:nabbda/components/textfield.dart';
+import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/forget_password_controller.dart';
 import 'package:nabbda/screens/enter_code_screen.dart';
