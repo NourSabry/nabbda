@@ -52,7 +52,42 @@ class EnterCode extends StatelessWidget {
                           vertical: 10, horizontal: 15),
                       child: TextFieldInput(
                         function: (c) {
-                          if (c.length < 10) {
+                          _controller.label.value = c;
+                        },
+                        hint: "Enter code",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "     Code expires in :",
+                            style: TextStyle(
+                                color: Color(0xFFBDBDBD), fontSize: 12),
+                          ),
+                          CustomTimer(
+                            controller: _controller.controller,
+                            from: Duration(seconds: 34),
+                            to: Duration(minutes: 0),
+                            interval: Duration(seconds: 1),
+                            builder: (CustomTimerRemainingTime remaining) {
+                              return Text(
+                                "${remaining.minutes}:${remaining.seconds}",
+                                style: TextStyle(
+                                    fontSize: 12, color: Color(0xFFD9544F)),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: RegisterButton(
+                        function: () {
+                          if (_controller.label.value.length < 10) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 backgroundColor: Colors.white,
@@ -127,42 +162,8 @@ class EnterCode extends StatelessWidget {
                               ),
                             );
                           }
-                        },
-                        hint: "Enter code",
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "     Code expires in :",
-                            style: TextStyle(
-                                color: Color(0xFFBDBDBD), fontSize: 12),
-                          ),
-                          CustomTimer(
-                            controller: _controller.controller,
-                            from: Duration(seconds: 34),
-                            to: Duration(minutes: 0),
-                            interval: Duration(seconds: 1),
-                            builder: (CustomTimerRemainingTime remaining) {
-                              return Text(
-                                "${remaining.minutes}:${remaining.seconds}",
-                                style: TextStyle(
-                                    fontSize: 12, color: Color(0xFFD9544F)),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: RegisterButton(
-                        function: () {
                           _controller.startTimer();
-                          Get.to(() => NewPasswordScreen());
+                          // Get.to(() => NewPasswordScreen());
                         },
                         label: "Send",
                       ),
