@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
+import 'package:nabbda/components/button.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/stroke_risk_controller.dart';
+import 'package:nabbda/screens/stroke%20_risk_result.dart';
 
 class StrokeRiskScreen extends StatelessWidget {
   @override
@@ -56,7 +58,11 @@ class StrokeRiskScreen extends StatelessWidget {
                               ))),
                       SizedBox(
                         height: 50,
-                      )
+                      ),
+                      RegisterButton(
+                        label: "Save",
+                        function: (){Get.to(()=>StrokeRiskConclusion());},
+                      ),
                     ],
                   ),
                 ),

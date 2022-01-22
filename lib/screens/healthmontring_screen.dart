@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/constants.dart';
+import 'package:nabbda/screens/diabetes_monitoring_screen.dart';
 import 'package:nabbda/screens/general_health_montring_screen.dart';
+import 'package:nabbda/screens/heart_disease_screen.dart';
+import 'package:nabbda/screens/renal_disease_screen.dart';
+import 'package:nabbda/screens/thyroid_disease_screen.dart';
 
 class HealthMonitoringScreen extends StatelessWidget {
   final List<String> label = [
@@ -46,12 +50,20 @@ class HealthMonitoringScreen extends StatelessWidget {
                                   print(0);
                                   Get.to(() => GeneralHealthMonitoringScreen());
                                 } else if (index == 1) {
+                                  Get.to(() => HeartDiseaseScreen());
+
                                   print(1);
                                 } else if (index == 2) {
+                                  Get.to(() => DiabetesMonitoringScreen());
+
                                   print(2);
                                 } else if (index == 3) {
+                                  Get.to(() => RenalDiseaseScreen());
+
                                   print(3);
                                 } else if (index == 4) {
+                                  Get.to(() => ThyroidDiseaseScreen());
+
                                   print(4);
                                 }
                               },
