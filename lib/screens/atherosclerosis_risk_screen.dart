@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
+import 'package:nabbda/components/button.dart';
 import 'package:nabbda/constants.dart';
 import 'package:nabbda/controller/atherosclerosis_risk_controller.dart';
+import 'package:nabbda/screens/atherosclerosis_risk_result.dart';
 
 class AtherosclerosisRiskScreen extends StatelessWidget {
   @override
@@ -56,7 +58,11 @@ class AtherosclerosisRiskScreen extends StatelessWidget {
                               ))),
                       SizedBox(
                         height: 50,
-                      )
+                      ),
+                      RegisterButton(
+                        label: "Save",
+                        function: (){Get.to(()=>AtherosclerosisRiskConclusion());},
+                      ),
                     ],
                   ),
                 ),
