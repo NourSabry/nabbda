@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
               percentText: "50%",
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               child: Material(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(25),
@@ -76,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                               Get.to(() => HealthInterest());
                               print("index==5");
                             } else if (index == 6) {
-                              Get.to(()=>PaymentMethodScreen());
+                              Get.to(() => PaymentMethodScreen());
                               print("index=6");
                             } else if (index == 7) {
                               Get.to(() => AppSettingScreen());

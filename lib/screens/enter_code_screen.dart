@@ -84,47 +84,11 @@ class EnterCode extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: RegisterButton(
                         function: () {
-                          if (_controller.label.value.length < 10) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                backgroundColor: Colors.white,
-                                content: Container(
-                                  alignment: Alignment.center,
-                                  width: 200,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFD9544F),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    border: Border.all(
-                                      width: 0.5,
-                                      color: Colors.red,
-                                      style: BorderStyle.solid,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(width: 15),
-                                      Icon(Icons.cancel,
-                                          color: Colors.white, size: 30),
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                            "Sorry, this number isn’t registered before!",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                            )),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
+                          print("c");
+                          if (_controller.label.value.length.isEqual(4)) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 backgroundColor: Colors.white,
@@ -149,7 +113,45 @@ class EnterCode extends StatelessWidget {
                                       TextButton(
                                         onPressed: () {},
                                         child: Text(
-                                            "Code successfully send, please check your phone",
+                                            "Correct code, now change your password",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                            Get.to(() => NewPasswordScreen());
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                backgroundColor: Colors.white,
+                                content: Container(
+                                  alignment: Alignment.center,
+                                  width: 200,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFD9544F),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                    border: Border.all(
+                                      width: 0.5,
+                                      color: Colors.red,
+                                      style: BorderStyle.solid,
+                                    ),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      SizedBox(width: 15),
+                                      Icon(Icons.cancel,
+                                          color: Colors.white, size: 30),
+                                      TextButton(
+                                        onPressed: () {},
+                                        child: Text(
+                                            "Wrong code! Enter the right one now",
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 12,
@@ -163,7 +165,6 @@ class EnterCode extends StatelessWidget {
                             );
                           }
                           _controller.startTimer();
-                          // Get.to(() => NewPasswordScreen());
                         },
                         label: "Send",
                       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nabbda/icons/MyIcon.dart';
+//import 'package:nabbda/icons/MyIcon.dart';
 
 class DoctorTime extends StatefulWidget {
   @override
@@ -24,10 +24,10 @@ class _DoctorTime extends State<DoctorTime> {
                   child: Text("Giza",
                       style: TextStyle(color: Colors.white, fontSize: 9)),
                 ),
-                Icon(
-                  NabdaIcons.navigate,
-                  color: Colors.white,
-                ),
+                // Icon(
+                //   NabdaIcons.navigate,
+                //   color: Colors.white,
+                // ),
               ],
             ),
           ),

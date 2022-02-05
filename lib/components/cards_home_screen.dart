@@ -36,7 +36,10 @@ class Cards extends StatelessWidget {
                 child: AutoSizeText(
                   label!,
                   maxLines: 2,
-                  style: TextStyle(fontSize: 18, color: Color(0xFF3B3C55), fontWeight : FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0xFF3B3C55),
+                      fontWeight: FontWeight.w600),
                 ),
               ),
               Row(
@@ -49,7 +52,10 @@ class Cards extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       percent!,
-                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
                     ),
                   )
                 ],

@@ -7,9 +7,10 @@ class HealthInterest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: K.WhiteColor,
+        backgroundColor: Color(0xFFF5F5F5),
         automaticallyImplyLeading: false,
         title: TextFieldSearch(
           function: (v) {
@@ -34,14 +35,15 @@ class HealthInterest extends StatelessWidget {
                       ),
                       Text(
                         "Favourite",
-                        style: TextStyle(fontSize: 10, color: Colors.black),
+                        style:
+                            TextStyle(fontSize: 10, color: Color(0xFF707070)),
                       )
                     ],
                   ),
                 ),
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: 30,
+                  width: 30,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(shape: BoxShape.circle),
                   child: Image.asset(
@@ -59,15 +61,15 @@ class HealthInterest extends StatelessWidget {
           shrinkWrap: true,
           physics: ClampingScrollPhysics(),
           itemBuilder: (context, Index) => ContainerOfHealthInterest(
-            image: "assets/images/patient.jpg",
-            description:
-                "It is considered wrong to use the term “good fats” and “bad fats”, according to the word ofDrJessicaBennett,an American nutritionist, because of the person’spsychological condition, which leadshim to continue eating fats when their use coincides withthe word “good.” It is better touse the term healthy fats and unhealthy or less healthyfats.",
-            name: "Heart Fat",
-            time: "12 Hours Ago nabbda.com",
-            moreFunction: () {},
-            shareFunction: () {},
-            StarFunction: () {},
-          )),
+                image: "assets/images/patient.jpg",
+                description:
+                    "It is considered wrong to use the term “good fats” and “bad fats”, according to the word ofDrJessicaBennett,an American nutritionist, because of the person’spsychological condition, which leadshim to continue eating fats when their use coincides withthe word “good.” It is better touse the term healthy fats and unhealthy or less healthyfats.",
+                name: "Heart Fat",
+                time: "12 Hours Ago nabbda.com",
+                moreFunction: () {},
+                shareFunction: () {},
+                StarFunction: () {},
+              )),
     );
   }
 }

@@ -53,8 +53,7 @@ class AppbarOfDoctorScreen extends StatelessWidget {
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: labels.length,
-                itemBuilder: (context, index) =>
-                    ButtonOfAppbar(
+                itemBuilder: (context, index) => ButtonOfAppbar(
                       label: labels[index],
                       function: () {
                         if (index == 0) {
@@ -67,8 +66,7 @@ class AppbarOfDoctorScreen extends StatelessWidget {
                           print("index==3");
                         }
                       },
-                    )
-            ),
+                    )),
           ),
         ),
       ],

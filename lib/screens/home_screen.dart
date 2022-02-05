@@ -14,10 +14,10 @@ import 'package:nabbda/screens/vital_signs_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<String> labels = [
-    "Medical Records",
-    "Vital Signs",
-    "Health Monitoring",
-    "Medical Documents"
+    "Medical\nRecords",
+    "Vital\nSigns",
+    "Health\nMonitoring",
+    "Medical\nDocuments"
   ];
   final List<String> images = [
     "assets/images/medical.svg",
@@ -33,8 +33,8 @@ class HomeScreen extends StatelessWidget {
   ];
   final List<String> percent = [
     "15%Higher",
-    "5%Low",
-    "5%Low",
+    "5%Less",
+    "5%Less",
     "15%Higher",
   ];
   final List<String> nameOfMedicine = [
@@ -103,8 +103,13 @@ class HomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-              child: Text("Remember Your Medications",
-                  style: Style.textStyleHomeScreenText),
+              child: Text(
+                "Remember Your Medications",
+                style: TextStyle(
+                    color: Color(0xFF2F2E41),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
             SizedBox(
               height: 110,
@@ -123,17 +128,20 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Doctors Nearby You",
-                      style: Style.textStyleHomeScreenText),
+                      style: TextStyle(
+                          color: Color(0xFF3F4079),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600)),
                   Text("See all",
                       style: TextStyle(
-                          fontSize: 18,
-                          color: CustomizedColors.btnInAct,
-                          fontWeight: FontWeight.w500)),
+                          fontSize: 14,
+                          color: Color(0XFF6E78F7),
+                          fontWeight: FontWeight.w600)),
                 ],
               ),
             ),

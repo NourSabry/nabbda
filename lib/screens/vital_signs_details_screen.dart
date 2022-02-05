@@ -38,7 +38,6 @@ class VitalSignsDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       body: SingleChildScrollView(
@@ -48,7 +47,7 @@ class VitalSignsDetailsScreen extends StatelessWidget {
               function: () {
                 Navigator.pop(context);
               },
-              label: "Vital Signs",
+              label: "Doctors",
             ),
             Padding(
               padding: const EdgeInsets.only(top: 120, left: 10, right: 10),
@@ -62,16 +61,20 @@ class VitalSignsDetailsScreen extends StatelessWidget {
                           horizontal: 15, vertical: 15),
                       child: Text(
                         "Your Vital Signs",
-                        style:
-                            TextStyle(color: Color(0xFF6E78F7), fontSize: 20),
+                        style: TextStyle(
+                            color: Color(0xFF6E78F7),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Text(
                         "In Last 7 days",
-                        style:
-                            TextStyle(color: Color(0xFF6E78F7), fontSize: 20),
+                        style: TextStyle(
+                            color: Color(0xFF7C9CBF),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                     ListView.builder(

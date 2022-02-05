@@ -20,7 +20,7 @@ class ButtonOfAppbar extends StatelessWidget {
           child: Center(
               child: Text(
             label!,
-            style: TextStyle(color: K.blackColor, fontSize: 16),
+            style: TextStyle(color: Color(0XFF313450), fontSize: 12),
           )),
         ),
       ),

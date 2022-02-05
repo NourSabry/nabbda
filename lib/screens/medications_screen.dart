@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/TextStyles/text_styles.dart';
-import 'package:nabbda/components/appbar_with_icon_lable.dart';
+import 'package:nabbda/components/AppbarWithoutAnIcon.dart';
 import 'package:nabbda/components/button.dart';
 import 'package:nabbda/components/container_medications.dart';
 import 'package:nabbda/components/medications_card.dart';
@@ -46,10 +46,7 @@ class MedicationsScreen extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
       child: Stack(children: [
-        AppbarWithLabelAndIcon(
-          function: () {
-            Navigator.pop(context);
-          },
+        AppbarWithoutIcon(
           label: "Medications ",
         ),
         Padding(
@@ -80,7 +77,8 @@ class MedicationsScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 30),
                     child: Text("Reminder Settings",
                         style: TextStyle(
                             color: Colors.black,
@@ -247,132 +245,125 @@ class MedicationsScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                    GestureDetector(
-                            onTap: () {
-                              Get.defaultDialog(
-                                  title: "Select Time",
-                                  titleStyle: Style.textStyleAlertText,
-                                  confirm: RegisterButton(
-                                    function: () {
-                                      Navigator.pop(context);
-                                    },
-                                    label: "Save",
-                                  ),
-                                  content: Container(
-                                      height: 200,
-                                      width: 200,
-                                      child: ListView.builder(
-                                        shrinkWrap: true,
-                                        physics: ClampingScrollPhysics(),
-                                        itemCount: labelsTime.length,
-                                        itemBuilder: (ctx, index) => Obx(() =>
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Row(
-                                                children: [
-                                                  GestureDetector(
-                                                      onTap: () {
-                                                        _controller
-                                                                .selectTimeValue
-                                                                .value =
-                                                            labelsTime[index];
-                                                        _controller
-                                                            .selectTime(index);
-                                                      },
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(4),
-                                                        child: Text(
-                                                          labelsTime[index],
-                                                          style: TextStyle(
-                                                              fontSize: _controller
-                                                                          .timeIndex
-                                                                          .value ==
-                                                                      index
-                                                                  ? 25
-                                                                  : 15,
-                                                              color: _controller
-                                                                          .timeIndex
-                                                                          .value ==
-                                                                      index
-                                                                  ? K.mainColor
-                                                                  : Color(
-                                                                      0xFF707070),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
-                                                        ),
-                                                      )),
-                                                  if (_controller.timeIndex ==
-                                                      index)
-                                                    Padding(
+                        GestureDetector(
+                          onTap: () {
+                            Get.defaultDialog(
+                                title: "Select Time",
+                                titleStyle: Style.textStyleAlertText,
+                                confirm: RegisterButton(
+                                  function: () {
+                                    Navigator.pop(context);
+                                  },
+                                  label: "Save",
+                                ),
+                                content: Container(
+                                    height: 200,
+                                    width: 200,
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      physics: ClampingScrollPhysics(),
+                                      itemCount: labelsTime.length,
+                                      itemBuilder: (ctx, index) => Obx(() =>
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Row(
+                                              children: [
+                                                GestureDetector(
+                                                    onTap: () {
+                                                      _controller
+                                                              .selectTimeValue
+                                                              .value =
+                                                          labelsTime[index];
+                                                      _controller
+                                                          .selectTime(index);
+                                                    },
+                                                    child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
-                                                              8.0),
+                                                              4),
                                                       child: Text(
-                                                        ": 30",
+                                                        labelsTime[index],
                                                         style: TextStyle(
-                                                            color: K.mainColor,
-                                                            fontSize: 25,
+                                                            fontSize: _controller
+                                                                        .timeIndex
+                                                                        .value ==
+                                                                    index
+                                                                ? 25
+                                                                : 15,
+                                                            color: _controller
+                                                                        .timeIndex
+                                                                        .value ==
+                                                                    index
+                                                                ? K.mainColor
+                                                                : Color(
+                                                                    0xFF707070),
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold),
                                                       ),
-                                                    )
-                                                  else
-                                                    Container(),
-                                                  if (_controller
-                                                          .timeIndex.value ==
-                                                      index)
-                                                    Row(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        _controller.check.value
-                                                            ? Text(
-                                                                "AM",
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        25,
-                                                                    color: K
-                                                                        .mainColor),
-                                                              )
-                                                            : Text(
-                                                                "PM",
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        25,
-                                                                    color: K
-                                                                        .mainColor),
-                                                              ),
-                                                        GestureDetector(
-                                                          onTap: () {
-                                                            _controller
-                                                                .selectCheck();
-                                                          },
-                                                          child: Icon(
-                                                            Icons
-                                                                .arrow_drop_down,
-                                                            color: K.mainColor,
-                                                          ),
-                                                        )
-                                                      ],
-                                                    )
-                                                  else
-                                                    Container(),
-                                                ],
-                                              ),
-                                            )),
-                                      )));
-                            },
-                            child: Obx(() => MedicationContainers(
-                                text: "Start Time",
-                                hint: _controller.selectTimeValue.value)),
-                          ),
-
+                                                    )),
+                                                if (_controller.timeIndex ==
+                                                    index)
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      ": 30",
+                                                      style: TextStyle(
+                                                          color: K.mainColor,
+                                                          fontSize: 25,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                  )
+                                                else
+                                                  Container(),
+                                                if (_controller
+                                                        .timeIndex.value ==
+                                                    index)
+                                                  Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      _controller.check.value
+                                                          ? Text(
+                                                              "AM",
+                                                              style: TextStyle(
+                                                                  fontSize: 25,
+                                                                  color: K
+                                                                      .mainColor),
+                                                            )
+                                                          : Text(
+                                                              "PM",
+                                                              style: TextStyle(
+                                                                  fontSize: 25,
+                                                                  color: K
+                                                                      .mainColor),
+                                                            ),
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          _controller
+                                                              .selectCheck();
+                                                        },
+                                                        child: Icon(
+                                                          Icons.arrow_drop_down,
+                                                          color: K.mainColor,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  )
+                                                else
+                                                  Container(),
+                                              ],
+                                            ),
+                                          )),
+                                    )));
+                          },
+                          child: Obx(() => MedicationContainers(
+                              text: "Start Time",
+                              hint: _controller.selectTimeValue.value)),
+                        ),
                         MedicationContainers(
                             text: "End Time", hint: "Select time"),
                       ],
@@ -387,4 +378,3 @@ class MedicationsScreen extends StatelessWidget {
     ));
   }
 }
-

@@ -58,8 +58,9 @@ class ContainerOfHealthInterest extends StatelessWidget {
                   name!,
                   maxLines: 1,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Color(0xFF3B3B3B),
                     fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -69,7 +70,7 @@ class ContainerOfHealthInterest extends StatelessWidget {
                 child: AutoSizeText(
                   description!,
                   maxLines: 3,
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(fontSize: 14, color: Color(0xFFA8A8A8)),
                 ),
               ),
               Expanded(
@@ -102,8 +103,8 @@ class ContainerOfHealthInterest extends StatelessWidget {
                           time!,
                           maxLines: 1,
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
+                            color: Color(0xFF3B3B3B),
+                            fontSize: 12,
                           ),
                         ),
                       ),

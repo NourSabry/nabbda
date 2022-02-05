@@ -29,7 +29,7 @@ class MedicationContainer1 extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF707070)),
+                      color: Color(0xFF3B3C55)),
                   decoration: InputDecoration(
                       hintText: "Write the medicine name",
                       hintStyle:

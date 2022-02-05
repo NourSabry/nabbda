@@ -146,16 +146,6 @@ class CardOfDoctorScreen extends StatelessWidget {
                       leftText: feedback!,
                       rightText: "Feedback",
                     ),
-                    Row(
-                      children: [
-                        ConstTextValue(
-                          label: "Checkup Price:",
-                        ),
-                        TextDetails(
-                          label: price,
-                        ),
-                      ],
-                    ),
                   ],
                 )),
             Padding(
@@ -167,6 +157,16 @@ class CardOfDoctorScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Row(
                       children: [
+                        Row(
+                          children: [
+                            ConstTextValue(
+                              label: "Checkup Price:",
+                            ),
+                            TextDetails(
+                              label: price,
+                            ),
+                          ],
+                        ),
                         ConstTextValue(
                           label: "WaitingTime:",
                         ),

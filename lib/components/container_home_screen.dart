@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:nabbda/TextStyles/text_styles.dart';
 import 'package:nabbda/components/textfield_search.dart';
 import 'package:nabbda/constants.dart';
 
@@ -34,7 +33,11 @@ class ContainerOfHomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("NABBDA", style: Style.textStyleHomeText),
+                      Text("NABBDA",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600)),
                       Row(
                         children: [
                           SizedBox(
@@ -57,10 +60,15 @@ class ContainerOfHomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                AutoSizeText(
-                    "Track Your Health Reports And Get Reminders\n For your Medications, Stay Healthy!",
-                    maxLines: 3,
-                    style: Style.textStyleHomeText)
+                Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: AutoSizeText(
+                        "Track Your Health Reports And Get Reminders\n For your Medications, Stay Healthy!",
+                        maxLines: 3,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 10))),
               ],
             ),
           ),
@@ -71,11 +79,10 @@ class ContainerOfHomeScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SizedBox(
-                height: 35,
+                height: 50,
                 child: TextFieldSearch(
                   function: onChange!,
                   hint: "Search in your reports",
-                  
                 ),
               ),
             ),

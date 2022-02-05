@@ -16,11 +16,11 @@ class SettingProfileScreen extends StatelessWidget {
           onTap: function,
           leading: SvgPicture.asset(
             images!,
-            width: 30,
+            width: 25,
           ),
           title: Text(
             label!,
-            style: TextStyle(color: Colors.grey, fontSize: 20),
+            style: TextStyle(color: Colors.grey, fontSize: 15),
           ),
           trailing: Icon(
             Icons.arrow_forward_ios,
@@ -28,9 +28,10 @@ class SettingProfileScreen extends StatelessWidget {
           ),
         ),
         Divider(
+          thickness: 0.3,
           color: Colors.grey,
-          endIndent: 5,
-          indent: 5,
+          endIndent: 6,
+          indent: 6,
         )
       ],
     );

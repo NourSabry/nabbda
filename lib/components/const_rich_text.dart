@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nabbda/constants.dart';
 
 class ConstRichText extends StatelessWidget {
   final String? leftText;
@@ -12,9 +11,11 @@ class ConstRichText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: leftText!,
-        style: TextStyle(color: K.grayColor, fontSize: 15),
+        style: TextStyle(color: Color(0xFF898A8F), fontSize: 12),
         children: <TextSpan>[
-          TextSpan(text: rightText!, style: TextStyle(color: K.blackColor)),
+          TextSpan(
+              text: rightText!,
+              style: TextStyle(color: Color(0xFF898A8F), fontSize: 12)),
         ],
       ),
     );

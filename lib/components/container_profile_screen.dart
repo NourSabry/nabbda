@@ -44,7 +44,10 @@ class ContainerOfProfile extends StatelessWidget {
               child: AutoSizeText(
                 name!,
                 maxLines: 1,
-                style: Style.textStyleProfileText,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
               ),
             ),
           ),
@@ -52,9 +55,10 @@ class ContainerOfProfile extends StatelessWidget {
             child: AutoSizeText(
               phone!,
               maxLines: 1,
-              style: Style.textStylePhoneText,
+              style: TextStyle(color: Colors.white, fontSize: 13),
             ),
           ),
+          SizedBox(height: 10),
           Center(
               child: Text(
             percentText!,
@@ -82,12 +86,15 @@ class ContainerOfProfile extends StatelessWidget {
                   onPressed: functionComplete,
                   child: Text(
                     "Complete Your Profile",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
                   ),
                   style: TextButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
-                          side: BorderSide(color: Colors.white))),
+                          side: BorderSide(color: Colors.white, width: 0.3))),
                 ),
               ),
             ),

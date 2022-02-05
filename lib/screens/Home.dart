@@ -5,6 +5,7 @@ import 'package:nabbda/screens/medications_screen.dart';
 import 'package:nabbda/controller/base_controller.dart';
 import 'package:nabbda/screens/home_screen.dart';
 import 'package:nabbda/screens/profile_screen.dart';
+import 'package:nabbda/icons/NavigationIcons.dart';
 
 class Home extends StatelessWidget {
   final _controller = Get.put(BaseController());
@@ -33,15 +34,15 @@ class Home extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                 backgroundColor: Color(0xFF6E78F7),
-                icon: Icon(Icons.home),
+                icon: Icon(NavigationIcons.home),
                 label: "Home",
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: "Medications"),
+                  icon: Icon(NavigationIcons.pills), label: "Medications"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: "Calculator"),
+                  icon: Icon(NavigationIcons.bmi), label: "Calculator"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: "Profile"),
+                  icon: Icon(NavigationIcons.user), label: "Account"),
             ],
           )),
     );

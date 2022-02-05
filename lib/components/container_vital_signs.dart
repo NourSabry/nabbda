@@ -22,8 +22,8 @@ class ContainerOfVitalSigns extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               child: Center(
                 child: SvgPicture.asset(
                   images!,
@@ -36,18 +36,25 @@ class ContainerOfVitalSigns extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AutoSizeText(
                   name!,
                   maxLines: 1,
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF404D66)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: AutoSizeText(
                     time!,
                     maxLines: 1,
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF8193AE),
+                    ),
                   ),
                 ),
               ],
@@ -55,19 +62,21 @@ class ContainerOfVitalSigns extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              width: 100,
+              width: 80,
               height: 50,
               child: Sparkline(
                 data: data,
                 useCubicSmoothing: true,
                 cubicSmoothingFactor: 0.2,
+                lineColor: Colors.grey,
               ),
             ),
           ),
+          SizedBox(width: 20),
           Expanded(
             child: AutoSizeText(
               quantity!,
-              style: TextStyle(fontSize: 16, color: Colors.black),
+              style: TextStyle(fontSize: 14, color: Color(0xFF3B3C55)),
             ),
           ),
         ],

@@ -15,9 +15,8 @@ class RadioButtonRow extends StatelessWidget {
     return Row(
       children: [
         Radio(
-
           value: value,
-          visualDensity: VisualDensity(horizontal: -4 , vertical: -4),
+          visualDensity: VisualDensity(horizontal: -4, vertical: -4),
           groupValue: groupValue,
           activeColor: K.mainColor,
           onChanged: function,
@@ -25,7 +24,10 @@ class RadioButtonRow extends StatelessWidget {
         ),
         AutoSizeText(
           label!,
-          style: TextStyle(fontSize: 15, color: Color(0xFF3B3C55)),
+          style: TextStyle(
+              fontSize: 13,
+              color: Color(0xFF3B3C55),
+              fontWeight: FontWeight.bold),
         )
       ],
     );
