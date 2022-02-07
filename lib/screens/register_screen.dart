@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:nabbda/colors.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/components/button.dart';
@@ -8,6 +9,7 @@ import 'package:nabbda/components/container_image_profile.dart';
 import 'package:nabbda/components/date_birth_alert.dart';
 import 'package:nabbda/components/text_field.dart';
 import 'package:nabbda/constants.dart';
+import 'package:nabbda/controller/register_controller.dart';
 import 'package:nabbda/screens/forget_password_screen.dart';
 import 'package:nabbda/screens/login_screen.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -15,9 +17,11 @@ import 'package:table_calendar/table_calendar.dart';
 class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(RegisterController());
     CalendarFormat format = CalendarFormat.month;
     DateTime selectedDay = DateTime.now();
     DateTime focusedDay = DateTime.now();
+    String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(focusedDay);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -51,7 +55,7 @@ class RegisterScreen extends StatelessWidget {
                                 color: CustomizedColors.greyy, fontSize: 14)),
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Get.defaultDialog(
                             title: "",
                             content: Container(
@@ -60,7 +64,7 @@ class RegisterScreen extends StatelessWidget {
                                 child: Column(children: [
                                   Padding(
                                     padding:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     child: TableCalendar(
                                       focusedDay: DateTime(1992, 3, 30, 0, 0),
                                       firstDay: DateTime(1990),
@@ -68,13 +72,12 @@ class RegisterScreen extends StatelessWidget {
                                       calendarFormat: format,
                                       onFormatChanged:
                                           (CalendarFormat _format) {
-
                                         format = _format;
                                       },
                                       rowHeight: 30,
                                       daysOfWeekHeight: 25,
                                       startingDayOfWeek:
-                                      StartingDayOfWeek.saturday,
+                                          StartingDayOfWeek.saturday,
                                       daysOfWeekVisible: true,
 
                                       //Day Changed
@@ -103,7 +106,7 @@ class RegisterScreen extends StatelessWidget {
                                               fontSize: 16,
                                               fontWeight: FontWeight.w600),
                                           selectedTextStyle:
-                                          TextStyle(color: Colors.white),
+                                              TextStyle(color: Colors.white),
                                           defaultDecoration: BoxDecoration(
                                               shape: BoxShape.circle),
                                           weekendTextStyle: TextStyle(
@@ -112,9 +115,10 @@ class RegisterScreen extends StatelessWidget {
                                               fontSize: 16)),
                                       onHeaderTapped: (dateTime) =>
                                           showDialog<String>(
-                                            context: context,
-                                            builder: (BuildContext context) => Container(),
-                                          ),
+                                        context: context,
+                                        builder: (BuildContext context) =>
+                                            Container(),
+                                      ),
 
                                       headerStyle: HeaderStyle(
                                           headerMargin: EdgeInsets.only(
@@ -158,7 +162,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       TextFieldInput(
                         hint: "full name",
-                        function: (v) {},
+                        function: (v) {
+                          controller.firstName.value = v;
+                        },
                         icon: Icon(
                           Icons.person,
                           color: Color(0xFFBDBDBD),
@@ -166,7 +172,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       TextFieldInput(
                         hint: "Mobile Number",
-                        function: (v) {},
+                        function: (v) {
+                          controller.lastName.value = v;
+                        },
                         icon: Icon(
                           Icons.phone,
                           color: Color(0xFFBDBDBD),
@@ -181,11 +189,12 @@ class RegisterScreen extends StatelessWidget {
                         ),
                       ),
                       TextFieldInput(
-                        onTap: (){
+                        onTap: () {
                           Get.defaultDialog(
                             title: "",
-                            content:DateOfBirth(
-                              function:   (DateTime selectDay, DateTime focusDay) {
+                            content: DateOfBirth(
+                              function:
+                                  (DateTime selectDay, DateTime focusDay) {
                                 selectedDay = selectDay;
                                 focusedDay = focusDay;
                                 print(focusedDay);
@@ -193,10 +202,9 @@ class RegisterScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        hint: "Date of Birth",
+                        hint: formattedDate,
                         function: (v) {
-                          v=focusedDay as String;
-                          print(v);
+                          print(formattedDate);
                         },
                         icon: Icon(
                           Icons.person,
@@ -205,7 +213,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       TextFieldInput(
                         hint: "Email",
-                        function: (v) {},
+                        function: (v) {
+                          controller.email.value = v;
+                        },
                         icon: Icon(
                           Icons.email,
                           color: Color(0xFFBDBDBD),
@@ -213,7 +223,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       TextFieldInput(
                         hint: "Password",
-                        function: (v) {},
+                        function: (v) {
+                          controller.password.value = v;
+                        },
                         icon: Icon(
                           Icons.email,
                           color: Color(0xFFBDBDBD),
@@ -223,7 +235,8 @@ class RegisterScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 20),
                         child: RegisterButton(
                           function: () {
-                            Get.to(() => ForgetPasswordScreen());
+                            controller.register();
+                            // Get.to(() => ForgetPasswordScreen());
                           },
                           label: "Register",
                         ),

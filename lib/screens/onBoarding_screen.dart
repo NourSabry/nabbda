@@ -69,6 +69,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ? GestureDetector(
                           onTap: () {
                             if (controller.isLast.value) {
+
                               Get.offAll(LoginScreen());
                             }
                           },
@@ -85,7 +86,7 @@ class OnBoardingScreen extends StatelessWidget {
                           icon: Icon(
                             Icons.arrow_forward_ios,
                             color: K.mainColor,
-                          ))),
+                         ))),
                 ],
               )
             ],
@@ -95,3 +96,4 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 }
+

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nabbda/components/appbar_with_icon_lable.dart';
 import 'package:nabbda/constants.dart';
-import 'package:nabbda/screens/chart_montring_screen.dart';
+import 'package:nabbda/screens/chart'
+    '_montring_screen.dart';
 
 class GeneralHealthMonitoringScreen extends StatelessWidget {
   final List<String> label = [
@@ -368,9 +369,13 @@ class GeneralHealthMonitoringScreen extends StatelessWidget {
                                       ));
                                 }
                               },
-                              leading: Text(label[index],style: TextStyle(
-                                color : Color(0xFF707070), fontSize: 16 , fontWeight : FontWeight.w600
-                              ),),
+                              leading: Text(
+                                label[index],
+                                style: TextStyle(
+                                    color: Color(0xFF707070),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              ),
                               trailing: Icon(
                                 Icons.arrow_forward_ios,
                                 color: K.mainColor,
