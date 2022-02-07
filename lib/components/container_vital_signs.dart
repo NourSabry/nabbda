@@ -8,13 +8,13 @@ class ContainerOfVitalSigns extends StatelessWidget {
   final String? name;
   final String? time;
   final String? quantity;
+  final List<double>? data;
 
-  ContainerOfVitalSigns({this.time, this.name, this.images, this.quantity});
+  ContainerOfVitalSigns(
+      {this.time, this.name, this.images, this.quantity, this.data});
 
   @override
   Widget build(BuildContext context) {
-    var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.0];
-
     return Container(
       height: 80,
       child: Row(
@@ -40,34 +40,35 @@ class ContainerOfVitalSigns extends StatelessWidget {
                 AutoSizeText(
                   name!,
                   maxLines: 1,
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 12, color: Color(0xFF404D66)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: AutoSizeText(
                     time!,
                     maxLines: 1,
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                    style: TextStyle(fontSize: 10, color: Color(0xFF8193AE)),
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              width: 100,
-              height: 50,
-              child: Sparkline(
-                data: data,
-                useCubicSmoothing: true,
-                cubicSmoothingFactor: 0.2,
-              ),
+          SizedBox(
+            width: 100,
+            height: 20,
+            child: Sparkline(
+              data: data!,
+              useCubicSmoothing: true,
+              cubicSmoothingFactor: 0.2,
             ),
+          ),
+          SizedBox(
+            width: 20,
           ),
           Expanded(
             child: AutoSizeText(
               quantity!,
-              style: TextStyle(fontSize: 16, color: Colors.black),
+              style: TextStyle(fontSize: 12, color: Color(0xFF3B3C55)),
             ),
           ),
         ],
